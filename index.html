@@ -6,7 +6,7 @@
   <style>
     body { font-family: Arial, sans-serif; max-width: 700px; margin: 20px auto; }
     #chat { border: 1px solid #ccc; padding: 10px; height: 400px; overflow-y: auto; }
-    .msg { margin: 5px 0; }
+    .msg { margin: 5px 0; white-space: pre-wrap; }
     .user { color: blue; }
     .bot { color: green; }
     input { width: 80%; padding: 5px; }
@@ -20,13 +20,23 @@
   <button onclick="fazerPergunta()">Enviar</button>
 
   <script>
-    let popTexto = "";
+    // 🔹 Lista de POPs no GitHub (adicione todos os 23 aqui)
+    const popURLs = [
+      "https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/main/pop_desmame.txt",
+      "https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/main/pop_vni.txt",
+      "https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/main/pop_extubacao.txt"
+      // ... adicione os outros até 23
+    ];
 
-    // 🔹 Carrega POP (substitua pela URL do seu repositório no GitHub)
-    async function carregarPOP() {
-      const url = "https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/main/pop_desmame.txt";
-      const resp = await fetch(url);
-      popTexto = await resp.text();
+    let pops = []; // {titulo, conteudo}
+
+    async function carregarPOPs() {
+      for (const url of popURLs) {
+        const resp = await fetch(url);
+        const texto = await resp.text();
+        const titulo = url.split("/").pop(); // pega o nome do arquivo
+        pops.push({ titulo, conteudo: texto });
+      }
     }
 
     function adicionarMensagem(texto, classe) {
@@ -40,15 +50,20 @@
 
     function buscarResposta(pergunta) {
       pergunta = pergunta.toLowerCase();
-      const linhas = popTexto.split("\n");
+      let respostas = [];
 
-      // 🔹 Busca simples por palavras-chave
-      const resultados = linhas.filter(l => l.toLowerCase().includes(pergunta));
+      for (const pop of pops) {
+        const linhas = pop.conteudo.split("\n");
+        const resultados = linhas.filter(l => l.toLowerCase().includes(pergunta));
+        if (resultados.length > 0) {
+          respostas.push(`📄 ${pop.titulo}:\n${resultados.join("\n")}`);
+        }
+      }
 
-      if (resultados.length > 0) {
-        return "Encontrei no POP:\n" + resultados.join("\n");
+      if (respostas.length > 0) {
+        return respostas.join("\n\n");
       } else {
-        return "Não há informação sobre isso neste POP.";
+        return "Não há informação sobre isso nos POPs.";
       }
     }
 
@@ -64,7 +79,8 @@
       input.value = "";
     }
 
-    carregarPOP();
+    // Carrega POPs ao iniciar
+    carregarPOPs();
   </script>
 </body>
 </html>
