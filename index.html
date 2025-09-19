@@ -20,42 +20,46 @@ button { padding: 5px 10px; }
 <button onclick="fazerPergunta()">Enviar</button>
 
 <script>
-const HF_TOKEN = "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; // HuggingFace Access Token gratuito
+// 🔹 Seu HuggingFace Token gratuito
+const HF_TOKEN = "SEU_TOKEN_AQUI"; 
 const EMB_MODEL = "sentence-transformers/all-MiniLM-L6-v2";
+
+// 🔹 Lista de POPs no GitHub (raw URLs)
 const popURLs = [
-  "https://raw.githubusercontent.com/Rcs1992/chatfisio/refs/heads/main/POP%20MOBILIZA%C3%87%C3%83O%20PRECOCE%20DO%20PACIENTE.txt",
-  "https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/main/pop_vni.txt",
-  // adicione os 23 links aqui
+  "https://raw.githubusercontent.com/Rcs1992/chatfisio/main/POP%20MOBILIZACAO%20PRECOCE%20DO%20PACIENTE.txt",
+  "https://raw.githubusercontent.com/Rcs1992/chatfisio/main/POP%20VNI.txt",
+  "https://raw.githubusercontent.com/Rcs1992/chatfisio/main/POP%20EXTUBACAO.txt"
+  // adicione os outros POPs até os 23
 ];
 
 let pops = []; // {titulo, chunks: [{texto, embedding}]}
 
-// Função para dividir texto em chunks
+// 🔹 Divide texto em blocos/chunks
 function chunkText(text, size=300){
   let arr=[];
   for(let i=0;i<text.length;i+=size) arr.push(text.slice(i,i+size));
   return arr;
 }
 
-// Gerar embedding HuggingFace
+// 🔹 Gerar embedding HuggingFace
 async function embedText(text){
   const resp = await fetch(`https://api-inference.huggingface.co/pipeline/feature-extraction/${EMB_MODEL}`,{
     method:"POST",
-    headers: {Authorization:`Bearer ${HF_TOKEN}`, "Content-Type":"application/json"},
+    headers: { Authorization:`Bearer ${HF_TOKEN}`, "Content-Type":"application/json" },
     body: JSON.stringify(text)
   });
   const data = await resp.json();
   return data[0]; // retorna array de floats
 }
 
-// Similaridade coseno
+// 🔹 Similaridade coseno
 function cosineSim(a,b){
   let dot=0,na=0,nb=0;
   for(let i=0;i<a.length;i++){ dot+=a[i]*b[i]; na+=a[i]*a[i]; nb+=b[i]*b[i]; }
   return dot/(Math.sqrt(na)*Math.sqrt(nb)+1e-9);
 }
 
-// Carrega e processa POPs
+// 🔹 Carrega e processa POPs
 async function carregarPOPs(){
   for(const url of popURLs){
     const resp = await fetch(url);
@@ -72,7 +76,7 @@ async function carregarPOPs(){
   adicionarMensagem("POP(s) carregados com embeddings.", "bot");
 }
 
-// Funções de chat
+// 🔹 Funções de chat
 function adicionarMensagem(texto,classe){
   const chat = document.getElementById("chat");
   const div = document.createElement("div");
