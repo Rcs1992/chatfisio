@@ -24,7 +24,7 @@ let pops = [];
 
 // Carregar JSON dos POPs
 async function carregarPOPs(){
-  const resp = await fetch("pops.json");
+  const resp = await fetch("https://raw.githubusercontent.com/Rcs1992/chatfisio/refs/heads/main/pops_embeddings.json");
   pops = await resp.json();
   adicionarMensagem("POP(s) carregados. Pronto para responder perguntas!", "bot");
 }
