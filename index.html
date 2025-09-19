@@ -20,98 +20,61 @@ button { padding: 5px 10px; }
 <button onclick="fazerPergunta()">Enviar</button>
 
 <script>
-const HF_TOKEN = "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"; // seu token HuggingFace
-const EMB_MODEL = "sentence-transformers/all-MiniLM-L6-v2";
+let pops = [];
 
-const popURLs = [
-  "https://raw.githubusercontent.com/Rcs1992/chatfisio/refs/heads/main/pops_embeddings.json,
-  // adicione os outros POPs aqui
-];
-
-let pops = []; // cada pop terá {titulo, chunks: [{texto, embedding}]}
-
-// 🔹 Função para dividir texto em chunks
-function chunkText(text, size=300){
-  let arr=[];
-  for(let i=0;i<text.length;i+=size) arr.push(text.slice(i,i+size));
-  return arr;
-}
-
-// 🔹 Gerar embedding usando HuggingFace
-async function embedText(text){
-  const resp = await fetch(`https://api-inference.huggingface.co/pipeline/feature-extraction/${EMB_MODEL}`,{
-    method:"POST",
-    headers: {Authorization:`Bearer ${HF_TOKEN}`, "Content-Type":"application/json"},
-    body: JSON.stringify({inputs:text})
-  });
-  const data = await resp.json();
-  return data[0];
-}
-
-// 🔹 Similaridade coseno
-function cosineSim(a,b){
-  let dot=0,na=0,nb=0;
-  for(let i=0;i<a.length;i++){ dot+=a[i]*b[i]; na+=a[i]*a[i]; nb+=b[i]*b[i]; }
-  return dot/(Math.sqrt(na)*Math.sqrt(nb)+1e-9);
-}
-
-// 🔹 Carregar POPs e gerar embeddings
+// Carregar JSON dos POPs
 async function carregarPOPs(){
-  for(const url of popURLs){
-    const resp = await fetch(url);
-    const texto = await resp.text();
-    const titulo = url.split("/").pop();
-    const chunksTexto = chunkText(texto,300);
-    const chunks=[];
-    for(const c of chunksTexto){
-      const emb = await embedText(c);
-      chunks.push({texto:c, embedding:emb});
-    }
-    pops.push({titulo,chunks});
-  }
-  adicionarMensagem("POP(s) carregados com embeddings em tempo real.", "bot");
+  const resp = await fetch("pops.json");
+  pops = await resp.json();
+  adicionarMensagem("POP(s) carregados. Pronto para responder perguntas!", "bot");
 }
 
-// 🔹 Funções de chat
-function adicionarMensagem(texto,classe){
+// Função de chat
+function adicionarMensagem(texto, classe){
   const chat = document.getElementById("chat");
   const div = document.createElement("div");
-  div.className="msg "+classe;
-  div.textContent=texto;
+  div.className = "msg " + classe;
+  div.textContent = texto;
   chat.appendChild(div);
-  chat.scrollTop=chat.scrollHeight;
+  chat.scrollTop = chat.scrollHeight;
 }
 
-async function fazerPergunta(){
+// Busca por palavras-chave
+function buscarResposta(pergunta){
+  let palavras = pergunta.toLowerCase().split(/\s+/);
+  let melhor = {score:0,texto:""};
+  
+  for(const pop of pops){
+    for(const chunk of pop.chunks){
+      let score = 0;
+      for(const k of chunk.keywords){
+        if(palavras.includes(k.toLowerCase())) score++;
+      }
+      if(score > melhor.score) melhor = {score, texto:`📄 ${pop.titulo}:\n${chunk.texto}`};
+    }
+  }
+  
+  if(melhor.score > 0) return melhor.texto;
+  else return "Não há informação sobre isso nos POPs.";
+}
+
+function fazerPergunta(){
   const input = document.getElementById("pergunta");
   const pergunta = input.value.trim();
   if(!pergunta) return;
   adicionarMensagem("Você: "+pergunta,"user");
-  input.value="";
+  input.value = "";
   adicionarMensagem("Assistente: ... pesquisando ...","bot");
-
-  const qEmb = await embedText(pergunta);
-  let best = {score:0,texto:""};
-  for(const pop of pops){
-    for(const chunk of pop.chunks){
-      const sim = cosineSim(qEmb,chunk.embedding);
-      if(sim>best.score){
-        best={score:sim,texto:`📄 ${pop.titulo}:\n${chunk.texto}`};
-      }
-    }
-  }
-
-  const chatDiv = document.getElementById("chat");
-  chatDiv.removeChild(chatDiv.lastChild);
-
-  if(best.score>0.6){
-    adicionarMensagem("Assistente: "+best.texto,"bot");
-  } else {
-    adicionarMensagem("Assistente: Não há informação sobre isso nos POPs.","bot");
-  }
+  
+  setTimeout(() => {
+    const resposta = buscarResposta(pergunta);
+    const chatDiv = document.getElementById("chat");
+    chatDiv.removeChild(chatDiv.lastChild);
+    adicionarMensagem("Assistente: "+resposta,"bot");
+  }, 200); // simula leve delay
 }
 
-// Inicia carregando os POPs
+// Inicia
 carregarPOPs();
 </script>
 </body>
