@@ -20,10 +20,33 @@ button { padding: 5px 10px; }
 <button onclick="fazerPergunta()">Enviar</button>
 
 <script>
-// 🔹 Raw link do JSON com embeddings
-const popsJSON = "https://raw.githubusercontent.com/Rcs1992/chatfisio/refs/heads/main/pops_embeddings.json";
+const HF_TOKEN = "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"; // seu token HuggingFace
+const EMB_MODEL = "sentence-transformers/all-MiniLM-L6-v2";
 
-let pops = [];
+const popURLs = [
+  "https://raw.githubusercontent.com/Rcs1992/chatfisio/main/POP_MOBILIZACAO_PRECOCE_DO_PACIENTE.txt",
+  // adicione os outros POPs aqui
+];
+
+let pops = []; // cada pop terá {titulo, chunks: [{texto, embedding}]}
+
+// 🔹 Função para dividir texto em chunks
+function chunkText(text, size=300){
+  let arr=[];
+  for(let i=0;i<text.length;i+=size) arr.push(text.slice(i,i+size));
+  return arr;
+}
+
+// 🔹 Gerar embedding usando HuggingFace
+async function embedText(text){
+  const resp = await fetch(`https://api-inference.huggingface.co/pipeline/feature-extraction/${EMB_MODEL}`,{
+    method:"POST",
+    headers: {Authorization:`Bearer ${HF_TOKEN}`, "Content-Type":"application/json"},
+    body: JSON.stringify({inputs:text})
+  });
+  const data = await resp.json();
+  return data[0];
+}
 
 // 🔹 Similaridade coseno
 function cosineSim(a,b){
@@ -32,11 +55,21 @@ function cosineSim(a,b){
   return dot/(Math.sqrt(na)*Math.sqrt(nb)+1e-9);
 }
 
-// 🔹 Carrega o JSON com embeddings
+// 🔹 Carregar POPs e gerar embeddings
 async function carregarPOPs(){
-  const resp = await fetch(popsJSON);
-  pops = await resp.json();
-  adicionarMensagem("POP(s) carregados com embeddings prontos.", "bot");
+  for(const url of popURLs){
+    const resp = await fetch(url);
+    const texto = await resp.text();
+    const titulo = url.split("/").pop();
+    const chunksTexto = chunkText(texto,300);
+    const chunks=[];
+    for(const c of chunksTexto){
+      const emb = await embedText(c);
+      chunks.push({texto:c, embedding:emb});
+    }
+    pops.push({titulo,chunks});
+  }
+  adicionarMensagem("POP(s) carregados com embeddings em tempo real.", "bot");
 }
 
 // 🔹 Funções de chat
@@ -49,25 +82,21 @@ function adicionarMensagem(texto,classe){
   chat.scrollTop=chat.scrollHeight;
 }
 
-function fazerPergunta(){
+async function fazerPergunta(){
   const input = document.getElementById("pergunta");
   const pergunta = input.value.trim();
   if(!pergunta) return;
   adicionarMensagem("Você: "+pergunta,"user");
   input.value="";
-
   adicionarMensagem("Assistente: ... pesquisando ...","bot");
 
-  // 🔹 Gerar embedding local para a pergunta usando TF.js + MiniLM (ou usar API)
-  // Para simplificar e 100% gratuito: vamos usar **busca por palavra-chave** nos chunks
-  // Pois embeddings já foram calculados previamente
-
-  let respostas=[];
-  const lowerQ = pergunta.toLowerCase();
+  const qEmb = await embedText(pergunta);
+  let best = {score:0,texto:""};
   for(const pop of pops){
     for(const chunk of pop.chunks){
-      if(chunk.texto.toLowerCase().includes(lowerQ)){
-        respostas.push(`📄 ${pop.titulo}:\n${chunk.texto}`);
+      const sim = cosineSim(qEmb,chunk.embedding);
+      if(sim>best.score){
+        best={score:sim,texto:`📄 ${pop.titulo}:\n${chunk.texto}`};
       }
     }
   }
@@ -75,14 +104,14 @@ function fazerPergunta(){
   const chatDiv = document.getElementById("chat");
   chatDiv.removeChild(chatDiv.lastChild);
 
-  if(respostas.length>0){
-    adicionarMensagem("Assistente: "+respostas.join("\n\n"),"bot");
+  if(best.score>0.6){
+    adicionarMensagem("Assistente: "+best.texto,"bot");
   } else {
     adicionarMensagem("Assistente: Não há informação sobre isso nos POPs.","bot");
   }
 }
 
-// 🔹 Inicia carregando os POPs
+// Inicia carregando os POPs
 carregarPOPs();
 </script>
 </body>
