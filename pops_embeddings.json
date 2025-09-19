@@ -1,0 +1,35 @@
+[
+  {
+    "titulo": "POP_MOBILIZACAO_PRECOCE_DO_PACIENTE.txt",
+    "chunks": [
+      {
+        "texto": "INTRODUÇÃO: Nos últimos anos, os avanços tecnológicos e a evolução no cuidado, em especial a evolução postural de pacientes graves contribuíram significativamente para a redução da mortalidade e para o aumento da sobrevida dessa população...",
+        "embedding": [0.01, 0.02, 0.03, 0.04, 0.05]
+      },
+      {
+        "texto": "OBJETIVO: Padronizar os procedimentos entre a equipe de fisioterapia na retirada precoce do leito de paciente internado no bloco crítico e emergência do CER Leblon...",
+        "embedding": [0.02, 0.03, 0.01, 0.05, 0.04]
+      },
+      {
+        "texto": "ABRANGÊNCIA: Bloco crítico (b5-RH CTI Geral, b7-RH unidade neurointensiva, b9-RH unidade cardiointensiva) e emergência do CER Leblon",
+        "embedding": [0.03, 0.01, 0.04, 0.02, 0.05]
+      },
+      {
+        "texto": "REFERÊNCIAS: Altman DG, Machin D, Bryan TN, Gardner MJ. Statistics for medical Research council. London:Chapman & Hall, 1991...",
+        "embedding": [0.05, 0.04, 0.03, 0.02, 0.01]
+      },
+      {
+        "texto": "DEFINIÇÕES E SIGLAS: IMS, MRC, CER, CTI, FiO2, FR, FC, MMII, MMSS, PaO2, SpO2, EPI...",
+        "embedding": [0.01, 0.03, 0.02, 0.05, 0.04]
+      },
+      {
+        "texto": "DESCRIÇÃO DA TÉCNICA: O Fisioterapeuta deve higienizar as mãos, avaliar sinais vitais, testar força muscular, avaliar funcionalidade do paciente e definir nível do protocolo de mobilização adequado para o paciente...",
+        "embedding": [0.04, 0.03, 0.05, 0.01, 0.02]
+      },
+      {
+        "texto": "CRITÉRIOS DE SEGURANÇA: Cardiovascular: FC > 40 bpm e < 130 bpm; PA Sistólica > 90 e < 180; Respiratório: FR > 5 e < 40 irpm; SpO2 > 88%; Neurológico: paciente cooperativo e alerta...",
+        "embedding": [0.05, 0.02, 0.01, 0.03, 0.04]
+      }
+    ]
+  }
+]
