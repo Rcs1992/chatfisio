@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat POPs</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: 20px auto; }
+    #chat { border: 1px solid #ccc; padding: 10px; height: 400px; overflow-y: auto; }
+    .msg { margin: 5px 0; }
+    .user { color: blue; }
+    .bot { color: green; }
+    input { width: 80%; padding: 5px; }
+    button { padding: 5px 10px; }
+  </style>
+</head>
+<body>
+  <h2>Chat - POPs Institucionais</h2>
+  <div id="chat"></div>
+  <input type="text" id="pergunta" placeholder="Digite sua pergunta..." />
+  <button onclick="fazerPergunta()">Enviar</button>
+
+  <script>
+    let popTexto = "";
+
+    // 🔹 Carrega POP (substitua pela URL do seu repositório no GitHub)
+    async function carregarPOP() {
+      const url = "https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/main/pop_desmame.txt";
+      const resp = await fetch(url);
+      popTexto = await resp.text();
+    }
+
+    function adicionarMensagem(texto, classe) {
+      const chat = document.getElementById("chat");
+      const div = document.createElement("div");
+      div.className = "msg " + classe;
+      div.textContent = texto;
+      chat.appendChild(div);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    function buscarResposta(pergunta) {
+      pergunta = pergunta.toLowerCase();
+      const linhas = popTexto.split("\n");
+
+      // 🔹 Busca simples por palavras-chave
+      const resultados = linhas.filter(l => l.toLowerCase().includes(pergunta));
+
+      if (resultados.length > 0) {
+        return "Encontrei no POP:\n" + resultados.join("\n");
+      } else {
+        return "Não há informação sobre isso neste POP.";
+      }
+    }
+
+    function fazerPergunta() {
+      const input = document.getElementById("pergunta");
+      const pergunta = input.value.trim();
+      if (!pergunta) return;
+
+      adicionarMensagem("Você: " + pergunta, "user");
+      const resposta = buscarResposta(pergunta);
+      adicionarMensagem("Assistente: " + resposta, "bot");
+
+      input.value = "";
+    }
+
+    carregarPOP();
+  </script>
+</body>
+</html>
