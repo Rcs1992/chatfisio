@@ -1,155 +1,288 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Chat POPs Institucionais</title>
+<meta charset="utf-8" />
+<title>Assistente POPs (Melhorado)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <style>
-body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
-  margin: 0;
-  padding: 0;
-}
-#container {
-  max-width: 800px;
-  margin: 20px auto;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 90vh;
-}
-#header {
-  background: #4a90e2;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-}
-#chat {
-  flex: 1;
-  padding: 15px;
-  overflow-y: auto;
-}
-.msg {
-  margin: 10px 0;
-  padding: 10px 14px;
-  border-radius: 8px;
-  max-width: 80%;
-  white-space: pre-wrap;
-}
-.user {
-  background: #e1f5fe;
-  align-self: flex-end;
-}
-.bot {
-  background: #f1f1f1;
-  align-self: flex-start;
-}
-#input-area {
-  display: flex;
-  border-top: 1px solid #ddd;
-}
-#pergunta {
-  flex: 1;
-  border: none;
-  padding: 10px;
-  font-size: 16px;
-}
-#pergunta:focus { outline: none; }
-button {
-  background: #4a90e2;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-button:hover { background: #357ab8; }
+  :root{
+    --accent:#0ea37a;
+    --bg:#f6f7f9;
+    --card:#ffffff;
+    --user:#d6f0ff;
+    --bot:#eef2f5;
+    --muted:#6c7a89;
+    --maxw:920px;
+  }
+  html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial; background:var(--bg); color:#111;}
+  .app{max-width:var(--maxw);margin:24px auto;padding:12px;display:flex;flex-direction:column;gap:12px}
+  header{display:flex;align-items:center;gap:12px;padding:14px;border-radius:12px;background:linear-gradient(90deg,var(--accent),#0c8b68);color:#fff}
+  header h1{margin:0;font-size:18px}
+  .main{display:flex;gap:16px;min-height:60vh}
+  .left{width:260px;background:var(--card);border-radius:12px;padding:12px;box-shadow:0 6px 18px rgba(10,10,10,0.06)}
+  .left h3{margin:0 0 8px 0;font-size:14px}
+  .pop-list{display:flex;flex-direction:column;gap:6px;max-height:60vh;overflow:auto;padding-right:6px}
+  .pop-item{padding:8px;border-radius:8px;cursor:pointer;border:1px solid transparent;font-size:14px}
+  .pop-item:hover{background:#f1f7f4}
+  .pop-item.active{background:linear-gradient(90deg,#eafaf4,#dff2ea);border-color:#cdeedc}
+  .center{flex:1;display:flex;flex-direction:column;background:var(--card);border-radius:12px;padding:12px;box-shadow:0 6px 18px rgba(10,10,10,0.06)}
+  #chat{flex:1;overflow:auto;padding:8px;display:flex;flex-direction:column;gap:8px}
+  .msg{max-width:78%;padding:10px 12px;border-radius:12px;white-space:pre-wrap}
+  .msg.user{align-self:flex-end;background:var(--user);color:#064a73}
+  .msg.bot{align-self:flex-start;background:var(--bot);color:#0a2b3b}
+  .meta{font-size:12px;color:var(--muted);margin-top:6px}
+  .input-row{display:flex;gap:8px;padding-top:8px;border-top:1px solid #eee}
+  .input-row input{flex:1;padding:10px;border-radius:10px;border:1px solid #ddd;font-size:15px}
+  .input-row button{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:600}
+  .hint{font-size:13px;color:var(--muted);margin-top:8px}
+  .small-btn{display:inline-block;padding:6px 8px;border-radius:8px;border:1px solid #e6eef0;background:#fff;cursor:pointer;font-size:13px;margin-right:6px}
+  .results-title{font-weight:700;margin-bottom:6px}
+  footer{font-size:13px;color:var(--muted);text-align:center;padding:6px}
 </style>
 </head>
 <body>
-<div id="container">
-  <div id="header">Assistente POPs Institucionais</div>
-  <div id="chat"></div>
-  <div id="input-area">
-    <input type="text" id="pergunta" placeholder="Digite sua pergunta..." />
-    <button onclick="fazerPergunta()">Enviar</button>
+  <div class="app" role="application" aria-label="Assistente POPs">
+    <header>
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" style="flex:0 0 36px">
+        <rect width="24" height="24" rx="6" fill="#fff" opacity="0.06"/>
+        <path d="M7 11c1.5-2 4-3 6-3s4.5 1 6 3" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7 16c1.5-2 4-3 6-3s4.5 1 6 3" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+      </svg>
+      <div>
+        <h1>Assistente POPs — Consulta restrita aos seus documentos</h1>
+        <div style="font-size:13px;color:rgba(255,255,255,0.9)">Escolha um POP à esquerda e faça perguntas sobre ele.</div>
+      </div>
+    </header>
+
+    <div class="main">
+      <aside class="left" aria-label="Lista de POPs">
+        <h3>POPs disponíveis</h3>
+        <div id="popList" class="pop-list"></div>
+        <div style="margin-top:12px">
+          <button class="small-btn" onclick="resetSelection()">Trocar POP</button>
+          <button class="small-btn" onclick="showAll()">Listar novamente</button>
+        </div>
+      </aside>
+
+      <main class="center" aria-live="polite">
+        <div id="chat" role="log" aria-live="polite"></div>
+
+        <div class="input-row" role="region" aria-label="Entrada de usuário">
+          <input id="input" placeholder="Digite sua pergunta (ou 'help' para comandos)..." aria-label="Pergunta do usuário" />
+          <button onclick="onSend()">Enviar</button>
+        </div>
+        <div class="hint">Comandos: <b>trocar</b> (voltar à lista); <b>listar</b> (mostrar POPs); <b>help</b></div>
+      </main>
+    </div>
+
+    <footer>Seu arquivo JSON deve estar configurado na variável <code>popFile</code> dentro do script.</footer>
   </div>
-</div>
 
 <script>
-const popFile = "https://raw.githubusercontent.com/Rcs1992/chatfisio/refs/heads/main/pops_embeddings.json";
-let pops = [];
+/* CONFIG: troque pela URL raw do seu pops_embeddings.json OU deixe 'pops_embeddings.json' local */
+const popFile = "https://raw.githubusercontent.com/Rcs1992/chatfisio/refs/heads/main/pops_embeddings.json"; // <<-- substitua pelo raw URL se necessário
+
+let pops = [];          // array de POP objects
 let popSelecionado = null;
 
-// Carregar POPs do JSON
-async function carregarPOPs(){
-  const resp = await fetch(popFile);
-  pops = await resp.json();
-  listarPOPs();
+// ---------- utils ----------
+function normalizeText(s){
+  if(!s) return "";
+  return s.toString()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g,"") // remove acentos
+    .replace(/[^\w\s\-\/\.%]/g," ") // remove pontuação (mantém / - . %)
+    .replace(/\s+/g," ").trim()
+    .toLowerCase();
 }
-
-// Mostrar lista de POPs para escolher
-function listarPOPs(){
-  let lista = "Selecione um POP digitando o número:\n\n";
-  pops.forEach((p,i)=>{ lista += `${i+1}. ${p.titulo}\n`; });
-  adicionarMensagem(lista, "bot");
-}
-
-// Adicionar mensagem ao chat
-function adicionarMensagem(texto, classe){
-  const chat = document.getElementById("chat");
-  const div = document.createElement("div");
-  div.className = "msg "+classe;
-  div.textContent = texto;
-  chat.appendChild(div);
+function tokenize(s){ return normalizeText(s).split(/\s+/).filter(Boolean); }
+function addMessage(text, who='bot', meta=null){
+  const chat = document.getElementById('chat');
+  const d = document.createElement('div');
+  d.className = 'msg ' + (who==='user'?'user':'bot');
+  d.innerHTML = text;
+  chat.appendChild(d);
+  if(meta){
+    const m = document.createElement('div');
+    m.className = 'meta';
+    m.textContent = meta;
+    chat.appendChild(m);
+  }
   chat.scrollTop = chat.scrollHeight;
 }
+// ---------- end utils ----------
 
-// Processar pergunta
-function fazerPergunta(){
-  const input = document.getElementById("pergunta");
-  const pergunta = input.value.trim();
-  if(!pergunta) return;
-  adicionarMensagem(pergunta, "user");
-  input.value = "";
-
-  if(!popSelecionado){
-    const num = parseInt(pergunta);
-    if(!isNaN(num) && num >= 1 && num <= pops.length){
-      popSelecionado = pops[num-1];
-      adicionarMensagem(`📄 Você selecionou: ${popSelecionado.titulo}\nAgora pode fazer suas perguntas.`, "bot");
-    } else {
-      adicionarMensagem("Digite o número de um POP válido da lista.", "bot");
+// Carrega JSON
+async function carregarPOPs(){
+  try{
+    addMessage("Carregando POPs...", "bot");
+    const r = await fetch(popFile);
+    if(!r.ok) throw new Error("Erro carregando JSON: " + r.status);
+    const data = await r.json();
+    if(!Array.isArray(data)) throw new Error("JSON inválido: deve ser um array de POPs");
+    pops = data;
+    // normalize keywords & prepare small token caches to acelerar buscas
+    for(const p of pops){
+      p._normTitulo = normalizeText(p.titulo || p.title || "Sem título");
+      for(const ch of p.chunks || []){
+        ch._normText = normalizeText(ch.texto || ch.text || "");
+        ch._tokens = tokenize(ch._normText);
+        ch._normKeywords = (ch.keywords||[]).map(k => normalizeText(k));
+      }
     }
+    // show list
+    renderPopList();
+    addMessage("POPs carregados. Selecione um POP à esquerda (clique ou digite o número).", "bot");
+  }catch(err){
+    console.error(err);
+    addMessage("Erro ao carregar POPs: " + (err.message||err), "bot");
+  }
+}
+
+// render list
+function renderPopList(){
+  const list = document.getElementById('popList');
+  list.innerHTML = '';
+  pops.forEach((p,i)=>{
+    const btn = document.createElement('div');
+    btn.className = 'pop-item' + ((popSelecionado && popSelecionado === p) ? ' active' : '');
+    btn.tabIndex = 0;
+    btn.innerHTML = `<strong>${i+1}. ${p.titulo}</strong>`;
+    btn.onclick = ()=> selectPopByIndex(i);
+    btn.onkeypress = (e)=>{ if(e.key==='Enter') selectPopByIndex(i); };
+    list.appendChild(btn);
+  });
+}
+
+// select pop
+function selectPopByIndex(i){
+  popSelecionado = pops[i];
+  renderPopList();
+  addMessage(`📄 Você selecionou: ${popSelecionado.titulo}\nAgora pode fazer suas perguntas.`, "bot");
+}
+
+// reset selection
+function resetSelection(){
+  popSelecionado = null;
+  renderPopList();
+  addMessage("Seleção removida. Digite o número do POP ou clique no item desejado.", "bot");
+}
+
+// show all list again
+function showAll(){
+  renderPopList();
+  const names = pops.map((p,i)=> `${i+1}. ${p.titulo}`).join("\n");
+  addMessage("POPs disponíveis:\n\n" + names, "bot");
+}
+
+// search algorithm: simple ranking
+function searchInSelectedPOP(query){
+  if(!popSelecionado) return {score:0, text:null, source:null};
+
+  const qNorm = normalizeText(query);
+  const qTokens = tokenize(qNorm);
+  if(qTokens.length===0) return {score:0};
+
+  let best = {score:0, chunk:null};
+
+  for(const ch of popSelecionado.chunks || []){
+    // score by: keyword exact match (weight 3), token overlap (weight 1), substring (weight 0.8)
+    let score = 0;
+    // keywords
+    for(const kw of ch._normKeywords || []){
+      // exact keyword contained in query or query contains keyword
+      if(qNorm.includes(kw) || kw.includes(qNorm) || qTokens.includes(kw)) score += 3;
+    }
+    // token overlap
+    let overlap = 0;
+    for(const t of qTokens){
+      if(ch._tokens.includes(t)) overlap++;
+      else {
+        // partial match: if token is substring of any chunk token
+        for(const ct of ch._tokens){
+          if(ct.includes(t) || t.includes(ct)){ overlap += 0.6; break; }
+        }
+      }
+    }
+    score += overlap;
+    // substring match whole phrase
+    if(ch._normText.includes(qNorm)) score += 1.2;
+    // small bonus if title matches query
+    if(popSelecionado._normTitulo && popSelecionado._normTitulo.includes(qNorm)) score += 0.8;
+
+    if(score > best.score){
+      best = {score, chunk:ch};
+    }
+  }
+  return best;
+}
+
+// handle send
+async function onSend(){
+  const input = document.getElementById('input');
+  const text = (input.value || "").trim();
+  if(!text) return;
+  addMessage(text, "user");
+  input.value = "";
+  const cmd = text.toLowerCase().trim();
+  if(cmd === 'help'){
+    addMessage("Comandos:\n- Digite o número do POP (ex: 1) ou clique no nome à esquerda para selecionar.\n- 'trocar' ou 'listar' para ver/alterar POP.\n- 'help' mostra isto.\nApós selecionar, faça perguntas específicas (ex: 'segurança', 'critérios', 'objetivo').", "bot");
+    return;
+  }
+  if(cmd === 'trocar'){
+    resetSelection();
+    return;
+  }
+  if(cmd === 'listar'){
+    showAll();
     return;
   }
 
-  // Procurar resposta dentro do POP selecionado
-  let melhor = {score:0,texto:""};
-  pergunta = pergunta.toLowerCase();
-  for(const chunk of popSelecionado.chunks){
-    let score = 0;
-    for(const kw of chunk.keywords){
-      if(pergunta.includes(kw.toLowerCase())) score++;
+  // if no pop selected and user entered a number, try to select
+  if(!popSelecionado){
+    const asNum = parseInt(cmd);
+    if(!isNaN(asNum) && asNum >=1 && asNum <= pops.length){
+      selectPopByIndex(asNum-1);
+      return;
     }
-    if(score > melhor.score){
-      melhor = {score, texto:chunk.texto};
+    // also try to match by title substring
+    const findByTitle = pops.find(p => normalizeText(p.titulo).includes(normalizeText(text)));
+    if(findByTitle){
+      popSelecionado = findByTitle;
+      renderPopList();
+      addMessage(`📄 Você selecionou: ${popSelecionado.titulo}\nAgora pode fazer suas perguntas.`, "bot");
+      return;
     }
+    addMessage("Ainda não há POP selecionado. Digite o número do POP desejado ou clique no título à esquerda.", "bot");
+    return;
   }
 
-  if(melhor.score > 0){
-    adicionarMensagem("📌 "+melhor.texto, "bot");
+  // if a pop is selected -> search inside it
+  addMessage("Assistente: ... pesquisando ...", "bot");
+  // small async pause to show UX
+  await new Promise(r => setTimeout(r, 250));
+
+  const result = searchInSelectedPOP(text);
+  // remove the '... pesquisando ...' message (last bot message)
+  const chat = document.getElementById('chat');
+  // remove last two nodes only if they are the searching message (simple heuristic)
+  // we'll remove last element if it is exactly that text
+  for(let i=chat.children.length-1;i>=0;i--){
+    const el = chat.children[i];
+    if(el.classList.contains('msg') && el.classList.contains('bot') && el.textContent.includes('... pesquisando ...')){
+      chat.removeChild(el);
+      break;
+    } else break;
+  }
+
+  if(result && result.chunk && result.score > 0){
+    const display = `📌 Trecho encontrado (score ${result.score.toFixed(2)}):\n\n${result.chunk.texto}\n\n<small>Fonte: ${popSelecionado.titulo}</small>`;
+    addMessage(display, "bot");
   } else {
-    adicionarMensagem("❌ Não encontrei nada sobre isso neste POP.", "bot");
+    addMessage("❌ Não há informação sobre isso neste POP. Tente reformular a pergunta ou verifique outro POP.", "bot");
   }
 }
 
-// Iniciar
+// init
 carregarPOPs();
 </script>
 </body>
