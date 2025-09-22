@@ -1,81 +1,154 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Chat Semântico POPs</title>
-<style>
-body { font-family: Arial; max-width: 700px; margin: 20px auto; }
-#chat { border: 1px solid #ccc; padding: 10px; height: 400px; overflow-y: auto; }
-.msg { margin: 5px 0; white-space: pre-wrap; }
-.user { color: blue; }
-.bot { color: green; }
-input { width: 80%; padding: 5px; }
-button { padding: 5px 10px; }
-</style>
+  <meta charset="UTF-8">
+  <title>Assistente POPs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    header {
+      background: #10a37f;
+      color: white;
+      padding: 15px;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+    }
+    #chat {
+      flex: 1;
+      width: 100%;
+      max-width: 700px;
+      overflow-y: auto;
+      padding: 20px;
+    }
+    .message {
+      margin: 10px 0;
+      padding: 12px 16px;
+      border-radius: 12px;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+    .user {
+      background: #d1e7ff;
+      align-self: flex-end;
+      margin-left: auto;
+    }
+    .assistant {
+      background: #e9ecef;
+      align-self: flex-start;
+      margin-right: auto;
+    }
+    #input-area {
+      display: flex;
+      width: 100%;
+      max-width: 700px;
+      padding: 15px;
+      background: white;
+      border-top: 1px solid #ddd;
+    }
+    #user-input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    button {
+      margin-left: 10px;
+      padding: 10px 20px;
+      background: #10a37f;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0d8b6c;
+    }
+  </style>
 </head>
 <body>
-<h2>Chat Semântico - POPs Institucionais</h2>
-<div id="chat"></div>
-<input type="text" id="pergunta" placeholder="Digite sua pergunta..." />
-<button onclick="fazerPergunta()">Enviar</button>
-
-<script>
-let pops = [];
-
-// Carregar JSON dos POPs
-async function carregarPOPs(){
-  const resp = await fetch("https://raw.githubusercontent.com/Rcs1992/chatfisio/refs/heads/main/pops_embeddings.json");
-  pops = await resp.json();
-  adicionarMensagem("POP(s) carregados. Pronto para responder perguntas!", "bot");
-}
-
-// Função de chat
-function adicionarMensagem(texto, classe){
-  const chat = document.getElementById("chat");
-  const div = document.createElement("div");
-  div.className = "msg " + classe;
-  div.textContent = texto;
-  chat.appendChild(div);
-  chat.scrollTop = chat.scrollHeight;
-}
-
-// Busca por palavras-chave
-function buscarResposta(pergunta){
-  let palavras = pergunta.toLowerCase().split(/\s+/);
-  let melhor = {score:0,texto:""};
+  <header>💬 Assistente POPs</header>
   
-  for(const pop of pops){
-    for(const chunk of pop.chunks){
-      let score = 0;
-      for(const k of chunk.keywords){
-        if(palavras.includes(k.toLowerCase())) score++;
+  <div id="chat"></div>
+  
+  <div id="input-area">
+    <input type="text" id="user-input" placeholder="Digite sua pergunta..." />
+    <button onclick="sendMessage()">Enviar</button>
+  </div>
+
+  <script>
+    let selectedPop = null;
+    let pops = {};
+
+    // Carregar lista de POPs do GitHub
+    async function loadPOPs() {
+      const popFiles = [
+        "pop1.json",
+        "pop2.json"
+        // 👉 Adicione aqui os outros nomes de arquivos
+      ];
+
+      for (const file of popFiles) {
+        const url = `https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/main/pops/${file}`;
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
+          pops[data.title] = data; 
+        } catch (err) {
+          console.error("Erro ao carregar:", file, err);
+        }
       }
-      if(score > melhor.score) melhor = {score, texto:`📄 ${pop.titulo}:\n${chunk.texto}`};
+
+      showMessage("assistant", "Escolha um POP para começar: <br>" + Object.keys(pops).map((p, i) => `${i+1}. ${p}`).join("<br>"));
     }
-  }
-  
-  if(melhor.score > 0) return melhor.texto;
-  else return "Não há informação sobre isso nos POPs.";
-}
 
-function fazerPergunta(){
-  const input = document.getElementById("pergunta");
-  const pergunta = input.value.trim();
-  if(!pergunta) return;
-  adicionarMensagem("Você: "+pergunta,"user");
-  input.value = "";
-  adicionarMensagem("Assistente: ... pesquisando ...","bot");
-  
-  setTimeout(() => {
-    const resposta = buscarResposta(pergunta);
-    const chatDiv = document.getElementById("chat");
-    chatDiv.removeChild(chatDiv.lastChild);
-    adicionarMensagem("Assistente: "+resposta,"bot");
-  }, 200); // simula leve delay
-}
+    function showMessage(sender, text) {
+      const chat = document.getElementById("chat");
+      const msg = document.createElement("div");
+      msg.classList.add("message", sender);
+      msg.innerHTML = text;
+      chat.appendChild(msg);
+      chat.scrollTop = chat.scrollHeight;
+    }
 
-// Inicia
-carregarPOPs();
-</script>
+    function sendMessage() {
+      const input = document.getElementById("user-input");
+      const text = input.value.trim();
+      if (!text) return;
+      showMessage("user", text);
+      input.value = "";
+
+      if (!selectedPop) {
+        // Usuário escolhe o POP pelo número
+        const popsList = Object.keys(pops);
+        const index = parseInt(text) - 1;
+        if (index >= 0 && index < popsList.length) {
+          selectedPop = pops[popsList[index]];
+          showMessage("assistant", `📄 Você selecionou: <b>${selectedPop.title}</b>. Agora pode perguntar sobre ele.`);
+        } else {
+          showMessage("assistant", "❌ Opção inválida. Digite o número do POP que deseja.");
+        }
+      } else {
+        // Buscar resposta no POP escolhido
+        let answer = "Não encontrei nada relacionado a sua pergunta nesse POP.";
+        for (const section of selectedPop.sections) {
+          if (text.toLowerCase().includes(section.keyword.toLowerCase())) {
+            answer = `<b>${section.keyword}:</b> ${section.content}`;
+            break;
+          }
+        }
+        showMessage("assistant", answer);
+      }
+    }
+
+    loadPOPs();
+  </script>
 </body>
 </html>
