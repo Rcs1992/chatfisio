@@ -51,5 +51,58 @@
         "keywords": ["formulários", "planilhas", "controle", "mobilização", "drive"]
       }
     ]
+  },
+  {
+    "titulo": "POP_Ventilacao_Mecanica",
+    "chunks": [
+      {
+        "texto": "INTRODUÇÃO: A ventilação mecânica (VM) consiste em um método de suporte para pacientes com insuficiência respiratória aguda ou crônica agudizada, exigindo cuidados multiprofissionais, em especial pelo fisioterapeuta.",
+        "keywords": ["introdução", "ventilação mecânica", "suporte ventilatório", "insuficiência respiratória", "fisioterapeuta", "recuperação"]
+      },
+      {
+        "texto": "OBJETIVO: Auxiliar fisioterapeutas e médicos a iniciar a ventilação mecânica e escolher os modos ventilatórios e parâmetros iniciais, uniformizando condutas no CER Leblon.",
+        "keywords": ["objetivo", "ventilação mecânica", "condutas", "fisioterapia", "medicina", "CER Leblon"]
+      },
+      {
+        "texto": "ABRANGÊNCIA: Bloco crítico (b5-RH CTI Geral, b7-RH unidade neurointensiva, b9-RH unidade cardiointensiva) e emergência do CER Leblon.",
+        "keywords": ["abrangência", "bloco crítico", "CTI", "emergência", "CER Leblon"]
+      },
+      {
+        "texto": "REFERÊNCIAS: III consenso brasileiro de ventilação mecânica; WeVent Grupo Internacional de Ventilação Mecânica, 2020; Bonassa J. Princípios Básicos dos Ventiladores Artificiais; Machado FD et al. Ventilação mecânica: como iniciar, Acta Médica, 2014.",
+        "keywords": ["referências", "ventilação mecânica", "consenso brasileiro", "WeVent", "literatura"]
+      },
+      {
+        "texto": "DEFINIÇÕES: A ventilação mecânica consiste em um método terapêutico de suporte ventilatório, baseado na escolha do modo ventilatório, forma de ciclagem e ajustes finos.",
+        "keywords": ["definições", "ventilação mecânica", "suporte ventilatório", "ciclagem", "modos ventilatórios"]
+      },
+      {
+        "texto": "SIGLAS: CER - Coordenação de Emergência Regional; CTI - Centro de Terapia Intensiva; EPI - Equipamento de Proteção Individual; PCV - Pressão Controlada; VCV - Volume Controlado; PRVC - Volume Controlado e Pressão Regulada; VC - Volume Corrente; PI - Pressão Inspiratória; PEEP - Positive End Expiratory Pressure; TI - Tempo Inspiratório; IRpA - Insuficiência Respiratória Aguda; SpO2 - Saturação periférica de oxigênio; FR - Frequência Respiratória; FC - Frequência Cardíaca; PAS - Pressão Arterial Sistólica.",
+        "keywords": ["siglas", "CER", "CTI", "EPI", "PCV", "VCV", "PRVC", "VC", "PI", "PEEP", "TI", "IRpA", "SpO2", "FR", "FC", "PAS"]
+      },
+      {
+        "texto": "RESPONSABILIDADES: Discutir parâmetros iniciais da ventilação mecânica; avaliar escolha da ciclagem ventilatória. Responsáveis: fisioterapeuta e médico.",
+        "keywords": ["responsabilidades", "ventilação mecânica", "parâmetros", "ciclagem", "fisioterapeuta", "médico"]
+      },
+      {
+        "texto": "DESCRIÇÃO DA TÉCNICA: Usar EPI; verificar circuito do ventilador; testar ventilador; em PCV usar PI para gerar VT 6 ml/kg de peso predito (Homens: 0,91x(altura-152,4)+50; Mulheres: 0,91x(altura-152,4)+45,5); FR 14–20; PEEP 5–8 cmH2O; TI 0,8–1,5s; FiO2 >80%; avaliar mudança para VCV ou PRVC se PI >25 cmH2O. Anotar parâmetros.",
+        "keywords": ["descrição", "técnica", "ventilador", "PCV", "VCV", "PRVC", "PEEP", "FIo2", "TI", "VT", "PI"]
+      },
+      {
+        "texto": "MATERIAIS NECESSÁRIOS: EPI, fita métrica, estetoscópio, caneta de quadro branco, ventilador mecânico, circuito, sistema fechado de aspiração, filtro bacteriológico.",
+        "keywords": ["materiais", "ventilador", "EPI", "estetoscópio", "circuito", "aspiração", "filtro"]
+      },
+      {
+        "texto": "FORMULÁRIOS E DOCUMENTOS: Drive institucional; ficha do ventilador mecânico.",
+        "keywords": ["formulários", "documentos", "drive", "ventilador"]
+      },
+      {
+        "texto": "CONTROLE DE REGISTRO: Prontuário eletrônico (Drive institucional).",
+        "keywords": ["controle", "registro", "prontuário", "drive"]
+      },
+      {
+        "texto": "ANEXOS: Não aplicável no momento.",
+        "keywords": ["anexos"]
+      }
+    ]
   }
 ]
