@@ -106,7 +106,7 @@
     ]
   },
   {
-  "nome": "POP_Desmame_Ventilacao_Mecanica",
+  "Título": "POP_Desmame_Ventilacao_Mecanica",
   "conteudo": [
     {
       "texto": "INTRODUÇÃO: A Ventilação Mecânica (VM) é necessária em uma grande parcela dos pacientes críticos internados nas Unidades de Terapia Intensiva (UTI). Seu uso prolongado pode gerar VILI, PAV, fraqueza da musculatura respiratória e polineuropatia do paciente crítico, aumentando mortalidade e custos. Nas últimas décadas, houve um esforço científico para reduzir o tempo de exposição à VM, desenvolvendo estratégias de desmame.",
@@ -171,6 +171,7 @@
   ]
 }
 ]
+
 
 
 
