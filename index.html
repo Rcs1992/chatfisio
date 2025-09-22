@@ -1,154 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Assistente POPs</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f8;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    header {
-      background: #10a37f;
-      color: white;
-      padding: 15px;
-      width: 100%;
-      text-align: center;
-      font-weight: bold;
-    }
-    #chat {
-      flex: 1;
-      width: 100%;
-      max-width: 700px;
-      overflow-y: auto;
-      padding: 20px;
-    }
-    .message {
-      margin: 10px 0;
-      padding: 12px 16px;
-      border-radius: 12px;
-      max-width: 80%;
-      word-wrap: break-word;
-    }
-    .user {
-      background: #d1e7ff;
-      align-self: flex-end;
-      margin-left: auto;
-    }
-    .assistant {
-      background: #e9ecef;
-      align-self: flex-start;
-      margin-right: auto;
-    }
-    #input-area {
-      display: flex;
-      width: 100%;
-      max-width: 700px;
-      padding: 15px;
-      background: white;
-      border-top: 1px solid #ddd;
-    }
-    #user-input {
-      flex: 1;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-    }
-    button {
-      margin-left: 10px;
-      padding: 10px 20px;
-      background: #10a37f;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #0d8b6c;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Chat POPs Institucionais</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+#container {
+  max-width: 800px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+}
+#header {
+  background: #4a90e2;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+#chat {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+.msg {
+  margin: 10px 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  max-width: 80%;
+  white-space: pre-wrap;
+}
+.user {
+  background: #e1f5fe;
+  align-self: flex-end;
+}
+.bot {
+  background: #f1f1f1;
+  align-self: flex-start;
+}
+#input-area {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+#pergunta {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+}
+#pergunta:focus { outline: none; }
+button {
+  background: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover { background: #357ab8; }
+</style>
 </head>
 <body>
-  <header>💬 Assistente POPs</header>
-  
+<div id="container">
+  <div id="header">Assistente POPs Institucionais</div>
   <div id="chat"></div>
-  
   <div id="input-area">
-    <input type="text" id="user-input" placeholder="Digite sua pergunta..." />
-    <button onclick="sendMessage()">Enviar</button>
+    <input type="text" id="pergunta" placeholder="Digite sua pergunta..." />
+    <button onclick="fazerPergunta()">Enviar</button>
   </div>
+</div>
 
-  <script>
-    let selectedPop = null;
-    let pops = {};
+<script>
+const popFile = "https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/main/pops/pops_embeddings.json";
+let pops = [];
+let popSelecionado = null;
 
-    // Carregar lista de POPs do GitHub
-    async function loadPOPs() {
-      const popFiles = [
-        "pop1.json",
-        "pop2.json"
-        // 👉 Adicione aqui os outros nomes de arquivos
-      ];
+// Carregar POPs do JSON
+async function carregarPOPs(){
+  const resp = await fetch(popFile);
+  pops = await resp.json();
+  listarPOPs();
+}
 
-      for (const file of popFiles) {
-        const url = `https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/main/pops/${file}`;
-        try {
-          const response = await fetch(url);
-          const data = await response.json();
-          pops[data.title] = data; 
-        } catch (err) {
-          console.error("Erro ao carregar:", file, err);
-        }
-      }
+// Mostrar lista de POPs para escolher
+function listarPOPs(){
+  let lista = "Selecione um POP digitando o número:\n\n";
+  pops.forEach((p,i)=>{ lista += `${i+1}. ${p.titulo}\n`; });
+  adicionarMensagem(lista, "bot");
+}
 
-      showMessage("assistant", "Escolha um POP para começar: <br>" + Object.keys(pops).map((p, i) => `${i+1}. ${p}`).join("<br>"));
+// Adicionar mensagem ao chat
+function adicionarMensagem(texto, classe){
+  const chat = document.getElementById("chat");
+  const div = document.createElement("div");
+  div.className = "msg "+classe;
+  div.textContent = texto;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+// Processar pergunta
+function fazerPergunta(){
+  const input = document.getElementById("pergunta");
+  const pergunta = input.value.trim();
+  if(!pergunta) return;
+  adicionarMensagem(pergunta, "user");
+  input.value = "";
+
+  if(!popSelecionado){
+    const num = parseInt(pergunta);
+    if(!isNaN(num) && num >= 1 && num <= pops.length){
+      popSelecionado = pops[num-1];
+      adicionarMensagem(`📄 Você selecionou: ${popSelecionado.titulo}\nAgora pode fazer suas perguntas.`, "bot");
+    } else {
+      adicionarMensagem("Digite o número de um POP válido da lista.", "bot");
     }
+    return;
+  }
 
-    function showMessage(sender, text) {
-      const chat = document.getElementById("chat");
-      const msg = document.createElement("div");
-      msg.classList.add("message", sender);
-      msg.innerHTML = text;
-      chat.appendChild(msg);
-      chat.scrollTop = chat.scrollHeight;
+  // Procurar resposta dentro do POP selecionado
+  let melhor = {score:0,texto:""};
+  pergunta = pergunta.toLowerCase();
+  for(const chunk of popSelecionado.chunks){
+    let score = 0;
+    for(const kw of chunk.keywords){
+      if(pergunta.includes(kw.toLowerCase())) score++;
     }
-
-    function sendMessage() {
-      const input = document.getElementById("user-input");
-      const text = input.value.trim();
-      if (!text) return;
-      showMessage("user", text);
-      input.value = "";
-
-      if (!selectedPop) {
-        // Usuário escolhe o POP pelo número
-        const popsList = Object.keys(pops);
-        const index = parseInt(text) - 1;
-        if (index >= 0 && index < popsList.length) {
-          selectedPop = pops[popsList[index]];
-          showMessage("assistant", `📄 Você selecionou: <b>${selectedPop.title}</b>. Agora pode perguntar sobre ele.`);
-        } else {
-          showMessage("assistant", "❌ Opção inválida. Digite o número do POP que deseja.");
-        }
-      } else {
-        // Buscar resposta no POP escolhido
-        let answer = "Não encontrei nada relacionado a sua pergunta nesse POP.";
-        for (const section of selectedPop.sections) {
-          if (text.toLowerCase().includes(section.keyword.toLowerCase())) {
-            answer = `<b>${section.keyword}:</b> ${section.content}`;
-            break;
-          }
-        }
-        showMessage("assistant", answer);
-      }
+    if(score > melhor.score){
+      melhor = {score, texto:chunk.texto};
     }
+  }
 
-    loadPOPs();
-  </script>
+  if(melhor.score > 0){
+    adicionarMensagem("📌 "+melhor.texto, "bot");
+  } else {
+    adicionarMensagem("❌ Não encontrei nada sobre isso neste POP.", "bot");
+  }
+}
+
+// Iniciar
+carregarPOPs();
+</script>
 </body>
 </html>
