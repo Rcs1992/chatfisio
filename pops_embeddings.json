@@ -19,7 +19,7 @@
         "keywords": ["referências"]
       },
       {
-        "texto": "DEFINIÇÕES: Escala Funcional em UTI (IMS): avaliação funcional do paciente à beira leito. A ICU Mobility Scale (IMS) é uma escala validada que avalia o nível máximo de mobilidade alcançado por pacientes em terapia intensiva, variando de 0 a 10 pontos. Os níveis são: 0 – acamado, não realiza mobilidade passiva/ativa; 1 – realiza exercícios passivos na cama; 2 – realiza exercícios ativos na cama (como flexão/extensão de membros); 3 – sentado na beira do leito com ajuda; 4 – sentado na beira do leito sem ajuda; 5 – ortostatismo passivo (em prancha ortostática ou com suporte); 6 – ortostatismo ativo, sustentando o peso sobre os pés; 7 – transferência da cama para cadeira com auxílio; 8 – marcha estacionária (em pé, movimentando os pés no lugar); 9 – deambula com auxílio de até duas pessoas; 10 – deambula de forma independente, sem ajuda. Essa classificação contribui para monitorar a progressão funcional, padronizar a comunicação entre a equipe e orientar a tomada de decisão clínica.; Escore Medical Research Council (MRC): avalia força muscular de 0 a 5 em seis movimentos específicos; Longo decúbito: período prolongado no mesmo decúbito; Posição de Fowler: cabeceira elevada 45º a 60º, joelhos ligeiramente elevados.",
+        "texto": "DEFINIÇÕES: Escala Funcional em UTI (IMS): avaliação funcional do paciente à beira leito. A ICU Mobility Scale (IMS) é uma escala validada que avalia o nível máximo de mobilidade alcançado por pacientes em terapia intensiva, variando de 0 a 10 pontos. Os níveis são: 0 – acamado, não realiza mobilidade passiva/ativa; 1 – realiza exercícios na cama; 2 – senta passivamente no leito ou fora dele; 3 – sentado na beira do leito; 4 – ortostatismo (pode ser auxiliado); 5 – capaz de realizar transferência para poltrona; 6 – realiza marcha estacionária; 7 – deambula com auxílio de duas pessoas; 8 – deambula com auxílio de uma pessoa; 9 – deambula com dispositivo; 10 – deambula de forma independente, sem ajuda. Essa classificação contribui para monitorar a progressão funcional, padronizar a comunicação entre a equipe e orientar a tomada de decisão clínica.; Escore Medical Research Council (MRC): avalia força muscular de 0 a 5 em seis movimentos específicos; Longo decúbito: período prolongado no mesmo decúbito; Posição de Fowler: cabeceira elevada 45º a 60º, joelhos ligeiramente elevados.",
         "keywords": ["definições", "IMS", "MRC"]
       },
       {
@@ -106,4 +106,5 @@
     ]
   }
 ]
+
 
