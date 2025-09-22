@@ -106,74 +106,68 @@
     ]
   },
   {
-  "titulo": "POP_Desmame_Ventilacao_Mecanica",
-   "chunks": [
-    {
-      "texto": "INTRODUÇÃO: A Ventilação Mecânica (VM) é necessária em uma grande parcela dos pacientes críticos internados nas Unidades de Terapia Intensiva (UTI). Seu uso prolongado pode gerar VILI, PAV, fraqueza da musculatura respiratória e polineuropatia do paciente crítico, aumentando mortalidade e custos. Nas últimas décadas, houve um esforço científico para reduzir o tempo de exposição à VM, desenvolvendo estratégias de desmame.",
-      "keywords": ["introdução"]
-    },
-    {
-      "texto": "OBJETIVO: Orientar a estratégia de retirada gradual da ventilação mecânica em pacientes traqueostomizados, com falha em três ou mais tentativas de desmame ventilatório.",
-      "keywords": ["objetivo"]
-    },
-    {
-      "texto": "ABRANGÊNCIA: Aplicável ao Bloco Crítico (b5-RH CTI Geral b7-RH).",
-      "keywords": ["abrangência"]
-    },
-    {
-      "texto": "REFERÊNCIAS: Andrade FM; Dias CM. PROFISIO Terapia Intensiva Adulto. Assobrafir Ciclo 4, Vol.2. Nemer SN; Barbas CSV. Parâmetros preditivos para desmame da ventilação mecânica. Volpe MS. Treinamento de musculatura inspiratória. III consenso brasileiro de ventilação mecânica.",
-      "keywords": ["referências"]
-    },
-    {
-      "texto": "O desmame da ventilação mecânica pode ser classificado como simples, difícil ou prolongado. O desmame simples ocorre quando o paciente é retirado da ventilação mecânica sem complicações e mantém a respiração espontânea por pelo menos 48 horas após a primeira tentativa de extubação. O desmame difícil é caracterizado por falha na primeira tentativa de retirada da ventilação (Terapia de Redução do Suporte – TRE), com necessidade de nova tentativa após 7 dias, ou por três falhas consecutivas de extubação. Já o desmame prolongado ocorre quando o paciente necessita de mais de 7 dias de tentativas graduais de retirada da ventilação mecânica. Essas definições auxiliam na padronização da avaliação clínica e na tomada de decisões terapêuticas.",
-      "keywords": ["definições", "desmame", "difícil", "prolongado"]
-    },
-    {
-      "texto": "SIGLAS: CER (Coordenação de Emergência Regional), CTI (Centro de Terapia Intensiva), EPI (Equipamento de Proteção Individual), PSV (Pressão de Suporte Ventilatório), PEEP (Positive End Expiratory Pressure), PaO2 (Pressão Arterial de Oxigênio), FiO2 (Fração Inspirada de Oxigênio), SpO2 (Saturação Periférica de Oxigênio), PAV (Pneumonia Associada à Ventilação Mecânica), VILI (Ventilator-Induced Lung Injury).",
-      "keywords": ["siglas"]
-    },
-    {
-      "texto": "RESPONSABILIDADES: 1) Discutir início do desmame após avaliação ventilatória (Fisioterapeuta/Médico). 2) Separar material de oxigenoterapia (Fisioterapeuta). 3) Iniciar retirada progressiva da VM (Fisioterapeuta).",
-      "keywords": ["responsabilidades"]
-    },
-    {
-      "texto": "AVALIAÇÃO INICIAL: Critérios para iniciar desmame: reversão/controle da doença de base; ausência de sedação; estabilidade hemodinâmica (PAS ≥ 90 mmHg, sem arritmias agudas); oxigenação adequada (PaO2 ≥ 60 mmHg, FR < 25, FiO2 ≤ 0,4, P/F ≥ 150, PEEP ≤ 8); pH 7,30–7,50; Hb ≥ 7; eletrólitos normais; Tax < 38°C.",
-      "keywords": ["avaliação inicial", "critérios"]
-    },
-    {
-      "texto": "EXECUÇÃO DA TÉCNICA: SBT em peça T de 30 min ao atingir critérios de estabilidade. Se sucesso → retirada no mesmo dia. Se falha → usar PSV confortável. Se falhas persistirem, avaliar causas reversíveis (fraqueza diafragmática, secreções, distúrbios metabólicos).",
-      "keywords": ["execução", "técnica"]
-    },
-    {
-      "texto": "ETAPAS: 0 - Estabilidade clínica confirmada → TRE em peça-T de 30min. 1 - Se falha, progredir tempo conforme tolerância. 2 - Se tolerância, progredir até 24h contínuas sem suporte. Avaliar decanulação após 48h. >2 - Se falhas persistirem, avaliar causas reversíveis.",
-      "keywords": ["etapas"]
-    },
-    {
-      "texto": "MATERIAIS NECESSÁRIOS: EPI, sonda de aspiração, macronebulização.",
-      "keywords": ["materiais"]
-    },
-    {
-      "texto": "FORMULÁRIOS/DOCUMENTOS: Disponíveis no Drive da equipe.",
-      "keywords": ["formulários"]
-    },
-    {
-      "texto": "CONTROLE DE REGISTRO: Prontuário eletrônico da equipe (Drive).",
-      "keywords": ["controle"]
-    },
-    {
-      "texto": "MODIFICAÇÕES EM RELAÇÃO À REVISÃO ANTERIOR: Não se aplica.",
-      "keywords": ["modificações"]
-    },
-    {
-      "texto": "ANEXOS: Anexo I – Critérios de intolerância/falha do desmame. Durante o desmame progressivo em pacientes traqueostomizados, a intolerância ou falha é caracterizada por sinais clínicos, respiratórios e hemodinâmicos que indicam dificuldade em manter a ventilação espontânea. Os critérios incluem: aumento do esforço respiratório evidente (uso de músculos acessórios, retrações intercostais ou tiragem), frequência respiratória >35 respirações/min ou <8 respirações/min, saturação de oxigênio <90% ou queda >4% em relação ao valor basal, hipertensão ou hipotensão significativa, taquicardia >140 bpm ou bradicardia <50 bpm, alterações de consciência (agitação, confusão ou sonolência excessiva), picos de pressão inspiratória elevados ou desconforto respiratório intenso, intolerância ao volume corrente reduzido, e presença de cianose ou sudorese profusa. A identificação precoce desses sinais é fundamental para interromper o desmame e evitar complicações.",
-      "keywords": ["critérios", "critérios de intolerância", "falha do desmame"]
-    }
-  ]
-}
+    "titulo": "POP_Desmame_Ventilacao_Mecanica",
+    "chunks": [
+      {
+        "texto": "INTRODUÇÃO: A Ventilação Mecânica (VM) é necessária em uma grande parcela dos pacientes críticos internados nas Unidades de Terapia Intensiva (UTI). Seu uso prolongado pode gerar VILI, PAV, fraqueza da musculatura respiratória e polineuropatia do paciente crítico, aumentando mortalidade e custos. Nas últimas décadas, houve um esforço científico para reduzir o tempo de exposição à VM, desenvolvendo estratégias de desmame.",
+        "keywords": ["introdução"]
+      },
+      {
+        "texto": "OBJETIVO: Orientar a estratégia de retirada gradual da ventilação mecânica em pacientes traqueostomizados, com falha em três ou mais tentativas de desmame ventilatório.",
+        "keywords": ["objetivo"]
+      },
+      {
+        "texto": "ABRANGÊNCIA: Aplicável ao Bloco Crítico (b5-RH CTI Geral b7-RH).",
+        "keywords": ["abrangência"]
+      },
+      {
+        "texto": "REFERÊNCIAS: Andrade FM; Dias CM. PROFISIO Terapia Intensiva Adulto. Assobrafir Ciclo 4, Vol.2. Nemer SN; Barbas CSV. Parâmetros preditivos para desmame da ventilação mecânica. Volpe MS. Treinamento de musculatura inspiratória. III consenso brasileiro de ventilação mecânica.",
+        "keywords": ["referências"]
+      },
+      {
+        "texto": "DEFINIÇÕES: O desmame da ventilação mecânica pode ser classificado como simples, difícil ou prolongado. O desmame simples ocorre quando o paciente é retirado da ventilação mecânica sem complicações e mantém a respiração espontânea por pelo menos 48 horas após a primeira tentativa de extubação. O desmame difícil é caracterizado por falha na primeira tentativa de retirada da ventilação (Terapia de Redução do Suporte – TRE), com necessidade de nova tentativa após 7 dias, ou por três falhas consecutivas de extubação. Já o desmame prolongado ocorre quando o paciente necessita de mais de 7 dias de tentativas graduais de retirada da ventilação mecânica.",
+        "keywords": ["definições", "desmame", "difícil", "prolongado"]
+      },
+      {
+        "texto": "SIGLAS: CER (Coordenação de Emergência Regional), CTI (Centro de Terapia Intensiva), EPI (Equipamento de Proteção Individual), PSV (Pressão de Suporte Ventilatório), PEEP (Positive End Expiratory Pressure), PaO2 (Pressão Arterial de Oxigênio), FiO2 (Fração Inspirada de Oxigênio), SpO2 (Saturação Periférica de Oxigênio), PAV (Pneumonia Associada à Ventilação Mecânica), VILI (Ventilator-Induced Lung Injury).",
+        "keywords": ["siglas"]
+      },
+      {
+        "texto": "RESPONSABILIDADES: 1) Discutir início do desmame após avaliação ventilatória (Fisioterapeuta/Médico). 2) Separar material de oxigenoterapia (Fisioterapeuta). 3) Iniciar retirada progressiva da VM (Fisioterapeuta).",
+        "keywords": ["responsabilidades"]
+      },
+      {
+        "texto": "AVALIAÇÃO INICIAL: Critérios para iniciar desmame: reversão/controle da doença de base; ausência de sedação; estabilidade hemodinâmica (PAS ≥ 90 mmHg, sem arritmias agudas); oxigenação adequada (PaO2 ≥ 60 mmHg, FR < 25, FiO2 ≤ 0,4, P/F ≥ 150, PEEP ≤ 8); pH 7,30–7,50; Hb ≥ 7; eletrólitos normais; Tax < 38°C.",
+        "keywords": ["avaliação inicial", "critérios"]
+      },
+      {
+        "texto": "EXECUÇÃO DA TÉCNICA: SBT em peça T de 30 min ao atingir critérios de estabilidade. Se sucesso → retirada no mesmo dia. Se falha → usar PSV confortável. Se falhas persistirem, avaliar causas reversíveis (fraqueza diafragmática, secreções, distúrbios metabólicos).",
+        "keywords": ["execução", "técnica"]
+      },
+      {
+        "texto": "ETAPAS: 0 - Estabilidade clínica confirmada → TRE em peça-T de 30min. 1 - Se falha, progredir tempo conforme tolerância. 2 - Se tolerância, progredir até 24h contínuas sem suporte. Avaliar decanulação após 48h. >2 - Se falhas persistirem, avaliar causas reversíveis.",
+        "keywords": ["etapas"]
+      },
+      {
+        "texto": "MATERIAIS NECESSÁRIOS: EPI, sonda de aspiração, macronebulização.",
+        "keywords": ["materiais"]
+      },
+      {
+        "texto": "FORMULÁRIOS/DOCUMENTOS: Disponíveis no Drive da equipe.",
+        "keywords": ["formulários"]
+      },
+      {
+        "texto": "CONTROLE DE REGISTRO: Prontuário eletrônico da equipe (Drive).",
+        "keywords": ["controle"]
+      },
+      {
+        "texto": "MODIFICAÇÕES EM RELAÇÃO À REVISÃO ANTERIOR: Não se aplica.",
+        "keywords": ["modificações"]
+      },
+      {
+        "texto": "ANEXOS: Anexo I – Critérios de intolerância/falha do desmame. Durante o desmame progressivo em pacientes traqueostomizados, a intolerância ou falha é caracterizada por sinais clínicos, respiratórios e hemodinâmicos que indicam dificuldade em manter a ventilação espontânea. Os critérios incluem: aumento do esforço respiratório evidente (uso de músculos acessórios, retrações intercostais ou tiragem), frequência respiratória >35 respirações/min ou <8 respirações/min, saturação de oxigênio <90% ou queda >4% em relação ao valor basal, hipertensão ou hipotensão significativa, taquicardia >140 bpm ou bradicardia <50 bpm, alterações de consciência (agitação, confusão ou sonolência excessiva), picos de pressão inspiratória elevados ou desconforto respiratório intenso, intolerância ao volume corrente reduzido, e presença de cianose ou sudorese profusa. A identificação precoce desses sinais é fundamental para interromper o desmame e evitar complicações.",
+        "keywords": ["critérios", "intolerância", "falha do desmame"]
+      }
+    ]
+  }
 ]
-
-
-
-
-
-
