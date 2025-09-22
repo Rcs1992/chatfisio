@@ -169,7 +169,102 @@
         "keywords": ["critérios", "intolerância", "falha do desmame"]
       }
     ]
+  },
+  {
+    "titulo": "POP_VNI",
+    "chunks": [
+      {
+        "texto": "SUMÁRIO: INTRODUÇÃO; OBJETIVO; ABRANGÊNCIA; REFERÊNCIAS; DEFINIÇÕES E SIGLAS; EXIGÊNCIAS; RESPONSABILIDADES; INDICAÇÕES; CONTRAINDICAÇÕES ABSOLUTAS; CONTRAINDICAÇÕES RELATIVAS; DESCRIÇÃO DA TÉCNICA; 9.1 Materiais necessários; FORMULÁRIOS E/OU DOCUMENTOS RELACIONADOS; CONTROLE DE REGISTRO; RESUMO DE REVISÕES; APROVAÇÕES; ANEXOS (Índice preditivo HACOR). Emissão inicial: 02/2024. Próx. revisão: 02/2026.",
+        "keywords": ["sumário"]
+      },
+      {
+        "texto": "INTRODUÇÃO: A ventilação não invasiva (VNI) é suporte ventilatório aplicado sem prótese endotraqueal, evitando complicações da VM invasiva. A VNI pode reduzir permanência na UTI e aumentar chance de sobrevida em pacientes selecionados.",
+        "keywords": ["introdução"]
+      },
+      {
+        "texto": "OBJETIVO: Orientar a utilização de VNI em pacientes internados no CTI do CER Leblon que evoluam para insuficiência respiratória aguda (IRpA), definindo critérios de indicação, contraindicação, escolha de interface, monitorização e tempo de reavaliação (30–60 minutos).",
+        "keywords": ["objetivo"]
+      },
+      {
+        "texto": "ABRANGÊNCIA: Bloco crítico (b5-RH CTI Geral, b7-RH unidade neurointensiva, b9-RH unidade cardiointensiva) e emergência do CER Leblon.",
+        "keywords": ["abrangência", "cti", "cer leblon", "bloco crítico", "emergência"]
+      },
+      {
+        "texto": "REFERÊNCIAS: Andrade FM; Dias CM (PROFISIO Terapia Intensiva Adulto); ASSOBRAFIR Ciclo 4; Carvalho CRR et al. III Consenso Brasileiro de Ventilação Mecânica; Knobel E. et al.; Machado MGR; Diretriz de suporte ventilatório AMIB.",
+        "keywords": ["referências", "profissionais", "bibliografia", "consenso", "diretriz"]
+      },
+      {
+        "texto": "DEFINIÇÕES: VNI — ventilação não invasiva aplicada por interface (máscara) sem entubação. HACOR score — índice preditivo de falha da VNI (Heart rate, Acidosis, Consciousness, Oxygenation, Respiratory rate). Desmame, suporte ventilatório, intolerância e falha definidos conforme protocolos institucionais.",
+        "keywords": ["definições", "vni", "hacor", "falha", "intolerância"]
+      },
+      {
+        "texto": "SIGLAS: VNI, EPI, PSV, PEEP, cmH2O, PaO2, FiO2, pO2/FiO2, HACOR, FR, Ipm, SpO2, pH, IRpA, PCR, CTI, CER, b5, b7, b9, c3, d3.",
+        "keywords": ["siglas"]
+      },
+      {
+        "texto": "EXIGÊNCIAS: Não se aplica (documento institucional).",
+        "keywords": ["exigências"]
+      },
+      {
+        "texto": "RESPONSABILIDADES: Indicação da VNI após avaliação (Fisioterapeuta/Médico); escolha da interface e modalidade ventilatória (Fisioterapeuta); separação de material e fixação da interface (Fisioterapeuta); monitorização contínua (Fisioterapeuta).",
+        "keywords": ["responsabilidades"]
+      },
+      {
+        "texto": "INDICAÇÕES: Insuficiência respiratória aguda (IRpA); dispneia com uso de musculatura acessória; falência da bomba ventilatória (PaCO2 > 45 mmHg com pH < 7,35); deterioração da troca gasosa (PaO2 < 60 mmHg em ar ambiente); pO2/FiO2 < 200 mmHg; SpO2 < 92%; FR > 24 ipm (até < 30 ipm).",
+        "keywords": ["indicações"]
+      },
+      {
+        "texto": "CONTRAINDICAÇÕES ABSOLUTAS: Necessidade iminente de intubação orotraqueal; parada cardiorrespiratória (PCR).",
+        "keywords": ["contraindicações", "absolutas"]
+      },
+      {
+        "texto": "CONTRAINDICAÇÕES RELATIVAS: Arritmias refratárias; instabilidade hemodinâmica; falência múltipla de órgãos; rebaixamento do nível de consciência (Glasgow ≤ 10); hemorragia digestiva; hipoxemia severa refratária a O2; obstrução de vias aéreas; incapacidade de proteger vias aéreas; cirurgia/trauma facial; claustrofobia; risco elevado de broncoaspiração.",
+        "keywords": ["contraindicações relativas", "relativas"]
+      },
+      {
+        "texto": "DESCRIÇÃO DA TÉCNICA (fluxo): 1) Avaliar indicação e contraindicações; 2) posicionar paciente em decúbito dorsal com cabeceira > 30°; 3) estabelecer vínculo e orientar paciente; 4) escolher interface (máscara facial, full face, almohadillada); 5) selecionar modo (PSV / CPAP) e iniciar pressões baixas; 6) ajustar sensibilidade e ciclagem; 7) monitorizar: SpO2, FR, conforto, sinais de desconforto; 8) avaliar resposta aos 30 e 60 minutos; 9) aplicar HACOR score e decidir manter VNI ou progredir para intubação.",
+        "keywords": ["descrição", "técnica", "como fazer"]
+      },
+      {
+        "texto": "AVALIAÇÃO INICIAL (pré-início): confirmar indicação; reversão/controle da causa; ausência de sedação depressora do SNC; estabilidade hemodinâmica; oxigenação aceitável (objetivos conforme protocolo); pH e eletrólitos adequados; térmico (temperatura < 38°C); avaliar risco de aspiração.",
+        "keywords": ["avaliação inicial", "criterios"]
+      },
+      {
+        "texto": "EXECUÇÃO DA TÉCNICA (monitorização e titulação): iniciar com níveis pressóricos baixos, ajustar até atingir objetivo de VC > 6 ml/kg predito quando possível; FiO2 para manter SpO2 ≥ 92%; ajustar sensibilidade e percentual de ciclagem; observar tolerância; reavaliar após 30 e 60 minutos; se HACOR > 5 ou piora clínica/oxigenação → avaliar interrupção e intubação orotraqueal.",
+        "keywords": ["execução"]
+      },
+      {
+        "texto": "DIRETRIZES ATS/ERS: Segundo as diretrizes da ATS/ERS, a ventilação não invasiva (VNI), especialmente o modo bilevel (BiPAP), pode ser considerada em pacientes com PaCO₂ normal ou elevado, mas com pH normal, com o objetivo de prevenir o desenvolvimento de acidose respiratória aguda. Essa recomendação é condicional e baseada em evidência de baixa certeza. As diretrizes afirmam que a VNI pode ser usada para evitar acidose respiratória aguda mesmo quando o pH está dentro da faixa normal, mas a PaCO₂ está elevada. Entretanto, sugerem que a VNI **não** seja usada rotineiramente em pacientes hipercápnicos que **não** estão acidóticos (pH > 7,35) no contexto de exacerbação de DPOC — recomendação condicional por evidência de baixa certeza. Por outro lado, a VNI é fortemente recomendada em pacientes com insuficiência respiratória aguda acompanhada de acidose respiratória (pH ≤ 7,35) ou aguda sobre crônica. Em indicações específicas: para DPOC a VNI é a primeira escolha quando indicada; para edema agudo de pulmão (EAP) a VNI (CPAP ou BiPAP) é claramente benéfica; para SARA/SDRA a VNI pode ser considerada apenas em casos leves, sendo a ventilação invasiva com estratégia protetora a opção na maioria dos casos. Em todos os cenários, a VNI deve ser monitorizada continuamente — se, em até 2 horas, não houver melhora clínica/respiratória **e** não ocorrer melhora pelo HACOR score, a VNI deve ser interrompida e deve-se discutir intubação orotraqueal ou outra estratégia ventilatória. O paciente permanece em VNI enquanto houver benefício clínico e tolerância; na presença de sinais de falha considerar intubação.",
+        "keywords": ["ats", "ers", "diretriz", "recomendação"]
+      },
+      {
+        "texto": "9.1 MATERIAIS NECESSÁRIOS: EPI conforme caso; ventilador com modos PSV/CPAP; interface (máscara full-face ou com almofada inflável); fixador cefálico (silicone/toca); estetoscópio; monitor de sinais vitais e oximetria de pulso; material para aspiração; oxigenoterapia e circuitos.",
+        "keywords": ["materiais"]
+      },
+      {
+        "texto": "FORMULÁRIOS E/OU DOCUMENTOS RELACIONADOS: Ficha de início de VNI; planilha de monitorização horário; índice preditivo HACOR (anexo); links e drives institucionais.",
+        "keywords": ["formulários"]
+      },
+      {
+        "texto": "CONTROLE DE REGISTRO: Registro em prontuário eletrônico: início, parâmetros iniciais, reavaliações (30/60 min), HACOR, evolução e justificativa de manutenção ou interrupção da VNI.",
+        "keywords": ["controle de registro"]
+      },
+      {
+        "texto": "RESUMO DE REVISÕES: Emissão inicial: 02/2024; Próxima revisão prevista: 02/2026. Histórico de revisões e descrição das alterações devem ser mantidos neste campo.",
+        "keywords": ["revisões"]
+      },
+      {
+        "texto": "APROVAÇÕES: ELABORAÇÃO: Alexandre Augusto Abrunhosa; CHEFIA/DIVISÃO: Alexandre Augusto Abrunhosa; QUALIDADE: Israel Pablo de L. Câmara; PRESIDÊNCIA/DIREÇÃO: Barbara Pyrrho Taveira; Assinatura: Dr. Berguer Elias.",
+        "keywords": ["aprovações"]
+      },
+      {
+        "texto": "ANEXOS: ÍNDICE PREDITIVO DE FALHA HACOR — variáveis e pontuação (ex.: FC, pH, Glasgow, PaO2/FiO2, FR). Utilizar tabela HACOR para cálculo e decisão clínica conforme anexo.",
+        "keywords": ["anexos"]
+      },
+      {
+        "texto": "TABELA HACOR (resumo): Frequência cardíaca: ≤120 (0), ≥120 (1). pH: ≥7,35 (0); 7,30–7,34 (2); 7,25–7,29 (3); <7,25 (4). Glasgow: 15 (0); 13–14 (2); 11–12 (5); ≤10 (10). PaO2/FiO2: 176–200 (2); 151–175 (3); 126–150 (4); 101–125 (5); ≤100 (6). FR (ipm): ≤30 (0); 31–35 (1); 36–40 (2); 41–45 (3); >45 (4). (Usar anexo completo para cálculo e interpretação).",
+        "keywords": ["hacor"]
+      }
+    ]
   }
 ]
-
-
