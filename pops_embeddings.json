@@ -146,7 +146,7 @@
       },
       {
         "texto": "ETAPAS: 0 - Estabilidade clínica confirmada → TRE em peça-T de 30min. 1 - Se o paciente apresentar falha, progredir o desmame por períodos de tempo até o limite do paciente. Ex.: Paciente permaneceu 2 horas em peça T. Anotar o tempo de desmame e recomendar progressão do tempo no dia seguinte. 2 - Se tolerância, progredir até 24h contínuas sem suporte. Avaliar decanulação após 48h. 3 - Se falhas persistirem, avaliar causas reversíveis.",
-        "keywords": ["etapas"]
+        "keywords": ["etapas", "como fazer"]
       },
       {
         "texto": "MATERIAIS NECESSÁRIOS: EPI, sonda de aspiração, macronebulização.",
@@ -171,4 +171,5 @@
     ]
   }
 ]
+
 
