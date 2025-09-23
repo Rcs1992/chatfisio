@@ -230,7 +230,7 @@
         "keywords": ["avaliação inicial", "criterios"]
       },
       {
-        "texto": "EXECUÇÃO DA TÉCNICA (monitorização e titulação): iniciar com níveis pressóricos baixos, ajustar até atingir objetivo de VC > 6 ml/kg predito quando possível; FiO2 para manter SpO2 ≥ 92%; ajustar sensibilidade e percentual de ciclagem; observar tolerância; reavaliar após 30 e 60 minutos; se HACOR > 5 ou piora clínica/oxigenação → avaliar interrupção e intubação orotraqueal.",
+        "texto": "EXECUÇÃO DA TÉCNICA (monitorização e titulação): iniciar com níveis pressóricos baixos, ajustar até atingir objetivo de VC > 6 ml/kg predito quando possível; FiO2 para manter SpO2 ≥ 92%; ajustar sensibilidade e percentual de ciclagem; observar tolerância; reavaliar após 30 e 60 minutos; se HACOR > 5 ou piora clínica/oxigenação → avaliar interrupção e intubação orotraqueal. A ventilação não invasiva deve ser interrompida diante de critérios objetivos que indicam falha ou risco ao paciente, como hipoxemia persistente (PaO₂ < 60 mmHg ou SpO₂ < 90% com FiO₂ > 0,6), acidose respiratória grave (pH < 7,25 com elevação progressiva da PaCO₂), taquipneia mantida acima de 35 incursões por minuto, instabilidade hemodinâmica (PAS < 90 mmHg ou PAM < 65 mmHg apesar de medidas de suporte, arritmias instáveis), rebaixamento do nível de consciência (Glasgow < 8 ou incapacidade de proteger vias aéreas) e intolerância clínica importante (agitação intensa, secreção abundante não manejável ou vômitos recorrentes). Nessas situações, a intubação orotraqueal e a ventilação mecânica invasiva devem ser consideradas imediatamente.",
         "keywords": ["execução", "interrupção", "interromper"]
       },
       {
@@ -262,7 +262,7 @@
         "keywords": ["anexos"]
       },
       {
-        "texto": "TABELA HACOR (resumo): Frequência cardíaca: ≤120 (0), ≥120 (1). pH: ≥7,35 (0); 7,30–7,34 (2); 7,25–7,29 (3); <7,25 (4). Glasgow: 15 (0); 13–14 (2); 11–12 (5); ≤10 (10). PaO2/FiO2: 176–200 (2); 151–175 (3); 126–150 (4); 101–125 (5); ≤100 (6). FR (ipm): ≤30 (0); 31–35 (1); 36–40 (2); 41–45 (3); >45 (4). (Usar anexo completo para cálculo e interpretação).",
+        "texto": "O HACOR é um escore desenvolvido para prever a falha da ventilação não invasiva (VNI) em pacientes com insuficiência respiratória aguda. Ele é calculado pela soma de pontos atribuídos a cinco variáveis: Frequência cardíaca (≤120 bpm = 0; ≥121 = 1), Acidose (pH) (≥7,35 = 0; 7,30–7,34 = 2; 7,25–7,29 = 3; <7,25 = 4), Consciência (Glasgow) (15 = 0; 13–14 = 2; 11–12 = 5; ≤10 = 10), Oxigenação (PaO₂/FiO₂, mmHg) (≥201 = 0; 176–200 = 2; 151–175 = 3; 126–150 = 4; 101–125 = 5; ≤100 = 6) e Frequência respiratória (≤30 = 0; 31–35 = 1; 36–40 = 2; 41–45 = 3; ≥46 = 4). A soma pode variar de 0 a 25 pontos. A interpretação é direta: HACOR ≤5 indica baixo risco de falha da VNI, enquanto HACOR >5 indica alto risco, orientando a equipe para considerar intervenção precoce, como intubação orotraqueal.",
         "keywords": ["hacor"]
       }
     ]
@@ -325,6 +325,7 @@
     ]
   }
 ]
+
 
 
 
