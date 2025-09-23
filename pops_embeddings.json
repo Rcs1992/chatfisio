@@ -266,5 +266,64 @@
         "keywords": ["hacor"]
       }
     ]
+  },
+  {
+    "titulo": "POP_Reabilitacao_Cardiaca_Fase_I",
+    "chunks": [
+      {
+        "texto": "SUMÁRIO: INTRODUÇÃO; OBJETIVO; ABRANGÊNCIA; CRITÉRIOS DE INCLUSÃO E EXCLUSÃO; CONTRAINDICAÇÕES ABSOLUTAS; REFERÊNCIAS; SIGLAS; RESPONSABILIDADES; DESCRIÇÃO DA TÉCNICA; RECURSOS FISIOTERAPÊUTICOS; CONTROLE DE REGISTRO.",
+        "keywords": ["sumário"]
+      },
+      {
+        "texto": "INTRODUÇÃO: A reabilitação cardíaca é um conjunto de intervenções multidisciplinares destinadas a otimizar a recuperação funcional, reduzir complicações e promover qualidade de vida após eventos cardiovasculares. A Fase I, realizada ainda durante a internação hospitalar, tem como foco a mobilização precoce, o condicionamento físico inicial e a educação em saúde, respeitando critérios clínicos de segurança. O fisioterapeuta conduz exercícios leves, progressivos e supervisionados, associados ao monitoramento rigoroso de parâmetros hemodinâmicos. Padronização das condutas via POP garante uniformidade, segurança e qualidade assistencial, além de favorecer o treinamento de novos profissionais.",
+        "keywords": ["introdução"]
+      },
+      {
+        "texto": "OBJETIVO: Padronizar a abordagem de reabilitação cardíaca Fase I em pacientes hospitalizados após eventos cardiovasculares agudos ou cirurgias cardíacas, assegurando segurança, eficácia e adesão às melhores práticas baseadas em evidências. Reduz morbimortalidade, tempo de internação, limitações funcionais e melhora a qualidade de vida. Recomendado pelas diretrizes ESC para todos os pacientes pós-evento coronariano agudo, revascularizados ou tratados clinicamente.",
+        "keywords": ["objetivo"]
+      },
+      {
+        "texto": "ABRANGÊNCIA: Bloco crítico (b5-RH CTI Geral, b7-RH unidade neurointensiva, b9-RH unidade cardiointensiva) e emergência do CER Leblon. Pacientes internados por SCA, SCC ou submetidos à cirurgia cardíaca primária.",
+        "keywords": ["abrangência"]
+      },
+      {
+        "texto": "CRITÉRIOS DE INCLUSÃO E EXCLUSÃO: Inclusão: pacientes clinicamente estáveis submetidos a CRVM, reparo/substituição de válvula aórtica ou mitral, cirurgia combinada, estabilidade hemodinâmica e ausência de dor torácica aguda. Exclusão: síndrome coronariana instável, insuficiência cardíaca grave (NYHA IV), arritmias ou insuficiência cardíaca descompensadas, déficits cognitivos significativos, limitações físicas severas incompatíveis com exercícios.",
+        "keywords": ["critérios", "inclusão", "exclusão"]
+      },
+      {
+        "texto": "CONTRAINDICAÇÕES ABSOLUTAS: Angina instável, insuficiência cardíaca descompensada, tromboflebite ou embolismo agudo, endocardite/miocardite/pericardite ativa, dissecção aguda de aorta, estenose aórtica grave sintomática, doença sistêmica aguda/febre, arritmias graves não controladas, bloqueio AV 3º grau sem marcapasso, hipertensão/hipotensão instável, taquicardia de repouso > 120 bpm, queda ortostática sintomática (> 20 mmHg).",
+        "keywords": ["contraindicações", "absolutas"]
+      },
+      {
+        "texto": "REFERÊNCIAS: Diretrizes ESC; estudos científicos recentes em reabilitação cardíaca; literatura sobre mobilização precoce e fisioterapia hospitalar.",
+        "keywords": ["referências"]
+      },
+      {
+        "texto": "SIGLAS: HAS, DM, DRC, DPOC, IAM, IAMCSST, SCA, CRM, CCE, POP, FC, PA, SpO₂, ECG, VR, CTI, Borg, CER, b5, b7, b9, c3, d3.",
+        "keywords": ["siglas"]
+      },
+      {
+        "texto": "RESPONSABILIDADES: Avaliação das condições clínicas (Médico rotina/plantonista); Avaliação cinético-funcional (Fisioterapeuta); Prescrição de exercícios terapêuticos (Fisioterapeuta).",
+        "keywords": ["responsabilidades"]
+      },
+      {
+        "texto": "DESCRIÇÃO DA TÉCNICA: Revisar prontuário (diagnóstico, exames, evolução médica, contraindicações, liberação médica). Checar estabilidade clínica (FC 50–120 bpm, PA sistólica 100–140 mmHg, SpO₂ ≥ 92%, ausência de dor torácica ou dispneia intensa). Higienizar mãos, utilizar EPIs. Avaliar paciente, posicionar sentado no leito (decúbito 30–45º). Auxiliar rolamento e elevação do tronco, manter pés e mãos apoiados. Observar sinais de intolerância (tontura, palidez, sudorese, queda de PA). Deambulação curta (3–10 m), ritmo lento, pausas. Monitorizar continuamente (dispneia, dor, tontura). Usar escala de Borg modificada 3–4. Circuito funcional leve opcional (atividades recreativas, VR relaxante). Retorno à calma, exercícios respiratórios e alongamento. Reavaliar sinais vitais, retirar EPIs, higienizar mãos, registrar evolução.",
+        "keywords": ["descrição da técnica", "execução", "como fazer", "segurança", "critérios de segurança"]
+      },
+      {
+        "texto": "MATERIAIS NECESSÁRIOS: Monitor multiparamétrico (ECG, PA, FC, SpO₂), esfigmomanômetro, estetoscópio, oxímetro portátil, cronômetro, carrinho de emergência, oxigênio suplementar, andador/bengala, bola de borracha, faixas elásticas, halteres leves, óculos de realidade virtual, smartphone.",
+        "keywords": ["materiais"]
+      },
+      {
+        "texto": "RECURSOS FISIOTERAPÊUTICOS: Sedestação à beira do leito, óculos de realidade virtual com atividades calmas, circuito de equilíbrio simples, atividades leves de deambulação com monitorização contínua.",
+        "keywords": ["recursos", "o que fazer"]
+      },
+      {
+        "texto": "CONTROLE DE REGISTRO: Registro em prontuário eletrônico.",
+        "keywords": ["controle"]
+      }
+    ]
   }
 ]
+
+
