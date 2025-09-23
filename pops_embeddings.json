@@ -174,10 +174,6 @@
     "titulo": "POP_VNI",
     "chunks": [
       {
-        "texto": "SUMÁRIO: INTRODUÇÃO; OBJETIVO; ABRANGÊNCIA; REFERÊNCIAS; DEFINIÇÕES E SIGLAS; EXIGÊNCIAS; RESPONSABILIDADES; INDICAÇÕES; CONTRAINDICAÇÕES ABSOLUTAS; CONTRAINDICAÇÕES RELATIVAS; DESCRIÇÃO DA TÉCNICA; 9.1 Materiais necessários; FORMULÁRIOS E/OU DOCUMENTOS RELACIONADOS; CONTROLE DE REGISTRO; RESUMO DE REVISÕES; APROVAÇÕES; ANEXOS (Índice preditivo HACOR). Emissão inicial: 02/2024. Próx. revisão: 02/2026.",
-        "keywords": ["sumário"]
-      },
-      {
         "texto": "INTRODUÇÃO: A ventilação não invasiva (VNI) é suporte ventilatório aplicado sem prótese endotraqueal, evitando complicações da VM invasiva. A VNI pode reduzir permanência na UTI e aumentar chance de sobrevida em pacientes selecionados.",
         "keywords": ["introdução"]
       },
@@ -186,28 +182,12 @@
         "keywords": ["objetivo"]
       },
       {
-        "texto": "ABRANGÊNCIA: Bloco crítico (b5-RH CTI Geral, b7-RH unidade neurointensiva, b9-RH unidade cardiointensiva) e emergência do CER Leblon.",
-        "keywords": ["abrangência"]
-      },
-      {
         "texto": "REFERÊNCIAS: Andrade FM; Dias CM (PROFISIO Terapia Intensiva Adulto); ASSOBRAFIR Ciclo 4; Carvalho CRR et al. III Consenso Brasileiro de Ventilação Mecânica; Knobel E. et al.; Machado MGR; Diretriz de suporte ventilatório AMIB.",
         "keywords": ["referências"]
       },
       {
         "texto": "DEFINIÇÕES: VNI — ventilação não invasiva aplicada por interface (máscara) sem entubação. HACOR score — índice preditivo de falha da VNI (Heart rate, Acidosis, Consciousness, Oxygenation, Respiratory rate). Desmame, suporte ventilatório, intolerância e falha definidos conforme protocolos institucionais.",
         "keywords": ["definições"]
-      },
-      {
-        "texto": "SIGLAS: VNI, EPI, PSV, PEEP, cmH2O, PaO2, FiO2, pO2/FiO2, HACOR, FR, Ipm, SpO2, pH, IRpA, PCR, CTI, CER, b5, b7, b9, c3, d3.",
-        "keywords": ["siglas"]
-      },
-      {
-        "texto": "EXIGÊNCIAS: Não se aplica (documento institucional).",
-        "keywords": ["exigências"]
-      },
-      {
-        "texto": "RESPONSABILIDADES: Indicação da VNI após avaliação (Fisioterapeuta/Médico); escolha da interface e modalidade ventilatória (Fisioterapeuta); separação de material e fixação da interface (Fisioterapeuta); monitorização contínua (Fisioterapeuta).",
-        "keywords": ["responsabilidades"]
       },
       {
         "texto": "INDICAÇÕES: Insuficiência respiratória aguda (IRpA); dispneia com uso de musculatura acessória; falência da bomba ventilatória (PaCO2 > 45 mmHg com pH < 7,35); deterioração da troca gasosa (PaO2 < 60 mmHg em ar ambiente); pO2/FiO2 < 200 mmHg; SpO2 < 92%; FR > 24 ipm (até < 30 ipm).",
@@ -238,28 +218,8 @@
         "keywords": ["ats", "ers", "diretriz", "recomendação"]
       },
       {
-        "texto": "9.1 MATERIAIS NECESSÁRIOS: EPI conforme caso; ventilador com modos PSV/CPAP; interface (máscara full-face ou com almofada inflável); fixador cefálico (silicone/toca); estetoscópio; monitor de sinais vitais e oximetria de pulso; material para aspiração; oxigenoterapia e circuitos.",
-        "keywords": ["materiais"]
-      },
-      {
         "texto": "FORMULÁRIOS E/OU DOCUMENTOS RELACIONADOS: Ficha de início de VNI; planilha de monitorização horário; índice preditivo HACOR (anexo); links e drives institucionais.",
         "keywords": ["formulários"]
-      },
-      {
-        "texto": "CONTROLE DE REGISTRO: Registro em prontuário eletrônico: início, parâmetros iniciais, reavaliações (30/60 min), HACOR, evolução e justificativa de manutenção ou interrupção da VNI.",
-        "keywords": ["controle de registro"]
-      },
-      {
-        "texto": "RESUMO DE REVISÕES: Emissão inicial: 02/2024; Próxima revisão prevista: 02/2026. Histórico de revisões e descrição das alterações devem ser mantidos neste campo.",
-        "keywords": ["revisões"]
-      },
-      {
-        "texto": "APROVAÇÕES: ELABORAÇÃO: Alexandre Augusto Abrunhosa; CHEFIA/DIVISÃO: Alexandre Augusto Abrunhosa; QUALIDADE: Israel Pablo de L. Câmara; PRESIDÊNCIA/DIREÇÃO: Barbara Pyrrho Taveira; Assinatura: Dr. Berguer Elias.",
-        "keywords": ["aprovações"]
-      },
-      {
-        "texto": "ANEXOS: ÍNDICE PREDITIVO DE FALHA HACOR — variáveis e pontuação (ex.: FC, pH, Glasgow, PaO2/FiO2, FR). Utilizar tabela HACOR para cálculo e decisão clínica conforme anexo.",
-        "keywords": ["anexos"]
       },
       {
         "texto": "O HACOR é um escore desenvolvido para prever a falha da ventilação não invasiva (VNI) em pacientes com insuficiência respiratória aguda. Ele é calculado pela soma de pontos atribuídos a cinco variáveis: Frequência cardíaca (≤120 bpm = 0; ≥121 = 1), Acidose (pH) (≥7,35 = 0; 7,30–7,34 = 2; 7,25–7,29 = 3; <7,25 = 4), Consciência (Glasgow) (15 = 0; 13–14 = 2; 11–12 = 5; ≤10 = 10), Oxigenação (PaO₂/FiO₂, mmHg) (≥201 = 0; 176–200 = 2; 151–175 = 3; 126–150 = 4; 101–125 = 5; ≤100 = 6) e Frequência respiratória (≤30 = 0; 31–35 = 1; 36–40 = 2; 41–45 = 3; ≥46 = 4). A soma pode variar de 0 a 25 pontos. A interpretação é direta: HACOR ≤5 indica baixo risco de falha da VNI, enquanto HACOR >5 indica alto risco, orientando a equipe para considerar intervenção precoce, como intubação orotraqueal.",
@@ -271,10 +231,6 @@
     "titulo": "POP_Reabilitacao_Cardiaca_Fase_I",
     "chunks": [
       {
-        "texto": "SUMÁRIO: INTRODUÇÃO; OBJETIVO; ABRANGÊNCIA; CRITÉRIOS DE INCLUSÃO E EXCLUSÃO; CONTRAINDICAÇÕES ABSOLUTAS; REFERÊNCIAS; SIGLAS; RESPONSABILIDADES; DESCRIÇÃO DA TÉCNICA; RECURSOS FISIOTERAPÊUTICOS; CONTROLE DE REGISTRO.",
-        "keywords": ["sumário"]
-      },
-      {
         "texto": "INTRODUÇÃO: A reabilitação cardíaca é um conjunto de intervenções multidisciplinares destinadas a otimizar a recuperação funcional, reduzir complicações e promover qualidade de vida após eventos cardiovasculares. A Fase I, realizada ainda durante a internação hospitalar, tem como foco a mobilização precoce, o condicionamento físico inicial e a educação em saúde, respeitando critérios clínicos de segurança. O fisioterapeuta conduz exercícios leves, progressivos e supervisionados, associados ao monitoramento rigoroso de parâmetros hemodinâmicos. Padronização das condutas via POP garante uniformidade, segurança e qualidade assistencial, além de favorecer o treinamento de novos profissionais.",
         "keywords": ["introdução"]
       },
@@ -283,24 +239,12 @@
         "keywords": ["objetivo"]
       },
       {
-        "texto": "ABRANGÊNCIA: Bloco crítico (b5-RH CTI Geral, b7-RH unidade neurointensiva, b9-RH unidade cardiointensiva) e emergência do CER Leblon. Pacientes internados por SCA, SCC ou submetidos à cirurgia cardíaca primária.",
-        "keywords": ["abrangência"]
-      },
-      {
         "texto": "CRITÉRIOS DE INCLUSÃO E EXCLUSÃO: Inclusão: pacientes clinicamente estáveis submetidos a CRVM, reparo/substituição de válvula aórtica ou mitral, cirurgia combinada, estabilidade hemodinâmica e ausência de dor torácica aguda. Exclusão: síndrome coronariana instável, insuficiência cardíaca grave (NYHA IV), arritmias ou insuficiência cardíaca descompensadas, déficits cognitivos significativos, limitações físicas severas incompatíveis com exercícios.",
         "keywords": ["critérios", "inclusão", "exclusão"]
       },
       {
         "texto": "CONTRAINDICAÇÕES ABSOLUTAS: Angina instável, insuficiência cardíaca descompensada, tromboflebite ou embolismo agudo, endocardite/miocardite/pericardite ativa, dissecção aguda de aorta, estenose aórtica grave sintomática, doença sistêmica aguda/febre, arritmias graves não controladas, bloqueio AV 3º grau sem marcapasso, hipertensão/hipotensão instável, taquicardia de repouso > 120 bpm, queda ortostática sintomática (> 20 mmHg).",
         "keywords": ["contraindicações", "absolutas"]
-      },
-      {
-        "texto": "REFERÊNCIAS: Diretrizes ESC; estudos científicos recentes em reabilitação cardíaca; literatura sobre mobilização precoce e fisioterapia hospitalar.",
-        "keywords": ["referências"]
-      },
-      {
-        "texto": "SIGLAS: HAS, DM, DRC, DPOC, IAM, IAMCSST, SCA, CRM, CCE, POP, FC, PA, SpO₂, ECG, VR, CTI, Borg, CER, b5, b7, b9, c3, d3.",
-        "keywords": ["siglas"]
       },
       {
         "texto": "RESPONSABILIDADES: Avaliação das condições clínicas (Médico rotina/plantonista); Avaliação cinético-funcional (Fisioterapeuta); Prescrição de exercícios terapêuticos (Fisioterapeuta).",
@@ -329,6 +273,7 @@
     ]
   }
 ]
+
 
 
 
