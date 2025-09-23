@@ -113,12 +113,12 @@ function addMessage(text, who='bot', meta=null){
 }
 // função para limpar todo o conteúdo exibido no chat
 function clearChat(){
-const chat = document.getElementById('chat');
-// remove todo o conteúdo
-chat.innerHTML = '';
-// opcional: colocar foco na caixa de input para continuar a interação
-const input = document.getElementById('input');
-if(input) input.focus();
+  const chat = document.getElementById('chat');
+  // remove todo o conteúdo
+  chat.innerHTML = '';
+  // opcional: colocar foco na caixa de input para continuar a interação
+  const input = document.getElementById('input');
+  if(input) input.focus();
 }
 // ---------- end utils ----------
 
@@ -229,35 +229,35 @@ function searchInSelectedPOP(query){
 
 // handle send
 async function onSend(){
-const input = document.getElementById('input');
-const text = (input.value || "").trim();
-if(!text) return;
-addMessage(text, "user");
-input.value = "";
-const cmd = text.toLowerCase().trim();
-if(cmd === 'help'){
-addMessage("Comandos:
+  const input = document.getElementById('input');
+  const text = (input.value || "").trim();
+  if(!text) return;
+  addMessage(text, "user");
+  input.value = "";
+  const cmd = text.toLowerCase().trim();
+  if(cmd === 'help'){
+    addMessage("Comandos:
 - Digite o número do POP (ex: 1) ou clique no nome à esquerda para selecionar.
 - 'trocar' ou 'listar' para ver/alterar POP.
 - 'limpar' para limpar o chat.
 - 'help' mostra isto.
 Após selecionar, faça perguntas específicas (ex: 'segurança', 'critérios', 'objetivo').", "bot");
-return;
-}
-if(cmd === 'trocar'){
-resetSelection();
-return;
-}
-if(cmd === 'listar'){
-showAll();
-return;
-}
-if(cmd === 'limpar'){
-// comando para limpar o chat
-clearChat();
-addMessage("✅ Chat limpo.", "bot");
-return;
-}
+    return;
+  }
+  if(cmd === 'trocar'){
+    resetSelection();
+    return;
+  }
+  if(cmd === 'listar'){
+    showAll();
+    return;
+  }
+  if(cmd === 'limpar'){
+    // comando para limpar o chat
+    clearChat();
+    addMessage("✅ Chat limpo.", "bot");
+    return;
+  }
 
   // if no pop selected and user entered a number, try to select
   if(!popSelecionado){
@@ -271,7 +271,8 @@ return;
     if(findByTitle){
       popSelecionado = findByTitle;
       renderPopList();
-      addMessage(`📄 Você selecionou: ${popSelecionado.titulo}\nAgora pode fazer suas perguntas.`, "bot");
+      addMessage(`📄 Você selecionou: ${popSelecionado.titulo}
+Agora pode fazer suas perguntas.`, "bot");
       return;
     }
     addMessage("Ainda não há POP selecionado. Digite o número do POP desejado ou clique no título à esquerda.", "bot");
@@ -297,7 +298,11 @@ return;
   }
 
   if(result && result.chunk && result.score > 0){
-    const display = `📌 Trecho encontrado (score ${result.score.toFixed(2)}):\n\n${result.chunk.texto}\n\n<small>Fonte: ${popSelecionado.titulo}</small>`;
+    const display = `📌 Trecho encontrado (score ${result.score.toFixed(2)}):
+
+${result.chunk.texto}
+
+<small>Fonte: ${popSelecionado.titulo}</small>`;
     addMessage(display, "bot");
   } else {
     addMessage("❌ Não há informação sobre isso neste POP. Tente reformular a pergunta ou verifique outro POP.", "bot");
