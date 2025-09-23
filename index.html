@@ -113,12 +113,12 @@ function addMessage(text, who='bot', meta=null){
 }
 // função para limpar todo o conteúdo exibido no chat
 function clearChat(){
-  const chat = document.getElementById('chat');
-  // remove todo o conteúdo
-  chat.innerHTML = '';
-  // opcional: colocar foco na caixa de input para continuar a interação
-  const input = document.getElementById('input');
-  if(input) input.focus();
+const chat = document.getElementById('chat');
+// remove todo o conteúdo
+chat.innerHTML = '';
+// opcional: colocar foco na caixa de input para continuar a interação
+const input = document.getElementById('input');
+if(input) input.focus();
 }
 // ---------- end utils ----------
 
