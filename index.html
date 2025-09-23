@@ -73,7 +73,7 @@
           <input id="input" placeholder="Digite sua pergunta (ou 'help' para comandos)..." aria-label="Pergunta do usuário" />
           <button onclick="onSend()">Enviar</button>
         </div>
-        <div class=\"hint\">Comandos: <b>trocar</b> (voltar à lista); <b>listar</b> (mostrar POPs); <b>limpar</b> (limpar chat); <b>help</b></div>
+        <div class="hint">Comandos: <b>trocar</b> (voltar à lista); <b>listar</b> (mostrar POPs); <b>help</b></div>
       </main>
     </div>
 
@@ -236,12 +236,7 @@ async function onSend(){
   input.value = "";
   const cmd = text.toLowerCase().trim();
   if(cmd === 'help'){
-    addMessage("Comandos:
-- Digite o número do POP (ex: 1) ou clique no nome à esquerda para selecionar.
-- 'trocar' ou 'listar' para ver/alterar POP.
-- 'limpar' para limpar o chat.
-- 'help' mostra isto.
-Após selecionar, faça perguntas específicas (ex: 'segurança', 'critérios', 'objetivo').", "bot");
+    addMessage("Comandos:\n- Digite o número do POP (ex: 1) ou clique no nome à esquerda para selecionar.\n- 'trocar' ou 'listar' para ver/alterar POP.\n- 'help' mostra isto.\nApós selecionar, faça perguntas específicas (ex: 'segurança', 'critérios', 'objetivo').", "bot");
     return;
   }
   if(cmd === 'trocar'){
@@ -250,12 +245,6 @@ Após selecionar, faça perguntas específicas (ex: 'segurança', 'critérios', 
   }
   if(cmd === 'listar'){
     showAll();
-    return;
-  }
-  if(cmd === 'limpar'){
-    // comando para limpar o chat
-    clearChat();
-    addMessage("✅ Chat limpo.", "bot");
     return;
   }
 
@@ -271,8 +260,7 @@ Após selecionar, faça perguntas específicas (ex: 'segurança', 'critérios', 
     if(findByTitle){
       popSelecionado = findByTitle;
       renderPopList();
-      addMessage(`📄 Você selecionou: ${popSelecionado.titulo}
-Agora pode fazer suas perguntas.`, "bot");
+      addMessage(`📄 Você selecionou: ${popSelecionado.titulo}\nAgora pode fazer suas perguntas.`, "bot");
       return;
     }
     addMessage("Ainda não há POP selecionado. Digite o número do POP desejado ou clique no título à esquerda.", "bot");
@@ -298,11 +286,7 @@ Agora pode fazer suas perguntas.`, "bot");
   }
 
   if(result && result.chunk && result.score > 0){
-    const display = `📌 Trecho encontrado (score ${result.score.toFixed(2)}):
-
-${result.chunk.texto}
-
-<small>Fonte: ${popSelecionado.titulo}</small>`;
+    const display = `📌 Trecho encontrado (score ${result.score.toFixed(2)}):\n\n${result.chunk.texto}\n\n<small>Fonte: ${popSelecionado.titulo}</small>`;
     addMessage(display, "bot");
   } else {
     addMessage("❌ Não há informação sobre isso neste POP. Tente reformular a pergunta ou verifique outro POP.", "bot");
