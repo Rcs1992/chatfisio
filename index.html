@@ -3,46 +3,102 @@
 <head>
 <meta charset="utf-8" />
 <title> ChatFisio</title>
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <style>
   :root{
-    --accent:#0ea37a;
-    --bg:#f6f7f9;
+    --accent:#0b3d91;        /* azul escuro principal */
+    --accent-2:#0e4aa8;      /* variação */
+    --bg:#eef3fb;            /* fundo claro suave */
     --card:#ffffff;
-    --user:#d6f0ff;
-    --bot:#eef2f5;
-    --muted:#6c7a89;
+    --user:#dbeeff;
+    --bot:#eef6ff;
+    --muted:#47607f;
     --maxw:920px;
+    --gap:12px;
+    --radius:12px;
+    --shadow: 0 8px 28px rgba(11,61,145,0.08);
   }
-  html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial; background:var(--bg); color:#111;}
-  .app{max-width:var(--maxw);margin:24px auto;padding:12px;display:flex;flex-direction:column;gap:12px}
-  header{display:flex;align-items:center;gap:12px;padding:14px;border-radius:12px;background:linear-gradient(90deg,var(--accent),#0c8b68);color:#fff}
-  header h1{margin:0;font-size:18px}
-  .main{display:flex;gap:16px;min-height:60vh}
-  .left{width:260px;background:var(--card);border-radius:12px;padding:12px;box-shadow:0 6px 18px rgba(10,10,10,0.06)}
-  .left h3{margin:0 0 8px 0;font-size:14px}
-  .pop-list{display:flex;flex-direction:column;gap:6px;max-height:60vh;overflow:auto;padding-right:6px}
-  .pop-item{padding:8px;border-radius:8px;cursor:pointer;border:1px solid transparent;font-size:14px}
-  .pop-item:hover{background:#f1f7f4}
-  .pop-item.active{background:linear-gradient(90deg,#eafaf4,#dff2ea);border-color:#cdeedc}
-  .center{flex:1;display:flex;flex-direction:column;background:var(--card);border-radius:12px;padding:12px;box-shadow:0 6px 18px rgba(10,10,10,0.06)}
-  #chat{flex:1;overflow:auto;padding:8px;display:flex;flex-direction:column;gap:8px}
-  .msg{max-width:78%;padding:10px 12px;border-radius:12px;white-space:pre-wrap}
-  .msg.user{align-self:flex-end;background:var(--user);color:#064a73}
-  .msg.bot{align-self:flex-start;background:var(--bot);color:#0a2b3b}
+
+  /* Reset / base */
+  html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif; background:var(--bg); color:#07203a; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+  *{box-sizing:border-box}
+
+  .app{max-width:var(--maxw);margin:16px auto;padding:12px;display:flex;flex-direction:column;gap:var(--gap);min-height:calc(100vh - 32px)}
+  header{display:flex;align-items:center;gap:12px;padding:12px;border-radius:var(--radius);background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;box-shadow:var(--shadow)}
+  header h1{margin:0;font-size:16px;line-height:1.1}
+  header .top-controls{margin-left:auto;display:flex;gap:8px;align-items:center}
+
+  /* mobile: hamburger / show list */
+  .btn-icon{background:transparent;border:none;color:inherit;padding:8px;border-radius:8px;cursor:pointer;font-size:18px}
+  .btn-primary{background:#fff;color:var(--accent);border:none;padding:8px 12px;border-radius:10px;font-weight:700;cursor:pointer}
+  .btn-small{background:rgba(255,255,255,0.12);color:#fff;border:none;padding:6px 8px;border-radius:8px}
+
+  .main{display:flex;gap:16px;flex:1;min-height:60vh}
+  aside.left{width:300px;background:var(--card);border-radius:var(--radius);padding:12px;box-shadow:0 6px 18px rgba(10,10,10,0.04);display:flex;flex-direction:column;gap:8px}
+  aside.left h3{margin:0 0 8px 0;font-size:14px}
+  .pop-list{display:flex;flex-direction:column;gap:8px;max-height:calc(60vh - 48px);overflow:auto;padding-right:6px}
+  .pop-item{padding:12px;border-radius:10px;cursor:pointer;border:1px solid transparent;font-size:15px;line-height:1.2}
+  .pop-item:hover{background:#f3f8ff}
+  .pop-item.active{background:linear-gradient(90deg,#f0f6ff,#e7f0ff);border-color:#d6e6ff;box-shadow:0 4px 12px rgba(11,61,145,0.04)}
+
+  main.center{flex:1;display:flex;flex-direction:column;background:var(--card);border-radius:var(--radius);padding:8px;box-shadow:0 6px 18px rgba(10,10,10,0.04);min-height:0}
+  #chat{flex:1;overflow:auto;padding:12px 10px 80px 10px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+  .msg{max-width:78%;padding:12px 14px;border-radius:12px;white-space:pre-wrap;word-break:break-word;box-shadow:0 1px 0 rgba(0,0,0,0.03)}
+  .msg.user{align-self:flex-end;background:var(--user);color:var(--accent)}
+  .msg.bot{align-self:flex-start;background:var(--bot);color:#052035}
   .meta{font-size:12px;color:var(--muted);margin-top:6px}
-  .input-row{display:flex;gap:8px;padding-top:8px;border-top:1px solid #eee}
-  .input-row input{flex:1;padding:10px;border-radius:10px;border:1px solid #ddd;font-size:15px}
-  .input-row button{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:600}
+  .input-row{display:flex;gap:8px;padding:10px;border-top:1px solid #eef4fb;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.98));align-items:center}
+  .input-row input{flex:1;padding:12px;border-radius:12px;border:1px solid #dfeaf8;font-size:16px}
+  .input-row button{background:var(--accent);color:#fff;border:none;padding:12px 14px;border-radius:12px;cursor:pointer;font-weight:700;font-size:15px;min-width:72px}
   .hint{font-size:13px;color:var(--muted);margin-top:8px}
-  .small-btn{display:inline-block;padding:6px 8px;border-radius:8px;border:1px solid #e6eef0;background:#fff;cursor:pointer;font-size:13px;margin-right:6px}
-  .results-title{font-weight:700;margin-bottom:6px}
+  .small-btn{display:inline-block;padding:8px 10px;border-radius:10px;border:1px solid #e6eef0;background:#fff;cursor:pointer;font-size:14px;margin-right:6px}
   footer{font-size:13px;color:var(--muted);text-align:center;padding:6px}
+
+  /* Off-canvas behavior for mobile */
+  .mobile-aside{
+    position:fixed;
+    inset:0 auto 0 0;
+    width:320px;
+    max-width:86%;
+    transform:translateX(-110%);
+    transition:transform .24s cubic-bezier(.2,.9,.3,1);
+    z-index:1200;
+    margin-left:8px;
+  }
+  .mobile-aside.open{transform:translateX(0)}
+  .aside-backdrop{position:fixed;inset:0;background:rgba(3,12,30,0.36);z-index:1100;opacity:0;pointer-events:none;transition:opacity .18s}
+  .aside-backdrop.show{opacity:1;pointer-events:auto}
+
+  /* responsive adjustments (mobile-first) */
+  @media (max-width:900px){
+    .main{gap:10px}
+    aside.left{display:none}                 /* hide desktop aside */
+    .main.mobile .center{flex:1}
+    header h1{font-size:15px}
+  }
+
+  @media (max-width:600px){
+    .app{margin:8px;padding:8px}
+    header{padding:10px;border-radius:10px}
+    header h1{font-size:14px}
+    .btn-primary{padding:8px 10px;font-size:14px}
+    .pop-item{padding:14px;font-size:16px}
+    .input-row{position:fixed;left:0;right:0;bottom:0;padding:12px;background:linear-gradient(180deg, #ffffff, #fbfdff);box-shadow:0 -6px 20px rgba(11,61,145,0.06);z-index:1000}
+    main.center{padding-bottom:88px} /* espaço para input fixo */
+    #chat{padding-bottom:120px}
+    footer{display:none}
+    /* safe area */
+    .input-row{padding-bottom:calc(12px + env(safe-area-inset-bottom));}
+  }
+
+  /* subtle UX: select focus */
+  .pop-item:focus{outline:2px solid rgba(11,61,145,0.12);outline-offset:2px}
 </style>
 </head>
 <body>
   <div class="app" role="application" aria-label="Assistente POPs">
     <header>
+      <button class="btn-icon" id="openListBtn" title="Abrir lista de POPs" aria-label="Abrir lista de POPs">☰</button>
       <svg width="36" height="36" viewBox="0 0 24 24" fill="none" style="flex:0 0 36px">
         <rect width="24" height="24" rx="6" fill="#fff" opacity="0.06"/>
         <path d="M7 11c1.5-2 4-3 6-3s4.5 1 6 3" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -50,22 +106,26 @@
       </svg>
       <div>
         <h1>Assistente POPs — Consulta restrita aos seus documentos</h1>
-        <div style="font-size:13px;color:rgba(255,255,255,0.9)">Escolha um POP à esquerda e faça perguntas sobre ele.</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.9)">Escolha um POP e faça perguntas sobre ele.</div>
+      </div>
+      <div class="top-controls" aria-hidden="false">
+        <button class="btn-small" onclick="showAll()" title="Listar POPs">Listar</button>
+        <button class="btn-primary" onclick="clearChat()" title="Limpar chat">Limpar</button>
       </div>
     </header>
 
-    <div class="main">
-      <aside class="left" aria-label="Lista de POPs">
+    <div class="main" id="mainArea">
+      <!-- desktop aside -->
+      <aside class="left" aria-label="Lista de POPs (desktop)">
         <h3>POPs disponíveis</h3>
-        <div id="popList" class="pop-list"></div>
-        <div style="margin-top:12px">
+        <div id="popList" class="pop-list" tabindex="0"></div>
+        <div style="margin-top:8px">
           <button class="small-btn" onclick="resetSelection()">Trocar POP</button>
           <button class="small-btn" onclick="showAll()">Listar novamente</button>
-          <!-- botão limpar adicionado -->
-          <button class="small-btn" onclick="clearChat()">Limpar chat</button>
         </div>
       </aside>
 
+      <!-- center area -->
       <main class="center" aria-live="polite">
         <div id="chat" role="log" aria-live="polite"></div>
 
@@ -73,16 +133,35 @@
           <input id="input" placeholder="Digite sua pergunta (ou 'help' para comandos)..." aria-label="Pergunta do usuário" />
           <button onclick="onSend()">Enviar</button>
         </div>
-        <div class="hint">Comandos: <b>trocar</b> (voltar à lista); <b>listar</b> (mostrar POPs); <b>help</b></div>
+        <div class="hint" style="padding:8px 6px;">Comandos: <b>trocar</b> (voltar à lista); <b>listar</b> (mostrar POPs); <b>help</b></div>
       </main>
     </div>
 
     <footer>Seu arquivo JSON deve estar configurado na variável <code>popFile</code> dentro do script.</footer>
   </div>
 
+  <!-- mobile off-canvas aside -->
+  <div class="mobile-aside" id="mobileAside" aria-hidden="true">
+    <aside class="left" style="height:100vh;padding-top:18px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:0 12px;">
+        <h3 style="margin:0">POPs disponíveis</h3>
+        <button class="btn-icon" id="closeListBtn" aria-label="Fechar lista">✕</button>
+      </div>
+      <div id="popListMobile" class="pop-list" style="padding:12px;"></div>
+      <div style="padding:12px">
+        <button class="small-btn" onclick="resetSelection()">Trocar POP</button>
+        <button class="small-btn" onclick="showAll()">Listar</button>
+      </div>
+    </aside>
+  </div>
+  <div class="aside-backdrop" id="asideBackdrop" tabindex="-1" aria-hidden="true"></div>
+
 <script>
-/* CONFIG: troque pela URL raw do seu pops_embeddings.json OU deixe 'pops_embeddings.json' local */
-const popFile = "https://raw.githubusercontent.com/Rcs1992/chatfisio/refs/heads/main/pops_embeddings.json"; // <<-- substitua pelo raw URL se necessário
+/* CONFIG: troque pela URL raw do seu pops_embeddings.json OU deixe 'pops_embeddings.json' local
+   Exemplo raw GitHub correto:
+   https://raw.githubusercontent.com/usuario/repositorio/branch/caminho/pops_embeddings.json
+*/
+const popFile = "https://raw.githubusercontent.com/Rcs1992/chatfisio/refs/heads/main/pops_embeddings.json"; // padrão local. substitua se usar raw URL
 
 let pops = [];          // array de POP objects
 let popSelecionado = null;
@@ -97,28 +176,48 @@ function normalizeText(s){
     .toLowerCase();
 }
 function tokenize(s){ return normalizeText(s).split(/\s+/).filter(Boolean); }
+
+// escape HTML simples (previne XSS)
+function escapeHtml(str){
+  if(str == null) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function addMessage(text, who='bot', meta=null){
   const chat = document.getElementById('chat');
   const d = document.createElement('div');
   d.className = 'msg ' + (who==='user'?'user':'bot');
-  d.innerHTML = text;
+
+  // preservar quebras de linha mas evitar HTML arbitrário
+  const safe = escapeHtml(text).replace(/\n/g, "<br>");
+  d.innerHTML = safe;
   chat.appendChild(d);
+
   if(meta){
     const m = document.createElement('div');
     m.className = 'meta';
     m.textContent = meta;
     chat.appendChild(m);
   }
+
+  // rolar para o final
   chat.scrollTop = chat.scrollHeight;
+  // foco na input
+  const input = document.getElementById('input');
+  if(input) input.focus();
 }
+
 // função para limpar todo o conteúdo exibido no chat
 function clearChat(){
-const chat = document.getElementById('chat');
-// remove todo o conteúdo
-chat.innerHTML = '';
-// opcional: colocar foco na caixa de input para continuar a interação
-const input = document.getElementById('input');
-if(input) input.focus();
+  const chat = document.getElementById('chat');
+  chat.innerHTML = '';
+  const input = document.getElementById('input');
+  if(input) input.focus();
 }
 // ---------- end utils ----------
 
@@ -133,10 +232,16 @@ async function carregarPOPs(){
     pops = data;
     // normalize keywords & prepare small token caches to acelerar buscas
     for(const p of pops){
-      p._normTitulo = normalizeText(p.titulo || p.title || "Sem título");
-      for(const ch of p.chunks || []){
-        ch._normText = normalizeText(ch.texto || ch.text || "");
-        ch._tokens = tokenize(ch._normText);
+      // garante campo título consistente
+      p.titulo = p.titulo || p.title || "Sem título";
+      p._normTitulo = normalizeText(p.titulo);
+      for(const ch of (p.chunks || [])){
+        // garante campo texto consistente
+        ch.texto = ch.texto || ch.text || "";
+        ch._normText = normalizeText(ch.texto);
+        const toks = tokenize(ch._normText);
+        ch._tokens = toks;
+        ch._tokenSet = new Set(toks);
         ch._normKeywords = (ch.keywords||[]).map(k => normalizeText(k));
       }
     }
@@ -149,18 +254,26 @@ async function carregarPOPs(){
   }
 }
 
-// render list
+// render list (both desktop and mobile)
 function renderPopList(){
   const list = document.getElementById('popList');
-  list.innerHTML = '';
+  const listMobile = document.getElementById('popListMobile');
+  if(list) list.innerHTML = '';
+  if(listMobile) listMobile.innerHTML = '';
   pops.forEach((p,i)=>{
+    const html = `<strong>${i+1}. ${escapeHtml(p.titulo)}</strong>`;
     const btn = document.createElement('div');
     btn.className = 'pop-item' + ((popSelecionado && popSelecionado === p) ? ' active' : '');
     btn.tabIndex = 0;
-    btn.innerHTML = `<strong>${i+1}. ${p.titulo}</strong>`;
+    btn.innerHTML = html;
     btn.onclick = ()=> selectPopByIndex(i);
     btn.onkeypress = (e)=>{ if(e.key==='Enter') selectPopByIndex(i); };
-    list.appendChild(btn);
+    if(list) list.appendChild(btn);
+
+    // mobile copy
+    const btnM = btn.cloneNode(true);
+    btnM.onclick = ()=> { selectPopByIndex(i); closeMobileAside(); };
+    if(listMobile) listMobile.appendChild(btnM);
   });
 }
 
@@ -175,19 +288,19 @@ function selectPopByIndex(i){
 function resetSelection(){
   popSelecionado = null;
   renderPopList();
-  addMessage("Seleção removida. Digite o número do POP ou clique no item desejado.", "bot");
+  addMessage("Seleção removida. Digite o número do POP ou clique no título à esquerda.", "bot");
 }
 
 // show all list again
 function showAll(){
   renderPopList();
   const names = pops.map((p,i)=> `${i+1}. ${p.titulo}`).join("\n");
-  addMessage("POPs disponíveis:\n\n" + names, "bot");
+  addMessage(`POPs disponíveis (${pops.length}):\n\n` + names, "bot");
 }
 
 // search algorithm: simple ranking
 function searchInSelectedPOP(query){
-  if(!popSelecionado) return {score:0, text:null, source:null};
+  if(!popSelecionado) return {score:0, chunk:null};
 
   const qNorm = normalizeText(query);
   const qTokens = tokenize(qNorm);
@@ -200,14 +313,15 @@ function searchInSelectedPOP(query){
     let score = 0;
     // keywords
     for(const kw of ch._normKeywords || []){
-      // exact keyword contained in query or query contains keyword
+      if(!kw) continue;
       if(qNorm.includes(kw) || kw.includes(qNorm) || qTokens.includes(kw)) score += 3;
     }
-    // token overlap
+    // token overlap using Set (mais rápido)
     let overlap = 0;
     for(const t of qTokens){
-      if(ch._tokens.includes(t)) overlap++;
-      else {
+      if(ch._tokenSet && ch._tokenSet.has(t)) {
+        overlap++;
+      } else {
         // partial match: if token is substring of any chunk token
         for(const ct of ch._tokens){
           if(ct.includes(t) || t.includes(ct)){ overlap += 0.6; break; }
@@ -243,7 +357,7 @@ async function onSend(){
     resetSelection();
     return;
   }
-  if(cmd === 'listar'){
+  if(cmd === 'listar' || cmd === 'list'){
     showAll();
     return;
   }
@@ -270,23 +384,28 @@ async function onSend(){
   // if a pop is selected -> search inside it
   addMessage("Assistente: ... pesquisando ...", "bot");
   // small async pause to show UX
-  await new Promise(r => setTimeout(r, 250));
+  await new Promise(r => setTimeout(r, 200));
 
   const result = searchInSelectedPOP(text);
-  // remove the '... pesquisando ...' message (last bot message)
+
+  // remove the '... pesquisando ...' message (procura da última para frente)
   const chat = document.getElementById('chat');
-  // remove last two nodes only if they are the searching message (simple heuristic)
-  // we'll remove last element if it is exactly that text
   for(let i=chat.children.length-1;i>=0;i--){
     const el = chat.children[i];
-    if(el.classList.contains('msg') && el.classList.contains('bot') && el.textContent.includes('... pesquisando ...')){
+    if(el.classList && el.classList.contains('msg') && el.classList.contains('bot') && el.textContent && el.textContent.includes('... pesquisando ...')){
+      // remove this msg
       chat.removeChild(el);
+      // se o próximo elemento for um meta gerado em seguida, remova também (opcional)
+      if(chat.children[i] && chat.children[i].classList && chat.children[i].classList.contains('meta')){
+        chat.removeChild(chat.children[i]);
+      }
       break;
-    } else break;
+    }
   }
 
   if(result && result.chunk && result.score > 0){
-    const display = `📌 Trecho encontrado (score ${result.score.toFixed(2)}):\n\n${result.chunk.texto}\n\n<small>Fonte: ${popSelecionado.titulo}</small>`;
+    const trecho = result.chunk.texto || result.chunk.text || "";
+    const display = `📌 Trecho encontrado (score ${result.score.toFixed(2)}):\n\n${trecho}\n\nFonte: ${popSelecionado.titulo}`;
     addMessage(display, "bot");
   } else {
     addMessage("❌ Não há informação sobre isso neste POP. Tente reformular a pergunta ou verifique outro POP.", "bot");
@@ -300,8 +419,35 @@ document.getElementById('input').addEventListener('keypress', function(e) {
     onSend();
   }
 });
-  
-  // init
+
+// mobile aside controls
+const openListBtn = document.getElementById('openListBtn');
+const closeListBtn = document.getElementById('closeListBtn');
+const mobileAside = document.getElementById('mobileAside');
+const asideBackdrop = document.getElementById('asideBackdrop');
+
+function openMobileAside(){
+  mobileAside.classList.add('open');
+  asideBackdrop.classList.add('show');
+  mobileAside.setAttribute('aria-hidden','false');
+  asideBackdrop.setAttribute('aria-hidden','false');
+  // move focus to first item for accessibility
+  const first = mobileAside.querySelector('.pop-item');
+  if(first) first.focus();
+}
+function closeMobileAside(){
+  mobileAside.classList.remove('open');
+  asideBackdrop.classList.remove('show');
+  mobileAside.setAttribute('aria-hidden','true');
+  asideBackdrop.setAttribute('aria-hidden','true');
+  openListBtn.focus();
+}
+if(openListBtn) openListBtn.addEventListener('click', openMobileAside);
+if(closeListBtn) closeListBtn.addEventListener('click', closeMobileAside);
+if(asideBackdrop) asideBackdrop.addEventListener('click', closeMobileAside);
+document.addEventListener('keydown', (e) => { if(e.key === 'Escape'){ closeMobileAside(); } });
+
+/* init */
 carregarPOPs();
 </script>
 </body>
