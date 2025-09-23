@@ -282,7 +282,15 @@ async function onSend(){
   }
 }
 
-// init
+// permitir enviar mensagem ao apertar ENTER
+document.getElementById('input').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    e.preventDefault(); // evita quebra de linha
+    onSend();
+  }
+});
+  
+  // init
 carregarPOPs();
 </script>
 </body>
