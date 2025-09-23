@@ -228,7 +228,7 @@
     ]
   },
   {
-    "titulo": "POP_Reabilitacao_Cardiaca_Fase_I",
+    "titulo": "POP_Reab_Cardiaca_Fase_I",
     "chunks": [
       {
         "texto": "INTRODUÇÃO: A reabilitação cardíaca é um conjunto de intervenções multidisciplinares destinadas a otimizar a recuperação funcional, reduzir complicações e promover qualidade de vida após eventos cardiovasculares. A Fase I, realizada ainda durante a internação hospitalar, tem como foco a mobilização precoce, o condicionamento físico inicial e a educação em saúde, respeitando critérios clínicos de segurança. O fisioterapeuta conduz exercícios leves, progressivos e supervisionados, associados ao monitoramento rigoroso de parâmetros hemodinâmicos. Padronização das condutas via POP garante uniformidade, segurança e qualidade assistencial, além de favorecer o treinamento de novos profissionais.",
@@ -240,7 +240,7 @@
       },
       {
         "texto": "CRITÉRIOS DE INCLUSÃO E EXCLUSÃO: Inclusão: pacientes clinicamente estáveis submetidos a CRVM, reparo/substituição de válvula aórtica ou mitral, cirurgia combinada, estabilidade hemodinâmica e ausência de dor torácica aguda. Exclusão: síndrome coronariana instável, insuficiência cardíaca grave (NYHA IV), arritmias ou insuficiência cardíaca descompensadas, déficits cognitivos significativos, limitações físicas severas incompatíveis com exercícios.",
-        "keywords": ["critérios", "inclusão", "exclusão"]
+        "keywords": ["indicação", "critérios", "inclusão", "exclusão"]
       },
       {
         "texto": "CONTRAINDICAÇÕES ABSOLUTAS: Angina instável, insuficiência cardíaca descompensada, tromboflebite ou embolismo agudo, endocardite/miocardite/pericardite ativa, dissecção aguda de aorta, estenose aórtica grave sintomática, doença sistêmica aguda/febre, arritmias graves não controladas, bloqueio AV 3º grau sem marcapasso, hipertensão/hipotensão instável, taquicardia de repouso > 120 bpm, queda ortostática sintomática (> 20 mmHg).",
@@ -264,7 +264,7 @@
       },
       {
         "texto": "CONTRAINDICAÇÕES: Em pacientes recém-pós-infarto do miocárdio, o uso de cicloergômetro ou atividades que aumentem significantemente a demanda cardiorrespiratória não deve ser iniciado ou deve ser suspenso. A presença de: instabilidade hemodinâmica (por exemplo, pressão arterial sistólica em repouso descontrolada, queda da PA com o exercício), angina instável ou nova isquemia eletrocardiográfica em repouso, arritmias ventriculares ou supraventriculares graves ou não controladas, insuficiência cardíaca descompensada, período muito precoce (< 2 dias) após o IAM, alterações agudas de biomarcadores (CK-MB ou troponina em elevação), ou presença de febre ou infecção sistêmica; inviabilizam a mobilização precoce momentaneamente. Diretrizes e estudos recomendam que nas fases iniciais seja realizada atividade leve: caminhada leve 2-4 vezes/dia por 3-5 minutos, mobilização precoce sob supervisão, e apenas quando o paciente estiver estável.",
-        "keywords": ["contraindicação", "o que não fazer", "cicloergometro"]
+        "keywords": ["contraindicação", "o que não fazer", "cicloergometro", "cuidado", "proibido", "não recomendado"]
       },      
       {
         "texto": "CONTROLE DE REGISTRO: Registro em prontuário eletrônico.",
@@ -273,6 +273,7 @@
     ]
   }
 ]
+
 
 
 
