@@ -4,6 +4,9 @@
 <meta charset="utf-8" />
 <title> ChatFisio</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<!-- Fuse.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.basic.min.js"></script>
+
 <style>
   :root{
     --accent:#0b3d91;        /* azul escuro principal */
@@ -19,7 +22,6 @@
     --shadow: 0 8px 28px rgba(11,61,145,0.08);
   }
 
-  /* Reset / base */
   html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif; background:var(--bg); color:#07203a; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
   *{box-sizing:border-box}
 
@@ -28,7 +30,6 @@
   header h1{margin:0;font-size:16px;line-height:1.1}
   header .top-controls{margin-left:auto;display:flex;gap:8px;align-items:center}
 
-  /* mobile: hamburger / show list */
   .btn-icon{background:transparent;border:none;color:inherit;padding:8px;border-radius:8px;cursor:pointer;font-size:18px}
   .btn-primary{background:#fff;color:var(--accent);border:none;padding:8px 12px;border-radius:10px;font-weight:700;cursor:pointer}
   .btn-small{background:rgba(255,255,255,0.12);color:#fff;border:none;padding:6px 8px;border-radius:8px}
@@ -54,7 +55,6 @@
   .small-btn{display:inline-block;padding:8px 10px;border-radius:10px;border:1px solid #e6eef0;background:#fff;cursor:pointer;font-size:14px;margin-right:6px}
   footer{font-size:13px;color:var(--muted);text-align:center;padding:6px}
 
-  /* Off-canvas behavior for mobile */
   .mobile-aside{
     position:fixed;
     inset:0 auto 0 0;
@@ -69,10 +69,9 @@
   .aside-backdrop{position:fixed;inset:0;background:rgba(3,12,30,0.36);z-index:1100;opacity:0;pointer-events:none;transition:opacity .18s}
   .aside-backdrop.show{opacity:1;pointer-events:auto}
 
-  /* responsive adjustments (mobile-first) */
   @media (max-width:900px){
     .main{gap:10px}
-    aside.left{display:none}                 /* hide desktop aside */
+    aside.left{display:none}
     .main.mobile .center{flex:1}
     header h1{font-size:15px}
   }
@@ -84,14 +83,15 @@
     .btn-primary{padding:8px 10px;font-size:14px}
     .pop-item{padding:14px;font-size:16px}
     .input-row{position:fixed;left:0;right:0;bottom:0;padding:12px;background:linear-gradient(180deg, #ffffff, #fbfdff);box-shadow:0 -6px 20px rgba(11,61,145,0.06);z-index:1000}
-    main.center{padding-bottom:88px} /* espaço para input fixo */
+    main.center{padding-bottom:88px}
     #chat{padding-bottom:120px}
     footer{display:none}
-    /* safe area */
     .input-row{padding-bottom:calc(12px + env(safe-area-inset-bottom));}
   }
 
-  /* subtle UX: select focus */
+  .pop-search{width:100%;padding:8px;border-radius:10px;border:1px solid #e6eef8;margin-bottom:8px;font-size:14px}
+  .pop-search-mobile{width:100%;padding:10px;border-radius:10px;border:1px solid #e6eef8;margin:12px 12px 0 12px;font-size:15px}
+  .pop-count{font-size:13px;color:var(--muted);margin-bottom:8px}
   .pop-item:focus{outline:2px solid rgba(11,61,145,0.12);outline-offset:2px}
 </style>
 </head>
@@ -118,6 +118,8 @@
       <!-- desktop aside -->
       <aside class="left" aria-label="Lista de POPs (desktop)">
         <h3>POPs disponíveis</h3>
+        <input id="popSearch" class="pop-search" type="search" placeholder="Buscar POPs..." aria-label="Buscar POPs" />
+        <div id="popCount" class="pop-count"></div>
         <div id="popList" class="pop-list" tabindex="0"></div>
         <div style="margin-top:8px">
           <button class="small-btn" onclick="resetSelection()">Trocar POP</button>
@@ -147,6 +149,7 @@
         <h3 style="margin:0">POPs disponíveis</h3>
         <button class="btn-icon" id="closeListBtn" aria-label="Fechar lista">✕</button>
       </div>
+      <input id="popSearchMobile" class="pop-search-mobile" type="search" placeholder="Buscar POPs..." aria-label="Buscar POPs (mobile)" />
       <div id="popListMobile" class="pop-list" style="padding:12px;"></div>
       <div style="padding:12px">
         <button class="small-btn" onclick="resetSelection()">Trocar POP</button>
@@ -157,14 +160,14 @@
   <div class="aside-backdrop" id="asideBackdrop" tabindex="-1" aria-hidden="true"></div>
 
 <script>
-/* CONFIG: troque pela URL raw do seu pops_embeddings.json OU deixe 'pops_embeddings.json' local
-   Exemplo raw GitHub correto:
-   https://raw.githubusercontent.com/usuario/repositorio/branch/caminho/pops_embeddings.json
-*/
+/* CONFIG: troque pela URL raw do seu pops_embeddings.json OU deixe 'pops_embeddings.json' local */
 const popFile = "https://raw.githubusercontent.com/Rcs1992/chatfisio/refs/heads/main/pops_embeddings.json"; // padrão local. substitua se usar raw URL
 
-let pops = [];          // array de POP objects
+let pops = [];              // array de POP objects
 let popSelecionado = null;
+let searchable = [];        // array usado pelo Fuse
+let fuse = null;            // Fuse instance
+let popFilter = "";         // filtro para lista de POPs
 
 // ---------- utils ----------
 function normalizeText(s){
@@ -193,7 +196,6 @@ function addMessage(text, who='bot', meta=null){
   const d = document.createElement('div');
   d.className = 'msg ' + (who==='user'?'user':'bot');
 
-  // preservar quebras de linha mas evitar HTML arbitrário
   const safe = escapeHtml(text).replace(/\n/g, "<br>");
   d.innerHTML = safe;
   chat.appendChild(d);
@@ -205,14 +207,11 @@ function addMessage(text, who='bot', meta=null){
     chat.appendChild(m);
   }
 
-  // rolar para o final
   chat.scrollTop = chat.scrollHeight;
-  // foco na input
   const input = document.getElementById('input');
   if(input) input.focus();
 }
 
-// função para limpar todo o conteúdo exibido no chat
 function clearChat(){
   const chat = document.getElementById('chat');
   chat.innerHTML = '';
@@ -221,22 +220,88 @@ function clearChat(){
 }
 // ---------- end utils ----------
 
-// Carrega JSON
+// debounce util
+function debounce(fn, wait = 200){
+  let t;
+  return function(...args){
+    clearTimeout(t);
+    t = setTimeout(()=> fn.apply(this, args), wait);
+  };
+}
+
+// destaque simples por palavra (usado na renderização de títulos)
+function highlightTitle(title, query){
+  if(!query) return escapeHtml(title);
+  const qNorm = normalizeText(query);
+  const parts = title.split(/\s+/);
+  const out = parts.map(w => {
+    const wNorm = normalizeText(w);
+    if(wNorm.includes(qNorm)){
+      return `<mark style="background:rgba(11,61,145,0.12);padding:2px 4px;border-radius:6px">${escapeHtml(w)}</mark>`;
+    } else {
+      return escapeHtml(w);
+    }
+  });
+  return out.join(' ');
+}
+
+// ---------- construir índice Fuse ----------
+function buildSearchableIndex(){
+  searchable = [];
+  pops.forEach((p, pi) => {
+    (p.chunks || []).forEach((ch, ci) => {
+      searchable.push({
+        popIndex: pi,
+        chunkIndex: ci,
+        titulo: p.titulo || p.title || "",
+        texto: ch.texto || ch.text || "",
+        keywords: (ch.keywords || []).join(" ")
+      });
+    });
+  });
+
+  const fuseOptions = {
+    keys: [
+      { name: 'texto', weight: 0.7 },
+      { name: 'titulo', weight: 0.2 },
+      { name: 'keywords', weight: 0.1 }
+    ],
+    includeScore: true,
+    threshold: 0.36,      // ajustar: menor = mais estrito
+    ignoreLocation: true,
+    minMatchCharLength: 2,
+    useExtendedSearch: false
+  };
+
+  // criar a instância Fuse (leve)
+  try{
+    fuse = new Fuse(searchable, fuseOptions);
+  }catch(err){
+    console.error("Erro criando Fuse:", err);
+    fuse = null;
+  }
+}
+
+// ---------- carregar POPs ----------
 async function carregarPOPs(){
   try{
     addMessage("Carregando POPs...", "bot");
-    const r = await fetch(popFile);
+    // fetch com timeout / abort
+    const controller = new AbortController();
+    const id = setTimeout(()=> controller.abort(), 10000);
+    const r = await fetch(popFile, { signal: controller.signal });
+    clearTimeout(id);
+
     if(!r.ok) throw new Error("Erro carregando JSON: " + r.status);
     const data = await r.json();
     if(!Array.isArray(data)) throw new Error("JSON inválido: deve ser um array de POPs");
     pops = data;
-    // normalize keywords & prepare small token caches to acelerar buscas
+
+    // normalizar e preparar caches
     for(const p of pops){
-      // garante campo título consistente
       p.titulo = p.titulo || p.title || "Sem título";
       p._normTitulo = normalizeText(p.titulo);
       for(const ch of (p.chunks || [])){
-        // garante campo texto consistente
         ch.texto = ch.texto || ch.text || "";
         ch._normText = normalizeText(ch.texto);
         const toks = tokenize(ch._normText);
@@ -245,7 +310,10 @@ async function carregarPOPs(){
         ch._normKeywords = (ch.keywords||[]).map(k => normalizeText(k));
       }
     }
-    // show list
+
+    // construir índice Fuse
+    buildSearchableIndex();
+
     renderPopList();
     addMessage("POPs carregados. Selecione um POP à esquerda (clique ou digite o número).", "bot");
   }catch(err){
@@ -254,14 +322,24 @@ async function carregarPOPs(){
   }
 }
 
-// render list (both desktop and mobile)
+// render list (desktop + mobile)
 function renderPopList(){
   const list = document.getElementById('popList');
   const listMobile = document.getElementById('popListMobile');
+  const countEl = document.getElementById('popCount');
   if(list) list.innerHTML = '';
   if(listMobile) listMobile.innerHTML = '';
+
+  const qNorm = normalizeText(popFilter);
+  let shown = 0;
   pops.forEach((p,i)=>{
-    const html = `<strong>${i+1}. ${escapeHtml(p.titulo)}</strong>`;
+    const titleNorm = p._normTitulo || normalizeText(p.titulo || p.title || "");
+    if(qNorm && !titleNorm.includes(qNorm)){
+      return;
+    }
+    shown++;
+
+    const html = `<strong>${i+1}. ${highlightTitle(p.titulo, popFilter)}</strong>`;
     const btn = document.createElement('div');
     btn.className = 'pop-item' + ((popSelecionado && popSelecionado === p) ? ' active' : '');
     btn.tabIndex = 0;
@@ -270,11 +348,13 @@ function renderPopList(){
     btn.onkeypress = (e)=>{ if(e.key==='Enter') selectPopByIndex(i); };
     if(list) list.appendChild(btn);
 
-    // mobile copy
     const btnM = btn.cloneNode(true);
     btnM.onclick = ()=> { selectPopByIndex(i); closeMobileAside(); };
+    btnM.onkeypress = (e)=>{ if(e.key==='Enter'){ selectPopByIndex(i); closeMobileAside(); } };
     if(listMobile) listMobile.appendChild(btnM);
   });
+
+  if(countEl) countEl.textContent = `${shown} de ${pops.length} POPs`;
 }
 
 // select pop
@@ -298,8 +378,8 @@ function showAll(){
   addMessage(`POPs disponíveis (${pops.length}):\n\n` + names, "bot");
 }
 
-// search algorithm: simple ranking
-function searchInSelectedPOP(query){
+// old token-overlap search (fallback)
+function searchInSelectedPOP_old(query){
   if(!popSelecionado) return {score:0, chunk:null};
 
   const qNorm = normalizeText(query);
@@ -307,38 +387,54 @@ function searchInSelectedPOP(query){
   if(qTokens.length===0) return {score:0};
 
   let best = {score:0, chunk:null};
-
   for(const ch of popSelecionado.chunks || []){
-    // score by: keyword exact match (weight 3), token overlap (weight 1), substring (weight 0.8)
     let score = 0;
-    // keywords
     for(const kw of ch._normKeywords || []){
-      if(!kw) continue;
       if(qNorm.includes(kw) || kw.includes(qNorm) || qTokens.includes(kw)) score += 3;
     }
-    // token overlap using Set (mais rápido)
     let overlap = 0;
     for(const t of qTokens){
-      if(ch._tokenSet && ch._tokenSet.has(t)) {
-        overlap++;
-      } else {
-        // partial match: if token is substring of any chunk token
+      if(ch._tokens.includes(t)) overlap++;
+      else {
         for(const ct of ch._tokens){
           if(ct.includes(t) || t.includes(ct)){ overlap += 0.6; break; }
         }
       }
     }
     score += overlap;
-    // substring match whole phrase
     if(ch._normText.includes(qNorm)) score += 1.2;
-    // small bonus if title matches query
     if(popSelecionado._normTitulo && popSelecionado._normTitulo.includes(qNorm)) score += 0.8;
-
     if(score > best.score){
       best = {score, chunk:ch};
     }
   }
   return best;
+}
+
+// fuzzy search via Fuse.js (retorna topK resultados apenas para o popIndex selecionado)
+function searchFuzzy(query, popIndex, topK = 3){
+  if(!fuse || !query) return [];
+  // pedir um conjunto maior e filtrar por popIndex
+  const candidateLimit = 50;
+  try{
+    const results = fuse.search(query, { limit: candidateLimit });
+    const filtered = results
+      .map(r => ({ item: r.item, score: r.score })) // score: 0 melhor
+      .filter(r => r.item.popIndex === popIndex)
+      .slice(0, topK)
+      .map(r => ({
+        popIndex: r.item.popIndex,
+        chunkIndex: r.item.chunkIndex,
+        texto: r.item.texto,
+        titulo: r.item.titulo,
+        // converter score (0..1) -> relevância (1..0) para exibição
+        relevance: 1 - (r.score || 0)
+      }));
+    return filtered;
+  }catch(err){
+    console.error("Erro na busca Fuse:", err);
+    return [];
+  }
 }
 
 // handle send
@@ -381,21 +477,25 @@ async function onSend(){
     return;
   }
 
-  // if a pop is selected -> search inside it
+  // if a pop is selected -> fuzzy search inside it
   addMessage("Assistente: ... pesquisando ...", "bot");
-  // small async pause to show UX
-  await new Promise(r => setTimeout(r, 200));
+  await new Promise(r => setTimeout(r, 180)); // pequeno delay UX
 
-  const result = searchInSelectedPOP(text);
+  const popIndex = pops.indexOf(popSelecionado);
+  let fuzzyResults = [];
+  try{
+    fuzzyResults = searchFuzzy(text, popIndex, 3);
+  }catch(e){
+    console.error(e);
+    fuzzyResults = [];
+  }
 
-  // remove the '... pesquisando ...' message (procura da última para frente)
+  // remove the '... pesquisando ...' message
   const chat = document.getElementById('chat');
   for(let i=chat.children.length-1;i>=0;i--){
     const el = chat.children[i];
     if(el.classList && el.classList.contains('msg') && el.classList.contains('bot') && el.textContent && el.textContent.includes('... pesquisando ...')){
-      // remove this msg
       chat.removeChild(el);
-      // se o próximo elemento for um meta gerado em seguida, remova também (opcional)
       if(chat.children[i] && chat.children[i].classList && chat.children[i].classList.contains('meta')){
         chat.removeChild(chat.children[i]);
       }
@@ -403,9 +503,21 @@ async function onSend(){
     }
   }
 
-  if(result && result.chunk && result.score > 0){
-    const trecho = result.chunk.texto || result.chunk.text || "";
-    const display = `📌 Trecho encontrado (score ${result.score.toFixed(2)}):\n\n${trecho}\n\nFonte: ${popSelecionado.titulo}`;
+  if(fuzzyResults && fuzzyResults.length > 0){
+    // montar mensagem com top resultados
+    let display = `🔎 Resultados fuzzy (${fuzzyResults.length}):\n\n`;
+    fuzzyResults.forEach((res, idx) => {
+      display += `📌 (${idx+1}) score ${(res.relevance).toFixed(2)}\n${res.texto}\n\n`;
+    });
+    display += `Fonte: ${popSelecionado.titulo}`;
+    addMessage(display, "bot");
+    return;
+  }
+
+  // fallback para busca antiga
+  const resultOld = searchInSelectedPOP_old(text);
+  if(resultOld && resultOld.chunk && resultOld.score > 0){
+    const display = `📌 (fallback) Trecho encontrado (score ${resultOld.score.toFixed(2)}):\n\n${resultOld.chunk.texto}\n\nFonte: ${popSelecionado.titulo}`;
     addMessage(display, "bot");
   } else {
     addMessage("❌ Não há informação sobre isso neste POP. Tente reformular a pergunta ou verifique outro POP.", "bot");
@@ -431,9 +543,10 @@ function openMobileAside(){
   asideBackdrop.classList.add('show');
   mobileAside.setAttribute('aria-hidden','false');
   asideBackdrop.setAttribute('aria-hidden','false');
-  // move focus to first item for accessibility
   const first = mobileAside.querySelector('.pop-item');
   if(first) first.focus();
+  const ms = document.getElementById('popSearchMobile');
+  if(ms) ms.focus();
 }
 function closeMobileAside(){
   mobileAside.classList.remove('open');
@@ -446,6 +559,22 @@ if(openListBtn) openListBtn.addEventListener('click', openMobileAside);
 if(closeListBtn) closeListBtn.addEventListener('click', closeMobileAside);
 if(asideBackdrop) asideBackdrop.addEventListener('click', closeMobileAside);
 document.addEventListener('keydown', (e) => { if(e.key === 'Escape'){ closeMobileAside(); } });
+
+// listeners para filtro de POPs (debounced)
+const desktopSearch = document.getElementById('popSearch');
+const mobileSearch = document.getElementById('popSearchMobile');
+if(desktopSearch){
+  desktopSearch.addEventListener('input', debounce(function(e){
+    popFilter = e.target.value || "";
+    renderPopList();
+  }, 180));
+}
+if(mobileSearch){
+  mobileSearch.addEventListener('input', debounce(function(e){
+    popFilter = e.target.value || "";
+    renderPopList();
+  }, 180));
+}
 
 /* init */
 carregarPOPs();
