@@ -39,6 +39,10 @@
         "keywords": ["segurança", "cardiovascular", "respiratório", "neurológico"]
       },
       {
+        "texto": "INTERRUPÇÃO: Os critérios de interrupção da mobilização precoce incluem a presença de sinais clínicos de instabilidade, como queda da pressão arterial sistólica abaixo de 90 mmHg ou aumento acima de 180 mmHg, frequência cardíaca menor que 40 bpm ou maior que 130 bpm, dessaturação de oxigênio com SpO₂ < 88%, aumento da frequência respiratória acima de 35 irpm, aparecimento de arritmias graves, dor intensa ou desconforto limitante, além de alteração aguda do nível de consciência (síncope, confusão súbita). Nessas condições, a mobilização deve ser interrompida imediatamente e o paciente reavaliado pela equipe multiprofissional.",
+        "keywords": ["interromper", "interrupção", "parar", "quando parar"]
+      },
+      {
         "texto": "MODELO DE INTERVENÇÃO: Uso da IMS para definir nível funcional; periodicidade, intensidade e continuidade ajustadas; acompanhamento multiprofissional; metas terapêuticas bem definidas; intervenção segura respeitando contraindicações e limitações.",
         "keywords": ["intervenção", "limitações"]
       },
@@ -273,6 +277,7 @@
     ]
   }
 ]
+
 
 
 
