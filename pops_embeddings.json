@@ -187,15 +187,15 @@
       },
       {
         "texto": "ABRANGÊNCIA: Bloco crítico (b5-RH CTI Geral, b7-RH unidade neurointensiva, b9-RH unidade cardiointensiva) e emergência do CER Leblon.",
-        "keywords": ["abrangência", "cti", "cer leblon", "bloco crítico", "emergência"]
+        "keywords": ["abrangência"]
       },
       {
         "texto": "REFERÊNCIAS: Andrade FM; Dias CM (PROFISIO Terapia Intensiva Adulto); ASSOBRAFIR Ciclo 4; Carvalho CRR et al. III Consenso Brasileiro de Ventilação Mecânica; Knobel E. et al.; Machado MGR; Diretriz de suporte ventilatório AMIB.",
-        "keywords": ["referências", "profissionais", "bibliografia", "consenso", "diretriz"]
+        "keywords": ["referências"]
       },
       {
         "texto": "DEFINIÇÕES: VNI — ventilação não invasiva aplicada por interface (máscara) sem entubação. HACOR score — índice preditivo de falha da VNI (Heart rate, Acidosis, Consciousness, Oxygenation, Respiratory rate). Desmame, suporte ventilatório, intolerância e falha definidos conforme protocolos institucionais.",
-        "keywords": ["definições", "vni", "hacor", "falha", "intolerância"]
+        "keywords": ["definições"]
       },
       {
         "texto": "SIGLAS: VNI, EPI, PSV, PEEP, cmH2O, PaO2, FiO2, pO2/FiO2, HACOR, FR, Ipm, SpO2, pH, IRpA, PCR, CTI, CER, b5, b7, b9, c3, d3.",
@@ -231,7 +231,7 @@
       },
       {
         "texto": "EXECUÇÃO DA TÉCNICA (monitorização e titulação): iniciar com níveis pressóricos baixos, ajustar até atingir objetivo de VC > 6 ml/kg predito quando possível; FiO2 para manter SpO2 ≥ 92%; ajustar sensibilidade e percentual de ciclagem; observar tolerância; reavaliar após 30 e 60 minutos; se HACOR > 5 ou piora clínica/oxigenação → avaliar interrupção e intubação orotraqueal.",
-        "keywords": ["execução"]
+        "keywords": ["execução", "interrupção", "interromper"]
       },
       {
         "texto": "DIRETRIZES ATS/ERS: Segundo as diretrizes da ATS/ERS, a ventilação não invasiva (VNI), especialmente o modo bilevel (BiPAP), pode ser considerada em pacientes com PaCO₂ normal ou elevado, mas com pH normal, com o objetivo de prevenir o desenvolvimento de acidose respiratória aguda. Essa recomendação é condicional e baseada em evidência de baixa certeza. As diretrizes afirmam que a VNI pode ser usada para evitar acidose respiratória aguda mesmo quando o pH está dentro da faixa normal, mas a PaCO₂ está elevada. Entretanto, sugerem que a VNI **não** seja usada rotineiramente em pacientes hipercápnicos que **não** estão acidóticos (pH > 7,35) no contexto de exacerbação de DPOC — recomendação condicional por evidência de baixa certeza. Por outro lado, a VNI é fortemente recomendada em pacientes com insuficiência respiratória aguda acompanhada de acidose respiratória (pH ≤ 7,35) ou aguda sobre crônica. Em indicações específicas: para DPOC a VNI é a primeira escolha quando indicada; para edema agudo de pulmão (EAP) a VNI (CPAP ou BiPAP) é claramente benéfica; para SARA/SDRA a VNI pode ser considerada apenas em casos leves, sendo a ventilação invasiva com estratégia protetora a opção na maioria dos casos. Em todos os cenários, a VNI deve ser monitorizada continuamente — se, em até 2 horas, não houver melhora clínica/respiratória **e** não ocorrer melhora pelo HACOR score, a VNI deve ser interrompida e deve-se discutir intubação orotraqueal ou outra estratégia ventilatória. O paciente permanece em VNI enquanto houver benefício clínico e tolerância; na presença de sinais de falha considerar intubação.",
@@ -325,6 +325,7 @@
     ]
   }
 ]
+
 
 
 
