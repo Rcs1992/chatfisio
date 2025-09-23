@@ -32,7 +32,7 @@
       },
       {
         "texto": "DESCRIÇÃO DA TÉCNICA: Higienizar mãos, usar EPI, discutir contraindicações com médico; avaliar SpO2>92%, PaO2/FiO2>200; observar comandos verbais e nível de cooperação; testar grupos musculares; graduar força; avaliar funcionalidade via IMS; definir nível do protocolo IMS 0-10; explicar procedimentos ao paciente; avaliar analgesia; avaliar critérios de segurança antes e após mobilização; reavaliar diariamente.",
-        "keywords": ["técnica"]
+        "keywords": ["técnica", "como fazer"]
       },
       {
         "texto": "CRITÉRIOS DE SEGURANÇA: Cardiovascular (FC 40-130 bpm, PA sistólica 90-180 mmHg, PA diastólica 60-110 mmHg); Respiratório (FR 5-40 irpm, SpO2>88%, PEEP<10 cmH2O, FiO2<60% se em VM); Neurológico (paciente cooperativo, entende comandos). Eventos adversos raros e não graves; mortalidade não aumenta.",
@@ -325,5 +325,6 @@
     ]
   }
 ]
+
 
 
