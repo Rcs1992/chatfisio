@@ -275,6 +275,51 @@
         "keywords": ["controle"]
       }
     ]
+  },
+   {
+    "titulo": "POP_Pronacao",
+    "chunks": [
+      {
+        "texto": "INTRODUÇÃO: A adoção da posição prona no combate à hipoxemia refratária vem ganhando espaço, especialmente em pacientes portadores de síndrome do desconforto respiratório agudo (SDRA). A melhora da oxigenação pode ser atribuída a diversos mecanismos que ocorrem isolados ou associados, como a diminuição dos fatores que contribuem para o colabamento alveolar, a redistribuição da ventilação alveolar e da perfusão. Em supino, as regiões dorsais sofrem colapso devido ao peso pulmonar aumentado pelo edema; em prona, essas regiões tornam-se mais complacentes, favorecendo trocas gasosas.",
+        "keywords": ["introdução", "posição prona", "oxigenação"]
+      },
+      {
+        "texto": "OBJETIVO: Este POP tem como objetivo auxiliar os profissionais de fisioterapia na padronização da realização da pronação e supinação em pacientes com SDRA no Centro de Terapia Intensiva Adulto do CER Leblon, estabelecendo diretrizes para o manejo seguro de pacientes em ventilação mecânica.",
+        "keywords": ["objetivo"]
+      },
+      {
+        "texto": "SARA: A Síndrome do Desconforto Respiratório Agudo (SDRA) é uma condição clínica grave caracterizada por insuficiência respiratória hipoxêmica aguda, resultante de uma resposta inflamatória difusa nos pulmões. Essa resposta leva a aumento da permeabilidade capilar, edema alveolar não cardiogênico e redução da complacência pulmonar, culminando em comprometimento da troca gasosa. Costuma estar associada a condições como sepse, pneumonia, trauma, pancreatite ou aspiração, sendo frequente em pacientes críticos e com elevada mortalidade. O diagnóstico da SDRA é estabelecido com base nos critérios de Berlim (2012). Eles incluem: (1) início agudo dos sintomas, dentro de 1 semana após insulto clínico ou piora respiratória recente; (2) presença de opacidades bilaterais em radiografia ou tomografia, não explicadas apenas por derrame pleural, atelectasia ou nódulos; (3) insuficiência respiratória que não pode ser atribuída totalmente à insuficiência cardíaca ou sobrecarga volêmica; e (4) alteração na relação PaO₂/FiO₂, com PEEP ≥ 5 cmH₂O, classificada em leve (200–300 mmHg), moderada (100–200 mmHg) e grave (< 100 mmHg). Esses critérios permitem padronizar o diagnóstico e estratificar a gravidade, sendo fundamentais para guiar intervenções terapêuticas e para a avaliação prognóstica. O manejo geralmente envolve suporte ventilatório protetor, otimização hemodinâmica e tratamento da causa de base.",
+        "keywords": ["SARA", "SDRA", "O que é SARA", "critério"]
+      },
+      {
+        "texto": "RESPONSABILIDADES: Avaliar e discutir a indicação de pronação (Fisioterapeuta, Médico, Enfermeiro); Separação das equipes por função (Fisioterapeuta, Médico, Enfermeiro); Preparação de materiais (Fisioterapeuta, Médico, Enfermeiro, Técnico de enfermagem); Execução da técnica (Equipe multiprofissional); Monitoramento e vigilância contínua (Equipe multiprofissional).",
+        "keywords": ["responsabilidades"]
+      },
+      {
+        "texto": "DESCRIÇÃO DA TÉCNICA: A equipe necessária inclui no mínimo 5 profissionais, sendo 6 em casos com dreno de tórax. São utilizados EPI, coxins, materiais de proteção ocular e cutânea, sondas, seringas e monitorização. A preparação envolve interrupção da dieta, revisão da sedoanalgesia, eventual bloqueio neuromuscular, posicionamento de dispositivos e checagem da fixação do TOT e drenos. A técnica ocorre em três fases: deslocamento contralateral ao ventilador, lateralização e rotação para prona sobre coxins. Durante a execução, monitoram-se sinais vitais, posicionamento dos coxins, proteção ocular e mudanças de posição de nadador a cada 4h.",
+        "keywords": ["descrição da técnica", "execução", "como fazer", "pronação"]
+      },
+      {
+        "texto": "MONITORAMENTO: Após a pronação, deve-se avaliar mecânica ventilatória, SpO2, gasometria na primeira hora, sinais vitais e posicionamento dos dispositivos, reiniciando infusões e dieta de acordo com protocolo. Após uma hora, deve-se realizar uma gasometria a fim de observar se houve resposta positiva, ou seja aumento de 20 mmHg da P/F ou 10 mmHg da PaO2. Se o paciente responder, deve-se manter o paciente em prona por 16-20 horas. Se ele não responder, deve-se retornar para a posição supina. Após o término do tempo estipulado, deve-se supinar o paciente e aguardar 4 horas para avaliar uma nova gasometria. Caso a gasometria seja maio que 150 mmHg, deve-se manter o paciente em supino e avaliar diariamente. Caso a P/F esteja abaixo de 150 mmHg, deve repronar o paciente.",
+        "keywords": ["monitoramento", "o que observar", "critérios", "monitorização"]
+      },
+      {
+        "texto": "INTERRUPÇÃO DA POSIÇÃO PRONA: A manobra deve ser suspensa em casos de extubação acidental, parada cardiorrespiratória, obstrução de tubo, bradicardia grave (<30 bpm por mais de 60s), hipotensão sistólica <60 mmHg prolongada, queda >10% da saturação basal ou saturação <85% por mais de 10 min em FiO2 1.0, e alteração importante da complacência pulmonar.",
+        "keywords": ["interrupção", "falha", "parar"]
+      },
+      {
+        "texto": "POSSÍVEIS COMPLICAÇÕES: Compressão de nervos periféricos, estase venosa, danos oculares e edema facial, remoção acidental de dispositivos, úlceras por pressão, limitação da mobilidade diafragmática, instabilidade hemodinâmica, arritmias, obstrução de cateteres e desposicionamento do TOT.",
+        "keywords": ["complicações", "riscos"]
+      },
+      {
+        "texto": "MANOBRA DE SUPINAÇÃO: Deve ser realizada em três tempos sob comando do profissional na cabeceira. Inclui monitorização de sinais vitais, checagem do TOT e dispositivos, posicionamento adequado, reinício das terapias pausadas e avaliação gasométrica após 1 hora. A cabeceira deve ser elevada a pelo menos 30°, reavaliando a necessidade de nova prona após 6 horas.",
+        "keywords": ["supinação", "como fazer a supinação"]
+      },
+      {
+        "texto": "CONTROLE DE REGISTRO: O registro deve ser feito no prontuário eletrônico disponível em: https://drive.google.com/drive/folders/1MdPv4ZRMnfjxhyxgw2JnM1mHXiMHxtM_?usp=share_link",
+        "keywords": ["controle de registro", "prontuário eletrônico"]
+      }
+    ]
   }
 ]
 
