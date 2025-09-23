@@ -215,7 +215,7 @@
       },
       {
         "texto": "DIRETRIZES ATS/ERS: Segundo as diretrizes da ATS/ERS, a ventilação não invasiva (VNI), especialmente o modo bilevel (BiPAP), pode ser considerada em pacientes com PaCO₂ normal ou elevado, mas com pH normal, com o objetivo de prevenir o desenvolvimento de acidose respiratória aguda. Essa recomendação é condicional e baseada em evidência de baixa certeza. As diretrizes afirmam que a VNI pode ser usada para evitar acidose respiratória aguda mesmo quando o pH está dentro da faixa normal, mas a PaCO₂ está elevada. Entretanto, sugerem que a VNI **não** seja usada rotineiramente em pacientes hipercápnicos que **não** estão acidóticos (pH > 7,35) no contexto de exacerbação de DPOC — recomendação condicional por evidência de baixa certeza. Por outro lado, a VNI é fortemente recomendada em pacientes com insuficiência respiratória aguda acompanhada de acidose respiratória (pH ≤ 7,35) ou aguda sobre crônica. Em indicações específicas: para DPOC a VNI é a primeira escolha quando indicada; para edema agudo de pulmão (EAP) a VNI (CPAP ou BiPAP) é claramente benéfica; para SARA/SDRA a VNI pode ser considerada apenas em casos leves, sendo a ventilação invasiva com estratégia protetora a opção na maioria dos casos. Em todos os cenários, a VNI deve ser monitorizada continuamente — se, em até 2 horas, não houver melhora clínica/respiratória **e** não ocorrer melhora pelo HACOR score, a VNI deve ser interrompida e deve-se discutir intubação orotraqueal ou outra estratégia ventilatória. O paciente permanece em VNI enquanto houver benefício clínico e tolerância; na presença de sinais de falha considerar intubação.",
-        "keywords": ["ats", "ers", "diretriz", "recomendação"]
+        "keywords": ["ats", "ers", "diretriz", "recomendação", "recomendações"]
       },
       {
         "texto": "FORMULÁRIOS E/OU DOCUMENTOS RELACIONADOS: Ficha de início de VNI; planilha de monitorização horário; índice preditivo HACOR (anexo); links e drives institucionais.",
@@ -273,6 +273,7 @@
     ]
   }
 ]
+
 
 
 
