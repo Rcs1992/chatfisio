@@ -232,7 +232,7 @@
     "chunks": [
       {
         "texto": "INTRODUÇÃO: A reabilitação cardíaca é um conjunto de intervenções multidisciplinares destinadas a otimizar a recuperação funcional, reduzir complicações e promover qualidade de vida após eventos cardiovasculares. A Fase I, realizada ainda durante a internação hospitalar, tem como foco a mobilização precoce, o condicionamento físico inicial e a educação em saúde, respeitando critérios clínicos de segurança. O fisioterapeuta conduz exercícios leves, progressivos e supervisionados, associados ao monitoramento rigoroso de parâmetros hemodinâmicos. Padronização das condutas via POP garante uniformidade, segurança e qualidade assistencial, além de favorecer o treinamento de novos profissionais.",
-        "keywords": ["introdução"]
+        "keywords": ["O que é", "introdução"]
       },
       {
         "texto": "OBJETIVO: Padronizar a abordagem de reabilitação cardíaca Fase I em pacientes hospitalizados após eventos cardiovasculares agudos ou cirurgias cardíacas, assegurando segurança, eficácia e adesão às melhores práticas baseadas em evidências. Reduz morbimortalidade, tempo de internação, limitações funcionais e melhora a qualidade de vida. Recomendado pelas diretrizes ESC para todos os pacientes pós-evento coronariano agudo, revascularizados ou tratados clinicamente.",
@@ -273,6 +273,7 @@
     ]
   }
 ]
+
 
 
 
