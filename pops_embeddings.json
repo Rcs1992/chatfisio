@@ -301,7 +301,7 @@
       },
       {
         "texto": "MONITORAMENTO: Após a pronação, deve-se avaliar mecânica ventilatória, SpO2, gasometria na primeira hora, sinais vitais e posicionamento dos dispositivos, reiniciando infusões e dieta de acordo com protocolo. Após uma hora, deve-se realizar uma gasometria a fim de observar se houve resposta positiva, ou seja aumento de 20 mmHg da P/F ou 10 mmHg da PaO2. Se o paciente responder, deve-se manter o paciente em prona por 16-20 horas. Se ele não responder, deve-se retornar para a posição supina. Após o término do tempo estipulado, deve-se supinar o paciente e aguardar 4 horas para avaliar uma nova gasometria. Caso a gasometria seja maior que 150 mmHg, deve-se manter o paciente em supino e avaliar diariamente. Caso a P/F esteja abaixo de 150 mmHg, deve repronar o paciente.",
-        "keywords": ["monitoramento", "o que observar", "critérios", "monitorização", "monitorar", "o que avaliar", "avaliação"]
+        "keywords": ["monitoramento", "o que observar", "critérios", "monitorização", "monitorar", "o que avaliar", "avaliação", "O que monitorar"]
       },
       {
         "texto": "INTERRUPÇÃO DA POSIÇÃO PRONA: A manobra deve ser suspensa em casos de extubação acidental, parada cardiorrespiratória, obstrução de tubo, bradicardia grave (<30 bpm por mais de 60s), hipotensão sistólica <60 mmHg prolongada, queda >10% da saturação basal ou saturação <85% por mais de 10 min em FiO2 1.0, e alteração importante da complacência pulmonar.",
@@ -322,6 +322,7 @@
     ]
   }
 ]
+
 
 
 
