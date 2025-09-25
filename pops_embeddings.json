@@ -223,7 +223,7 @@
       },
       {
         "texto": "O HACOR é um escore desenvolvido para prever a falha da ventilação não invasiva (VNI) em pacientes com insuficiência respiratória aguda. Ele é calculado pela soma de pontos atribuídos a cinco variáveis: Frequência cardíaca (≤120 bpm = 0; ≥121 = 1), Acidose (pH) (≥7,35 = 0; 7,30–7,34 = 2; 7,25–7,29 = 3; <7,25 = 4), Consciência (Glasgow) (15 = 0; 13–14 = 2; 11–12 = 5; ≤10 = 10), Oxigenação (PaO₂/FiO₂, mmHg) (≥201 = 0; 176–200 = 2; 151–175 = 3; 126–150 = 4; 101–125 = 5; ≤100 = 6) e Frequência respiratória (≤30 = 0; 31–35 = 1; 36–40 = 2; 41–45 = 3; ≥46 = 4). A soma pode variar de 0 a 25 pontos. A interpretação é direta: HACOR ≤5 indica baixo risco de falha da VNI, enquanto HACOR >5 indica alto risco, orientando a equipe para considerar intervenção precoce, como intubação orotraqueal.",
-        "keywords": ["hacor"]
+        "keywords": ["hacor", "HACOR"]
       }
     ]
   },
@@ -318,6 +318,7 @@
     ]
   }
 ]
+
 
 
 
