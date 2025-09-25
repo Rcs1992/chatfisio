@@ -215,7 +215,7 @@
       },
       {
         "texto": "EXECUÇÃO DA TÉCNICA (monitorização e titulação): iniciar com níveis pressóricos baixos, ajustar até atingir objetivo de VC > 6 ml/kg predito quando possível; FiO2 para manter SpO2 ≥ 92%; ajustar sensibilidade e percentual de ciclagem; observar tolerância; reavaliar após 30 e 60 minutos; se HACOR > 5 ou piora clínica/oxigenação → avaliar interrupção e intubação orotraqueal. A ventilação não invasiva deve ser interrompida diante de critérios objetivos que indicam falha ou risco ao paciente, como hipoxemia persistente (PaO₂ < 60 mmHg ou SpO₂ < 90% com FiO₂ > 0,6), acidose respiratória grave (pH < 7,25 com elevação progressiva da PaCO₂), taquipneia mantida acima de 35 incursões por minuto, instabilidade hemodinâmica (PAS < 90 mmHg ou PAM < 65 mmHg apesar de medidas de suporte, arritmias instáveis), rebaixamento do nível de consciência (Glasgow < 8 ou incapacidade de proteger vias aéreas) e intolerância clínica importante (agitação intensa, secreção abundante não manejável ou vômitos recorrentes). Nessas situações, a intubação orotraqueal e a ventilação mecânica invasiva devem ser consideradas imediatamente.",
-        "keywords": ["execução", "interrupção", "interromper"]
+        "keywords": ["execução", "interrupção", "interromper", "falha"]
       },
       {
         "texto": "DIRETRIZES ATS/ERS: Segundo as diretrizes da ATS/ERS, a ventilação não invasiva (VNI), especialmente o modo bilevel (BiPAP), pode ser considerada em pacientes com PaCO₂ normal ou elevado, mas com pH normal, com o objetivo de prevenir o desenvolvimento de acidose respiratória aguda. Essa recomendação é condicional e baseada em evidência de baixa certeza. As diretrizes afirmam que a VNI pode ser usada para evitar acidose respiratória aguda mesmo quando o pH está dentro da faixa normal, mas a PaCO₂ está elevada. Entretanto, sugerem que a VNI **não** seja usada rotineiramente em pacientes hipercápnicos que **não** estão acidóticos (pH > 7,35) no contexto de exacerbação de DPOC — recomendação condicional por evidência de baixa certeza. Por outro lado, a VNI é fortemente recomendada em pacientes com insuficiência respiratória aguda acompanhada de acidose respiratória (pH ≤ 7,35) ou aguda sobre crônica. Em indicações específicas: para DPOC a VNI é a primeira escolha quando indicada; para edema agudo de pulmão (EAP) a VNI (CPAP ou BiPAP) é claramente benéfica; para SARA/SDRA a VNI pode ser considerada apenas em casos leves, sendo a ventilação invasiva com estratégia protetora a opção na maioria dos casos. Em todos os cenários, a VNI deve ser monitorizada continuamente — se, em até 2 horas, não houver melhora clínica/respiratória **e** não ocorrer melhora pelo HACOR score, a VNI deve ser interrompida e deve-se discutir intubação orotraqueal ou outra estratégia ventilatória. O paciente permanece em VNI enquanto houver benefício clínico e tolerância; na presença de sinais de falha considerar intubação. A duração ideal da VNI não é claramente definida. No entanto, alguns dados apoiam a ideia de que, para pacientes selecionados, um tempo maior de tentativa de VNI pode ser apropriado e pode não estar associado ao risco de um tempo prolongado em ventilação mecânica e a desfechos ruins, caso a falha acabe ocorrendo. Dessa forma, é crucial observar possíveis sinais de falha.",
@@ -322,6 +322,7 @@
     ]
   }
 ]
+
 
 
 
