@@ -296,8 +296,8 @@
         "keywords": ["responsabilidades"]
       },
       {
-        "texto": "DESCRIÇÃO DA TÉCNICA: A equipe necessária inclui no mínimo 5 profissionais, sendo 6 em casos com dreno de tórax. São utilizados EPI, coxins, materiais de proteção ocular e cutânea. A preparação envolve interrupção da dieta, revisão da sedoanalgesia, eventual bloqueio neuromuscular, posicionamento de dispositivos e checagem da fixação do TOT e drenos. A técnica ocorre em três fases: deslocamento contralateral ao ventilador, lateralização e rotação para prona sobre coxins. Durante a execução, monitoram-se sinais vitais, posicionamento dos coxins, proteção ocular e mudanças de posição de nadador a cada 4h.",
-        "keywords": ["descrição da técnica", "execução", "como fazer", "pronação"]
+        "texto": "DESCRIÇÃO DA TÉCNICA: Após o preparo, realiza-se a manobra propriamente dita. O paciente deve ser alinhado no leito, cabos e extensores organizados do mesmo lado e um lençol posicionado sob seu corpo - a chamada técnica de envelopamento. A primeira rotação é feita até o decúbito lateral - esse deslocamento até o decúbito lateral deve ser feito para o lado contralateral ao ventilador, sempre de maneira coordenada pela equipe, mantendo o controle do tubo orotraqueal. Em seguida, completa-se a rotação para o decúbito ventral, posicionando o paciente em pronação. Uma vez prono, ajustes finos são necessários: a cabeça deve ser alternada lateralmente a cada duas horas, os braços posicionados de forma alternada (um em abdução, outro ao longo do corpo), e coxins devem ser colocados sob o tórax e a pelve para reduzir a compressão abdominal, além de sob joelhos e pés para prevenir lesões e contraturas. Durante todo o período, é fundamental monitorar parâmetros ventilatórios, hemodinâmicos e sinais de complicações, além de inspecionar áreas de risco para úlcera por pressão. O tempo de permanência recomendado em pronação é de 16 a 20 horas por ciclo, devendo-se retornar o paciente ao decúbito supino em caso de melhora sustentada da oxigenação (relação PaO₂/FiO₂ superior a 150–200 mmHg com FiO₂ ≤ 60% e PEEP ≤ 10 cmH₂O), ou se surgirem instabilidade hemodinâmica, arritmias graves, complicações mecânicas ou deslocamento de dispositivos. O retorno ao supino deve seguir os mesmos passos da pronação, em ordem inversa, também de forma coordenada pela equipe.",
+        "keywords": ["descrição da técnica", "execução", "como fazer", "pronação", "como é a pronação"]
       },
       {
         "texto": "MONITORAMENTO: Após a pronação, deve-se avaliar/monitorar a mecânica ventilatória, SpO2, gasometria na primeira hora, sinais vitais e posicionamento dos dispositivos, reiniciando infusões e dieta de acordo com protocolo. Após uma hora, deve-se realizar uma gasometria a fim de observar se houve resposta positiva, ou seja aumento de 20 mmHg da P/F ou 10 mmHg da PaO2. Se o paciente responder, deve-se manter o paciente em prona por 16-20 horas. Se ele não responder, deve-se retornar para a posição supina. Após o término do tempo estipulado, deve-se supinar o paciente e aguardar 4 horas para avaliar uma nova gasometria. Caso a gasometria seja maior que 150 mmHg, deve-se manter o paciente em supino e avaliar diariamente. Caso a P/F esteja abaixo de 150 mmHg, deve repronar o paciente.",
@@ -322,6 +322,7 @@
     ]
   }
 ]
+
 
 
 
