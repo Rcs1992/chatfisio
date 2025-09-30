@@ -342,11 +342,11 @@
     },
     {
       "texto": "DESCRIÇÃO DA TÉCNICA — PREPARAÇÃO: Utilizar EPI indicado. Pausar a dieta até 3 horas antes do procedimento. Separar todo o material necessário. Revisar prontuário, exames de imagem (RX, tomografia) e situação clínica. Confirmar resolução/controle da causa de IrpA e estabilidade clínica antes do TRE.",
-      "keywords": ["procedimento", "como fazer", "técnica"]
+      "keywords": ["procedimento", "como fazer", "tecnica"]
     },
     {
       "texto": "AVALIAÇÃO PRELIMINAR: Verificar nível de consciência (Glasgow > 8 ou RASS ≤ -3), PaO2/FiO2 > 250, PEEP ≤ 8 cmH2O, FiO2 ≤ 0,4 com PaO2 ≥ 60 mmHg, pH entre 7,30 e 7,50, ausência de arritmia ventilatória, HB > 7 g/dL, afebril e sem dor intensa. Avaliar capacidade de manejo de secreções e eficiência da tosse.",
-      "keywords": ["avaliacao", "elegibilidade", "critérios", "iniciar", "início"]
+      "keywords": ["avaliacao", "elegibilidade", "criterios", "iniciar", "inicio"]
     },
     {
       "texto": "DESCRIÇÃO DA TÉCNICA — TRE E CRITÉRIOS: Submeter o paciente a TRE por 30 minutos (PSV 5 cmH2O, PEEP 5 cmH2O e FiO2 < 0,3 ). Preencher a folha própria de TRE com parâmetros ventilatórios e critérios de risco. Interromper o TRE se ocorrerem: dispneia importante, agitação psicomotora, sudorese, FR ≥ 35 ipm, FC ≥ 140 bpm, PAS ≥ 180 mmHg ou ≤ 90 mmHg, redução do nível de consciência. INDICAÇÃO DE EOT: Se o paciente passar no TRE, realizar ventilometria no ventilador e aplicar o IRRS modificado (valores < 75 predizem sucesso). Medir PiMax (valores < -20 cmH2O predizem sucesso). Avaliar eficiência da tosse, realizar aspiração completa de vias aéreas superiores e da via artificial, realizar Cuff Leak Test (esvaziar cuff e observar fuga aérea). Comunicar equipe, soltar fixação e retirar TOT quando indicado. Avaliar necessidade de oxigenoterapia pós-EOT (MNBZ ou O2 por cateter). Auscultar pescoço para estridor e monitorar após EOT. Avaliar necessidade de VNI pós extubação - procure por VNI profilática no POP.",
@@ -354,11 +354,11 @@
     },
     {
       "texto": "CRITÉRIOS DE FALHA DO TRE: O Teste de Respiração Espontânea deve ser interrompido diante de sinais de intolerância como dispneia intensa, uso acentuado da musculatura acessória, sudorese, agitação ou rebaixamento do nível de consciência, cianose, queda da SpO₂ < 90%, frequência respiratória ≥ 35 incursões por minuto, frequência cardíaca ≥ 140 bpm ou aumento superior a 20% do valor basal, pressão arterial sistólica ≥ 180 mmHg ou ≤ 90 mmHg e presença de arritmias significativas. A detecção de qualquer desses critérios indica falha do TRE e necessidade de retorno ao suporte ventilatório.",
-      "keywords": ["critérios de falha", "falha", "interromper"]
+      "keywords": ["criterios de falha", "falha", "interromper"]
     },
     {
       "texto": "RISCO DE FALHA DE EXTUBAÇÃO E VNI PROFILÁTICA: Pacientes com ≥ 4 fatores de risco devem realizar VNI profilática imediatamente após extubação por máscara full face. Protocolo: VNI profilática por pelo menos 12 horas/dia, com tempo mínimo contínuo de 4 horas, por 48 horas. Fatores de risco: idade > 65 anos; risco de laringoespasmo; IMC > 30 kg/m²; manejo inadequado de secreção; desmame difícil/prolongado (falha > 3 TRE); ICC como indicação primária; diagnóstico de DPOC; ventilação mecânica prolongada (>7 dias); PaCO2 > 45 mmHg ao final do TRE.",
-      "keywords": ["Risco", "risco de falha", "VNI", "Profilática", "VNI profilática"]
+      "keywords": ["Risco", "risco de falha", "VNI", "profilatica", "VNI profilática"]
     },
     {
       "texto": "ANEXOS: Link para planilha de TRE e ficha de controle (conforme POP original), formulários e fluxogramas visuais a serem anexados ao documento principal conforme versão final do POP.",
@@ -367,6 +367,3 @@
    ]
  }
 ]
-
-
-
