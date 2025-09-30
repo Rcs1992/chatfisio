@@ -354,7 +354,7 @@
     },
     {
       "texto": "CRITÉRIOS DE FALHA DO TRE: O Teste de Respiração Espontânea deve ser interrompido diante de sinais de intolerância como dispneia intensa, uso acentuado da musculatura acessória, sudorese, agitação ou rebaixamento do nível de consciência, cianose, queda da SpO₂ < 90%, frequência respiratória ≥ 35 incursões por minuto, frequência cardíaca ≥ 140 bpm ou aumento superior a 20% do valor basal, pressão arterial sistólica ≥ 180 mmHg ou ≤ 90 mmHg e presença de arritmias significativas. A detecção de qualquer desses critérios indica falha do TRE e necessidade de retorno ao suporte ventilatório.",
-      "keywords": ["criterios de falha", "falha", "interromper"]
+      "keywords": ["criterios de falha", "falha", "interromper o teste", "interrupção"]
     },
     {
       "texto": "RISCO DE FALHA DE EXTUBAÇÃO E VNI PROFILÁTICA: Pacientes com ≥ 4 fatores de risco devem realizar VNI profilática imediatamente após extubação por máscara full face. Protocolo: VNI profilática por pelo menos 12 horas/dia, com tempo mínimo contínuo de 4 horas, por 48 horas. Fatores de risco: idade > 65 anos; risco de laringoespasmo; IMC > 30 kg/m²; manejo inadequado de secreção; desmame difícil/prolongado (falha > 3 TRE); ICC como indicação primária; diagnóstico de DPOC; ventilação mecânica prolongada (>7 dias); PaCO2 > 45 mmHg ao final do TRE.",
@@ -367,3 +367,4 @@
    ]
  }
 ]
+
