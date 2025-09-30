@@ -365,6 +365,32 @@
       "keywords": ["anexos_links"]
     }
    ]
+ },
+{
+  "titulo": "POP_Peso_Predito",
+  "chunks": [
+    {
+      "texto": "INTRODUÇÃO: Um dos principais objetivos da ventilação mecânica invasiva (VMI) é reduzir ou abolir o trabalho ventilatório, representado pelo produto do volume inspirado e a pressão necessária para deslocá-lo. O volume corrente excessivo pode causar volutrauma, caracterizado por distensão pulmonar, ruptura tecidual, extravasamento capilar, edema alveolar e alterações no surfactante.",
+      "keywords": ["introducao", "o que é"]
+    },
+    {
+      "texto": "OBJETIVO: Orientar a equipe de fisioterapia no cálculo do peso predito e da faixa de volume corrente ideal (5 a 8 ml/kg), garantindo maior controle e segurança na assistência ventilatória.",
+      "keywords": ["objetivo"]
+    },
+    {
+      "texto": "DESCRIÇÃO DA TÉCNICA: O fisioterapeuta deve utilizar EPI, aferir a altura do paciente com fita métrica ou estimar pela semi-envergadura do braço. A fórmula do peso predito é: Homens = 0,91 x (altura em cm – 152,4) + 50; Mulheres = 0,91 x (altura em cm – 152,4) + 45,5. O volume corrente ideal é de 6 a 8 ml/kg do peso predito. Registrar no prontuário eletrônico e no formulário de admissão.",
+      "keywords": ["tecnica", "altura", "semi envergadura", "formula", "peso predito"]
+    },
+    {
+      "texto": "MATERIAIS NECESSÁRIOS: EPI, fita métrica, caneta de quadro branco, calculadora.",
+      "keywords": ["materiais", "fita metrica", "calculadora"]
+    },
+    {
+      "texto": "REFERÊNCIAS COMPLEMENTARES: CIRILLO, D. M. et al. Height Measures: Evaluating Alternatives to Standing Height in the Ambulatory Setting. Clinical Journal of Oncology Nursing, 2018. DIGSSIE, A.; ARGAW, A.; BELACHEW, T. Developing an equation for estimating body height from linear body measurements of Ethiopian adults. Journal of Physiological Anthropology, 2018.",
+      "keywords": ["referencias_complementares", "altura", "estimativa"]
+    }
+  ]
  }
 ]
+
 
