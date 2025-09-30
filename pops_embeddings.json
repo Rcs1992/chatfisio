@@ -316,37 +316,54 @@
         "keywords": ["controle de registro", "prontuário eletrônico"]
       }
     ]
-  }
+  },
+  {
+  "titulo": "POP_Desmame_EOT",
+  "chunks": [
+    {
+      "texto": "INTRODUÇÃO: Aproximadamente um terço dos pacientes internados em UTI necessita de intubação e ventilação com pressão positiva. A ventilação mecânica aumenta riscos como lesão pulmonar, pneumonia nosocomial, trauma de via aérea, sedação excessiva e atrofia muscular respiratória, o que prolonga o tempo de ventilação, a internação e os custos. Estratégias padronizadas para descontinuidade do suporte ventilatório tornam o processo mais seguro e rotineiro. A falha de extubação (reintubação em até 48 horas) pode ocorrer em até 23,5% dos casos e está associada a pior prognóstico; pacientes de alto risco (idade >65 anos, doença cardíaca crônica, doença pulmonar) têm maior incidência. Evidências mostram que VNI profilática reduz falha de extubação em grupos selecionados de alto risco.",
+      "keywords": ["introducao", "contexto", "o que é"]
+    },
+    {
+      "texto": "OBJETIVO: Este POP visa orientar a equipe de fisioterapia para: 1) estabelecer mecanismos para retirada segura da via aérea artificial e assistência ventilatória em pacientes do bloco crítico do CER Leblon; 2) padronizar procedimentos para manejo durante o processo de descontinuidade do suporte ventilatório; 3) identificar pacientes de alto risco de falha de extubação e iniciar VNI profilática imediatamente após a EOT quando indicado.",
+      "keywords": ["objetivo"]
+    },
+    {
+      "texto": "ABRANGÊNCIA: Aplica-se ao bloco crítico do CER Leblon — b5 (RH CTI Geral), b7 (RH CTI Unidade Neurointensiva), b9 (RH CTI Unidade Cardiointensiva) — e à área de emergência do CER Leblon.",
+      "keywords": ["abrangencia"]
+    },
+    {
+      "texto": "REFERÊNCIAS: III Consenso Brasileiro de Ventilação Mecânica; MacIntyre NR (Respir Care, 2004); Diretrizes Brasileiras de Ventilação Mecânica 2013 – AMIB; Boscolo et al., European Respiratory Review 2023; Goldwasser et al.; Machado & Zin; Nemer & Barbas; Teixeira et al.; Andrade et al. (lista completa conforme POP original).",
+      "keywords": ["referencias"]
+    },
+    {
+      "texto": "DEFINIÇÕES: O processo de descontinuidade do suporte ventilatório e extubação orotraqueal (EOT) envolve equipe multiprofissional e inclui monitoramento de parâmetros ventilatórios, índices preditivos, testes indicativos de EOT e procedimentos padronizados para reduzir riscos e aumentar a probabilidade de sucesso.",
+      "keywords": ["definicoes"]
+    },
+    {
+      "texto": "DESCRIÇÃO DA TÉCNICA — PREPARAÇÃO: Utilizar EPI indicado. Interromper dieta até 3 horas antes do procedimento. Separar todo o material necessário. Revisar prontuário, exames de imagem (RX, tomografia) e situação clínica. Confirmar resolução/controle da causa de IrpA e estabilidade clínica antes do TRE.",
+      "keywords": ["procedimento", "como fazer", "técnica"]
+    },
+    {
+      "texto": "AVALIAÇÃO PRELIMINAR: Verificar nível de consciência (Glasgow > 8 ou RASS ≤ -3), PaO2/FiO2 > 250, PEEP ≤ 8 cmH2O, FiO2 ≤ 0,4 com PaO2 ≥ 60 mmHg, pH entre 7,30 e 7,50, ausência de arritmia ventilatória, HB > 7 g/dL, afebril e sem dor intensa. Avaliar capacidade de manejo de secreções e eficiência da tosse.",
+      "keywords": ["avaliacao", "elegibilidade", "critérios", "iniciar", "início"]
+    },
+    {
+      "texto": "DESCRIÇÃO DA TÉCNICA — TRE E CRITÉRIOS: Submeter o paciente a TRE por 30 minutos (PSV 5 cmH2O, PEEP 5 cmH2O e FiO2 < 0,3 ou MNBZ em peça “T” ligada à fonte de O2). Preencher a folha própria de TRE com parâmetros ventilatórios e critérios de risco. Interromper o TRE se ocorrerem: dispneia importante, agitação psicomotora, sudorese, FR ≥ 35 ipm, FC ≥ 140 bpm, PAS ≥ 180 mmHg ou ≤ 90 mmHg, redução do nível de consciência.",
+      "keywords": ["TRE", "Como fazer", "IRRS", "Tobin"]
+    },
+    {
+      "texto": "DESCRIÇÃO DA TÉCNICA — INDICAÇÃO DE EOT: Se o paciente passar no TRE, realizar ventilometria no ventilador e aplicar o IRRS modificado (valores < 75 predizem sucesso). Medir PiMax (valores < -20 cmH2O predizem sucesso). Avaliar eficiência da tosse, realizar aspiração completa de vias aéreas superiores e da via artificial, realizar Cuff Leak Test (esvaziar cuff e observar fuga aérea). Comunicar equipe, soltar fixação e retirar TOT quando indicado. Avaliar necessidade de oxigenoterapia pós-EOT (MNBZ ou O2 por cateter). Auscultar pescoço para estridor e monitorar após EOT.",
+      "keywords": ["Indicações", "EOT"]
+    },
+    {
+      "texto": "RISCO DE FALHA DE EXTUBAÇÃO E VNI PROFILÁTICA: Pacientes com ≥ 4 fatores de risco devem realizar VNI profilática imediatamente após extubação por máscara full face. Protocolo: VNI profilática por pelo menos 12 horas/dia, com tempo mínimo contínuo de 4 horas, por 48 horas. Fatores de risco: idade > 65 anos; risco de laringoespasmo; IMC > 30 kg/m²; manejo inadequado de secreção; desmame difícil/prolongado (falha > 3 TRE); ICC como indicação primária; diagnóstico de DPOC; ventilação mecânica prolongada (>7 dias); PaCO2 > 45 mmHg ao final do TRE.",
+      "keywords": ["Risco", "risco de falha", "VNI", "Profilática", "VNI profilática"]
+    },
+    {
+      "texto": "ANEXOS: Link para planilha de TRE e ficha de controle (conforme POP original), formulários e fluxogramas visuais a serem anexados ao documento principal conforme versão final do POP.",
+      "keywords": ["anexos_links"]
+    }
+   ]
+ }
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
