@@ -378,8 +378,8 @@
       "keywords": ["objetivo"]
     },
     {
-      "texto": "DESCRIÇÃO DA TÉCNICA: O fisioterapeuta deve utilizar EPI, aferir a altura do paciente com fita métrica ou estimar pela semi-envergadura do braço. A fórmula do peso predito é: Homens = 0,91 x (altura em cm – 152,4) + 50; Mulheres = 0,91 x (altura em cm – 152,4) + 45,5. O volume corrente ideal é de 6 a 8 ml/kg do peso predito. Registrar no prontuário eletrônico e no formulário de admissão.",
-      "keywords": ["tecnica", "altura", "semi envergadura", "formula", "peso predito"]
+      "texto": "DESCRIÇÃO DA TÉCNICA: O fisioterapeuta deve utilizar EPI, aferir a altura do paciente com fita métrica ou estimar pela semi-envergadura do braço - a semi-envergadura correspondeu à distância entre o esterno e a falange distal do dedo médio. A fórmula do peso predito é: Homens = 0,91 x (altura em cm – 152,4) + 50; Mulheres = 0,91 x (altura em cm – 152,4) + 45,5. O volume corrente ideal é de 6 a 8 ml/kg do peso predito. Registrar no prontuário eletrônico e no formulário de admissão.",
+      "keywords": ["tecnica", "altura", "semi envergadura", "formula", "peso predito", "como medir", "como fazer", "medir", "medida"]
     },
     {
       "texto": "MATERIAIS NECESSÁRIOS: EPI, fita métrica, caneta de quadro branco, calculadora.",
@@ -392,5 +392,6 @@
   ]
  }
 ]
+
 
 
