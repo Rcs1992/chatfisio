@@ -411,7 +411,7 @@
       "keywords": ["preparacao", "posicionamento", "estabilidade"]
     },
     {
-      "texto": "EXECUÇÃO DO RECRUTAMENTO (Etapa 1): Modo PCV, Pins 15 cmH₂O, FR 15 ipm, Tinsp 2s, relação I:E 1:1, FiO₂ 100%. Iniciar PEEP em 15 cmH₂O, subir para 20 cmH₂O por 10s e para 26 cmH₂O por 30s. EXECUÇÃO DA TITULAÇÃO DA PEEP (Etapa 2): Ajustar PEEP em 26 cmH₂O, mudar para VCV com VC 6 ml/kg, FR 10 ipm, relação I:E 1:1, FiO₂ 100%. Reduzir PEEP em degraus de 2 cmH₂O a cada 30s até 6 cmH₂O, registrando Drive Pressure. Identificar o menor DP. ANOBRA FINAL (Etapa 3): Modo PCV, Pins 15 cmH₂O, FR 10 ipm, Tinsp 3s, relação I:E 1:1, FiO₂ 100%. Aumentar PEEP sequencialmente (15, 20, 26 cmH₂O) e ajustar para o valor que gerou menor DP. Ajustar parâmetros ventilatórios conforme critério para manter VC de 6 ml/kg.",
+      "texto": "EXECUÇÃO DO RECRUTAMENTO (Etapa 1): Modo PCV, Pins 15 cmH₂O, FR 15 ipm, Tinsp 2s, relação I:E 1:1, FiO₂ 100%. Iniciar PEEP em 15 cmH₂O, elevar para 20 cmH₂O por 10s e para 26 cmH₂O por 30s. EXECUÇÃO DA TITULAÇÃO DA PEEP (Etapa 2): Ajustar PEEP em 26 cmH₂O, mudar para VCV com VC 6 ml/kg, FR 10 ipm, relação I:E 1:1, FiO₂ 100%. Reduzir PEEP em degraus de 2 cmH₂O a cada 30s até 6 cmH₂O, registrando a Drive Pressure. Identificar a menor DP. ANOBRA FINAL (Etapa 3): Modo PCV, Pins 15 cmH₂O, FR 10 ipm, Tinsp 3s, relação I:E 1:1, FiO₂ 100%. Aumentar PEEP sequencialmente para 15, 20, 26 cmH₂O e mantendo por 10 segundos os dois primeiros steps e 30 segundos o último step. Por fim, ajustar a PEEP de acordo com o valor que gerou menor DP. Ajustar parâmetros ventilatórios conforme critério para manter VC de 6 ml/kg.",
       "keywords": ["recrutamento", "titulação", "manobra de recrutamento", "como fazer", "como é"]
     },
     {
@@ -425,6 +425,7 @@
   ]
  }
 ]
+
 
 
 
