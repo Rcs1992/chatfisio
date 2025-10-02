@@ -423,8 +423,42 @@
       "keywords": ["controle_registro", "prontuario"]
     }
   ]
+ },
+{
+  "titulo": "POP_SARA",
+  "chunks": [
+    {
+      "texto": "A Síndrome da Angústia Respiratória do Adulto (SDRA) é uma condição crítica caracterizada por lesão pulmonar aguda e hipoxemia. Este protocolo visa orientar a ventilação mecânica em pacientes com SDRA, buscando minimizar a lesão pulmonar induzida e melhorar a oxigenação.",
+      "keywords": ["introdução", "lesão pulmonar", "o que é"]
+    },
+    {
+      "texto": "O objetivo do protocolo é oferecer ao fisioterapeuta diretrizes claras e baseadas em evidências para o início da assistência ventilatória na SDRA. O foco está em melhorar a oxigenação e ventilação, reduzindo complicações e mortalidade associadas à ventilação mecânica.",
+      "keywords": ["objetivo"]
+    },
+    {
+      "texto": "Definição atual de SARA: início agudo ou piora de insuficiência respiratória em até uma semana do fator predisponente; presença de opacidades bilaterais em radiografia ou TC não explicadas por derrame ou colapso; exclusão de causas alternativas como IC congestiva. Classificação da gravidade pela relação PaO2/FiO2: leve (200–300), moderada (100–200) e grave (≤100).",
+      "keywords": ["SARA", "SDRA", "definição de Berlim", "como identificar", "o que é SARA", "o que é SDRA", "critérios"]
+    },
+    {
+      "texto": "A ventilação protetora é a base do manejo: utilizar volume corrente de 4–8 ml/kg de peso predito (ideal iniciar em 6 ml/kg), manter pressão de platô ≤30 cmH2O, driving pressure ≤15 cmH2O, e FiO2 suficiente para manter SpO2 entre 92–96%. Frequência respiratória inicial de 20 irpm, podendo ir até 35 irpm se não houver autoPEEP.",
+      "keywords": ["ventilação protetora", "volume corrente", "pressão de platô", "driving pressure", "como ventilar", "ventilação mecânica"]
+    },
+    {
+      "texto": "Mini-titulação da PEEP: realizar recrutamento alveolar escalonado com PEEP de 15, 20 e 26 cmH2O, seguido de titulação decrescente em modo volume controlado para identificar a menor driving pressure. A PEEP escolhida deve ser a que resulta em menor pressão de distensão.",
+      "keywords": ["PEEP", "mini-titulação", "recrutamento alveolar", "driving pressure"]
+    },
+    {
+      "texto": "Posição prona: indicada para pacientes com relação PaO2/FiO2 ≤150 mmHg sob FiO2 >60% e PEEP ≥5 cmH2O. Deve ser iniciada precocemente, preferencialmente nas primeiras 12h, mantida por 16–20h. Considera-se resposta quando há aumento >20% na relação PaO2/FiO2 após 1h de pronação. Suspender quando PaO2/FiO2 >150 mmHg com FiO2 <60% após supinação, ou diante de complicações.",
+      "keywords": ["posição prona", "hipoxemia grave"]
+    },
+    {
+      "texto": "Siglas utilizadas no protocolo: CER (Coordenação de Emergência Regional), CTI (Centro de Terapia Intensiva), EPI (Equipamento de Proteção Individual), SDRA (Síndrome do Desconforto Respiratório Agudo), SpO2 (Saturação periférica de oxigênio), FR (Frequência respiratória), FC (Frequência cardíaca), PAS (Pressão arterial sistólica), Cest (Complacência estática), FiO2 (Fração inspirada de oxigênio), PaO2 (Pressão arterial de oxigênio), TOT (Tubo orotraqueal), SNG (Sonda nasogástrica), SNE (Sonda nasoenteral).",
+      "keywords": ["siglas", "terminologia", "ventilação mecânica", "protocolo"]
+    }
+  ]
  }
 ]
+
 
 
 
