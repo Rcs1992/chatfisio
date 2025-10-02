@@ -456,8 +456,38 @@
       "keywords": ["siglas", "terminologia", "ventilação mecânica", "protocolo"]
     }
   ]
+ },
+  {
+  "titulo": "POP_Teste_de_Apneia",
+  "chunks": [
+    {
+      "texto": "A apneia é um dos achados cardinais da morte encefálica. O teste de apneia (TA) avalia a função do tronco encefálico inferior, permitindo que a PaCO2 aumente e o pH do LCR diminua para estimular os centros respiratórios. Considera-se adequado o valor de PaCO2 em torno de 60 mmHg para confirmar ausência de respiração espontânea.",
+      "keywords": ["introdução", "morte encefálica"]
+    },
+    {
+      "texto": "O objetivo do protocolo é orientar a equipe de fisioterapia na execução do teste de apneia, em conjunto com a equipe multidisciplinar, sempre que solicitado pelo médico. O fisioterapeuta tem papel fundamental na monitorização, ajuste do ventilador e segurança do paciente durante o procedimento.",
+      "keywords": ["objetivo"]
+    },
+    {
+      "texto": "Definição: O teste de apneia é padronizado pela Academia Americana de Neurologia, utilizando insuflação de oxigênio. Ele deve ser realizado em ambiente crítico, com suporte ventilatório e monitorização rigorosa, conforme protocolo anexo.",
+      "keywords": ["definição"]
+    },
+    {
+      "texto": "Descrição da técnica: o fisioterapeuta deve higienizar as mãos, paramentar-se com EPI, observar parâmetros ventilatórios e confirmar estabilidade hemodinâmica (PAS >100 mmHg). Deve aumentar a FiO2 para 100% por 10 minutos e ajustar a FR para normocapnia. Após gasometria inicial, desconectar o ventilador e instalar cateter de O2 a 6 L/min no TOT, observando tórax e abdome. Caso instabilidade ocorra (PAS <90 mmHg, SpO2 <85% ou arritmia), o teste deve ser interrompido. Ao final, realizar nova gasometria e reconectar ao ventilador nos parâmetros basais. Critério diagnóstico: o teste é compatível com morte encefálica se não houver movimentos respiratórios durante 10 minutos e a gasometria demonstrar PaCO2 ≥60 mmHg. A normocapnia de início deve estar entre 40–45 mmHg, podendo ser maior em comprometimento pulmonar grave.",
+      "keywords": ["descrição técnica", "execução", "como fazer", "parâmetros", "diagnóstico", "morte encefálica"]
+    },
+    {
+      "texto": "Precauções: o auto-disparo do ventilador pode gerar falso resultado positivo de respiração. O fisioterapeuta deve identificar oscilações cardiogênicas, vazamentos no circuito, ruídos e condensação excessiva. Ajustes incluem trocar disparo por fluxo para disparo por pressão, corrigir balonete do TOT, drenar condensado e ajustar a sensibilidade de fluxo/pressão.",
+      "keywords": ["precauções", "auto-disparo", "ajuste do ventilador", "interpretação"]
+    },
+    {
+      "texto": "Controle de registro: todos os passos e resultados do teste devem ser documentados no prontuário eletrônico.",
+      "keywords": ["registro", "prontuário eletrônico", "documentação", "controle clínico"]
+    }
+  ]
  }
 ]
+
 
 
 
