@@ -390,8 +390,43 @@
       "keywords": ["referencias_complementares", "altura", "estimativa"]
     }
   ]
- }
+ },
+  {
+  "titulo": "POP_Recrutamento_Alveolar",
+  "chunks": [
+    {
+      "texto": "INTRODUÇÃO: O recrutamento alveolar é uma técnica utilizada para melhorar a função ventilatória por abrir unidades alveolares colapsadas. Isso aumenta a complacência pulmonar e a oxigenação arterial. A titulação da PEEP tem como objetivo manter as unidades abertas durante todo o ciclo ventilatório, reduzindo lesões induzidas pela ventilação mecânica (VILI).",
+      "keywords": ["introducao"]
+    },
+    {
+      "texto": "OBJETIVO: Melhorar a mecânica ventilatória e a oxigenação arterial por meio da abertura de alvéolos colapsados (recrutamento) e da manutenção destes abertos (titulação da PEEP), reduzindo as lesões induzidas pela ventilação mecânica.",
+      "keywords": ["objetivo"]
+    },
+    {
+      "texto": "FÓRMULAS: Cest = VC / (Pplatô - PEEP); Índice de oxigenação arterial = PaO₂/FiO₂; Peso predito = 0,91 x (altura - 152,4) + 50 (homens) ou + 45,5 (mulheres); DP = Pplatô - PEEP.",
+      "keywords": ["formulas", "peso predito", "peso ideal"]
+    },
+    {
+      "texto": "PREPARAÇÃO DA TÉCNICA: Confirmar estabilidade hemodinâmica, sedação e relaxamento do paciente. Posicionar em decúbito dorsal com cabeceira > 30°. Verificar pressão do cuff, aspirar secreções e checar conexões do circuito.",
+      "keywords": ["preparacao", "posicionamento", "estabilidade"]
+    },
+    {
+      "texto": "EXECUÇÃO DO RECRUTAMENTO (Etapa 1): Modo PCV, Pins 15 cmH₂O, FR 15 ipm, Tinsp 2s, relação I:E 1:1, FiO₂ 100%. Iniciar PEEP em 15 cmH₂O, subir para 20 cmH₂O por 10s e para 26 cmH₂O por 30s. EXECUÇÃO DA TITULAÇÃO DA PEEP (Etapa 2): Ajustar PEEP em 26 cmH₂O, mudar para VCV com VC 6 ml/kg, FR 10 ipm, relação I:E 1:1, FiO₂ 100%. Reduzir PEEP em degraus de 2 cmH₂O a cada 30s até 6 cmH₂O, registrando Drive Pressure. Identificar o menor DP. ANOBRA FINAL (Etapa 3): Modo PCV, Pins 15 cmH₂O, FR 10 ipm, Tinsp 3s, relação I:E 1:1, FiO₂ 100%. Aumentar PEEP sequencialmente (15, 20, 26 cmH₂O) e ajustar para o valor que gerou menor DP. Ajustar parâmetros ventilatórios conforme critério para manter VC de 6 ml/kg.",
+      "keywords": ["recrutamento", "titulação", "manobra de recrutamento", "como fazer", "como é"]
+    },
+    {
+      "texto": "INTERRUPÇÃO DA TÉCNICA: A manobra deve ser interrompida em caso de hipotensão arterial severa, bradicardia, arritmias ou assincronia ventilatória.",
+      "keywords": ["interrupcao", "quando parar", "parar", "hipotensao", "arritmia", "assincronia"]
+    },
+    {
+      "texto": "CONTROLE DE REGISTROS: Todos os procedimentos e parâmetros devem ser documentados em prontuário eletrônico.",
+      "keywords": ["controle_registro", "prontuario"]
+    }
+  ]
+}
+
 ]
+
 
 
 
