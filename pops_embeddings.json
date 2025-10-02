@@ -444,7 +444,7 @@
       "keywords": ["ventilação protetora", "volume corrente", "pressão de platô", "driving pressure", "como ventilar", "ventilação mecânica"]
     },
     {
-      "texto": "Mini-titulação da PEEP: realizar recrutamento alveolar escalonado com PEEP de 15, 20 e 26 cmH2O, seguido de titulação decrescente em modo volume controlado para identificar a menor driving pressure. A PEEP escolhida deve ser a que resulta em menor pressão de distensão.",
+      "texto": "Mini-titulação da PEEP: realizar recrutamento alveolar escalonado com PEEP de 15, 20 e 26 cmH2O, seguido de titulação decrescente em modo volume controlado para identificar a menor driving pressure. A PEEP escolhida deve ser a que resulta em menor pressão de distensão. Para maiores informações, ver o POP de recrutamento alveolar",
       "keywords": ["PEEP", "mini-titulação", "recrutamento alveolar", "driving pressure"]
     },
     {
@@ -458,6 +458,7 @@
   ]
  }
 ]
+
 
 
 
