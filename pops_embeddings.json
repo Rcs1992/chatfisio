@@ -485,8 +485,46 @@
       "keywords": ["registro", "prontuário eletrônico", "documentação", "controle clínico"]
     }
   ]
+ },
+{
+  "titulo": "POP_Prancha_Ortostática",
+  "chunks": [
+    {
+      "texto": "Pacientes restritos ao leito ficam vulneráveis a complicações decorrentes do imobilismo prolongado, que pode afetar múltiplos sistemas e levar à Síndrome do Imobilismo. A prancha ortostática é um recurso fisioterapêutico de mecanoterapia que promove o ortostatismo assistido, variando a angulação de 0° a 90°, favorecendo a função respiratória, circulatória e muscular, além de minimizar os efeitos da imobilização.",
+      "keywords": ["introdução"]
+    },
+    {
+      "texto": "Objetivos: posicionar o paciente em ortostatismo; prevenir complicações da imobilidade (contraturas, deformidades); proporcionar descarga de peso e propriocepção em MMII; melhorar expansão torácica e eliminação de secreções; estimular motilidade gastrointestinal; melhorar circulação sanguínea; treinar controle motor de MMSS.",
+      "keywords": ["objetivo"]
+    },
+    {
+      "texto": "Indicações: pacientes com AVE; TCE estável; lesão medular após estabilização; pacientes cronicamente críticos; indivíduos com imobilização prolongada no leito. CASOS ESPECIAIS: evidências limitadas sugerem que a mobilização ortostática, associada à estimulação sensorial multimodal (auditiva, tátil, olfativa, visual, gustativa), pode melhorar o nível de consciência em pacientes em estado vegetativo ou minimamente consciente. Pode ser usada em conjunto com terapias farmacológicas e estimulação cerebral não invasiva.",
+      "keywords": ["indicações", "AVE", "TCE", "lesão medular", "em quem utilizar", "quem pode fazer"]
+    },
+    {
+      "texto": "Contraindicações absolutas: instabilidade hemodinâmica; lesão medular em fase aguda; choque séptico; fraturas bilaterais de MMII; monitorização de pressão intracraniana (relativo); grandes queimados (relativo).",
+      "keywords": ["contraindicações", "quem não pode fazer", "em quem não usar", "não usar", "não pode usar", "não pode utilizar", "contra indicações"]
+    },
+    {
+      "texto": "Responsabilidades: seleção de pacientes — fisioterapeuta; transferência do paciente do leito para a prancha — equipe multidisciplinar; manipulação da graduação da verticalização — fisioterapeuta.",
+      "keywords": ["responsabilidades", "fisioterapeuta", "equipe multidisciplinar", "verticalização"]
+    },
+    {
+      "texto": "Descrição da técnica: higienizar as mãos e paramentar-se com EPI; explicar objetivo da atividade ao paciente; posicionar o paciente na prancha e fixá-lo com faixas de segurança; graduar angulações progressivas monitorando PA e SpO₂; interromper se PA <100 mmHg ou SpO₂ <85%; se estável, realizar exercícios respiratórios e de MMSS/MMII (ativos assistidos ou ativos); ao final, retornar paciente ao leito, monitorar, aspirar se necessário e registrar no prontuário.",
+      "keywords": ["descrição técnica", "ortostatismo", "como fazer", "como executar", "execução"]
+    },
+    {
+      "texto": "Casos especiais: evidências limitadas sugerem que a mobilização ortostática, associada à estimulação sensorial multimodal (auditiva, tátil, olfativa, visual, gustativa), pode melhorar o nível de consciência em pacientes em estado vegetativo ou minimamente consciente. Pode ser usada em conjunto com terapias farmacológicas e estimulação cerebral não invasiva.",
+      "keywords": ["casos especiais", "estimulação sensorial", "consciência", "estado vegetativo"]
+    },
+    {
+      "texto": "Controle de registro: o procedimento deve ser documentado integralmente em prontuário eletrônico.",
+      "keywords": ["registro", "prontuário eletrônico", "documentação"]
+    }
+  ]
  }
 ]
+
 
 
 
