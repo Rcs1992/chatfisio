@@ -503,7 +503,7 @@
     },
     {
        "texto": "CRITÉRIOS DE INTERRUPÇÃO DA PRANCHA ORTOSTÁTICA: A sessão deve ser suspensa diante de sinais de intolerância hemodinâmica ou clínica, como queda ou elevação acentuada da pressão arterial, taquicardia ou bradicardia significativa, arritmias, dessaturação de oxigênio (SpO₂ < 90%), tontura intensa, síncope, sudorese profusa, palidez, agitação ou perda de contato com o examinador. Qualquer um desses sinais indica a necessidade de interrupção imediata do uso da prancha.",
-       "keywords": ["interrupção", "quando parar", "parar", "interromper", "quando interromper"]
+       "keywords": ["interrupção", "quando parar", "parar", "interromper", "quando interromper", "suspender", "quando suspender"]
     },
     {
       "texto": "Contraindicações absolutas: instabilidade hemodinâmica; lesão medular em fase aguda; choque séptico; fraturas bilaterais de MMII; monitorização de pressão intracraniana (relativo); grandes queimados (relativo).",
@@ -528,6 +528,7 @@
   ]
  }
 ]
+
 
 
 
