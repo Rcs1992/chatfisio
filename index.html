@@ -135,7 +135,7 @@
           <input id="input" placeholder="Digite sua pergunta (ou 'help' para comandos)..." aria-label="Pergunta do usuário" />
           <button onclick="onSend()">Enviar</button>
         </div>
-        <div class="hint" style="padding:8px 6px;">Comandos: <b>trocar</b> (voltar à lista); <b>listar</b> (mostrar POPs); <b>help</b></div>
+        <div class="hint" style="padding:8px 6px;">Comandos: <b>trocar</b> (voltar à lista); <b>listar</b> (mostrar POPs); <b>help</b> (Ajuda); <b>limpar<b> (limpar chat); <b>limpar tudo<b> (Limpar e reiniciar chat)</div>
       </main>
     </div>
 
@@ -174,7 +174,7 @@ function normalizeText(s){
   if(!s) return "";
   return s.toString()
     .normalize("NFD").replace(/[\u0300-\u036f]/g,"") // remove acentos
-    .replace(/[^\w\s\-\/\.%]/g," ") // remove pontuação (mantém / - . %)
+    .replace(/[^\w\s\-\/\.\%]/g," ") // remove pontuação (mantém / - . %)
     .replace(/\s+/g," ").trim()
     .toLowerCase();
 }
@@ -187,7 +187,7 @@ function escapeHtml(str){
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
+    .replace(/\"/g, "&quot;")
     .replace(/'/g, "&#39;");
 }
 
@@ -214,9 +214,15 @@ function addMessage(text, who='bot', meta=null){
 
 function clearChat(){
   const chat = document.getElementById('chat');
-  chat.innerHTML = '';
+  if(chat) chat.innerHTML = '';
+  // fechar menu e painel mobile por segurança
+  try { closeMenu(); } catch(e) {}
+  try { closeMobileAside(); } catch(e) {}
+  // manter foco para digitação
   const input = document.getElementById('input');
-  if(input) input.focus();
+  if(input) {
+    input.focus();
+  }
 }
 // ---------- end utils ----------
 
@@ -362,6 +368,8 @@ function selectPopByIndex(i){
   popSelecionado = pops[i];
   renderPopList();
   addMessage(`📄 Você selecionou: ${popSelecionado.titulo}\nAgora pode fazer suas perguntas.`, "bot");
+  // se quiser abrir o menu automaticamente ao selecionar, descomente a linha abaixo
+  // showMenuForSelectedPop(true);
 }
 
 // reset selection
@@ -437,6 +445,111 @@ function searchFuzzy(query, popIndex, topK = 3){
   }
 }
 
+// ---------- Menu por parágrafo (números) ----------
+let menuOpen = false;
+let menuPopIndex = null;
+
+// tenta obter um título legível para um chunk
+function getChunkTitle(chunk, idx){
+  if(chunk.heading) return String(chunk.heading);
+  if(chunk.title_chunk) return String(chunk.title_chunk);
+  if(Array.isArray(chunk.keywords) && chunk.keywords.length){
+    const k = String(chunk.keywords[0]).trim();
+    if(k) return k.charAt(0).toUpperCase() + k.slice(1);
+  }
+  if(chunk.texto){
+    const m = chunk.texto.trim().match(/^([A-ZÀ-Ú][^:\n]{2,60}):/i);
+    if(m && m[1]) return m[1].trim();
+  }
+  const t = (chunk.texto || "").trim().split(/\s+/).slice(0,6).join(" ");
+  return t ? (t + ( (chunk.texto && chunk.texto.length > t.length) ? "…" : "")) : `Parágrafo ${idx+1}`;
+}
+
+// adiciona um elemento DOM (bot) ao chat — preserva segurança pois criamos nós
+function addBotNode(node){
+  const chat = document.getElementById('chat');
+  const wrapper = document.createElement('div');
+  wrapper.className = 'msg bot';
+  wrapper.appendChild(node);
+  chat.appendChild(wrapper);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+// mostra menu numerado do POP selecionado
+function showMenuForSelectedPop(optAutoOpen = false){
+  if(!popSelecionado) {
+    addMessage("❗ Nenhum POP selecionado. Escolha um POP primeiro.", "bot");
+    return;
+  }
+  const pi = pops.indexOf(popSelecionado);
+  if(pi < 0) return;
+  menuOpen = true;
+  menuPopIndex = pi;
+
+  addMessage("Escolha um número para selecionar o que deseja (ou toque no item):", "bot");
+
+  const container = document.createElement('div');
+  container.style.display = 'flex';
+  container.style.flexDirection = 'column';
+  container.style.gap = '6px';
+  container.style.marginTop = '6px';
+
+  const chunks = popSelecionado.chunks || [];
+  for(let i=0;i<chunks.length;i++){
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'small-btn';
+    btn.textContent = `${i+1}) ${ getChunkTitle(chunks[i], i) }`;
+    btn.addEventListener('click', ()=> {
+      displayChunk(pi, i);
+      closeMenu();
+    });
+    container.appendChild(btn);
+  }
+
+  const closeRow = document.createElement('div');
+  closeRow.style.marginTop = '8px';
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'small-btn';
+  closeBtn.textContent = 'Fechar menu';
+  closeBtn.addEventListener('click', ()=> { closeMenu(); addMessage('Menu fechado.', 'bot'); });
+  closeRow.appendChild(closeBtn);
+  container.appendChild(closeRow);
+
+  addBotNode(container);
+
+  if(optAutoOpen){
+    const firstBtn = container.querySelector('button');
+    if(firstBtn) firstBtn.focus();
+  }
+}
+
+function closeMenu(){
+  menuOpen = false;
+  menuPopIndex = null;
+}
+
+// exibe o chunk (mostra texto e meta)
+function displayChunk(popIndex, chunkIndex){
+  const pop = pops[popIndex];
+  if(!pop) return;
+  const ch = (pop.chunks || [])[chunkIndex];
+  if(!ch) {
+    addMessage("Trecho não encontrado.", "bot");
+    return;
+  }
+  const title = `${pop.titulo} — ${getChunkTitle(ch, chunkIndex)}`;
+  addMessage(`📌 ${title}`, "bot");
+  addMessage(ch.texto || ch.text || "(sem texto)", "bot");
+  const meta = `Fonte: ${pop.titulo} — Parágrafo ${chunkIndex+1}`;
+  if(meta) {
+    const m = document.createElement('div');
+    m.className = 'meta';
+    m.textContent = meta;
+    addBotNode(m);
+  }
+}
+
 // handle send
 async function onSend(){
   const input = document.getElementById('input');
@@ -446,9 +559,9 @@ async function onSend(){
   input.value = "";
   const cmd = text.toLowerCase().trim();
   if(cmd === 'help'){
-    addMessage("Comandos:\n- Digite o número do POP (ex: 1) ou clique no nome à esquerda para selecionar.\n- 'trocar' ou 'listar' para ver/alterar POP.\n- 'help' mostra isto.\nApós selecionar, faça perguntas específicas (ex: 'segurança', 'critérios', 'objetivo').", "bot");
-    return;
-  }
+  addMessage("Comandos:\n- Digite o número do POP (ex: 1) ou clique no nome à esquerda para selecionar.\n- 'trocar' ou 'listar' para ver/alterar POP.\n- 'menu' mostra os parágrafos numerados do POP selecionado.\n- 'limpar' (ou 'limpar tudo') para limpar o chat ou resetar seleção.", "bot");
+  return;
+}
   if(cmd === 'trocar'){
     resetSelection();
     return;
@@ -458,7 +571,69 @@ async function onSend(){
     return;
   }
 
-  // if no pop selected and user entered a number, try to select
+  // suporte a comando via texto para limpar o chat (e variações)
+  if (cmd === 'limpar' || cmd === 'clear' || cmd === 'cls') {
+    clearChat();
+    // informa o usuário
+    addMessage("✔ Chat limpo.", "bot");
+    return;
+  }
+
+  // comando para limpar chat e também remover a seleção do POP
+  if (cmd === 'limpar tudo' || cmd === 'limpartudo' || cmd === 'clearall') {
+    clearChat();
+    resetSelection();      // remove seleção do POP
+    closeMenu();           // fecha menu por segurança
+    closeMobileAside();    // fecha a lista mobile caso esteja aberta
+    addMessage("✔ Chat e seleção de POP removidos.", "bot");
+    return;
+  }
+
+  // se o usuário digitou 'menu' -> mostrar menu para o POP selecionado
+  if(cmd === 'menu'){
+    if(!popSelecionado){
+      addMessage("Ainda não há POP selecionado. Selecione um POP (click ou digite o número).", "bot");
+      return;
+    }
+    showMenuForSelectedPop(true); // true = foco no primeiro botão
+    return;
+  }
+
+  // se o usuário digitou apenas um número e o menu está aberto -> selecionar esse parágrafo
+  if(/^\d+$/.test(cmd)){
+    const n = parseInt(cmd, 10);
+    // caso o menu esteja aberto para esse POP
+    if(menuOpen && menuPopIndex !== null){
+      const chunks = pops[menuPopIndex].chunks || [];
+      if(n >=1 && n <= chunks.length){
+        displayChunk(menuPopIndex, n-1);
+        closeMenu();
+      } else {
+        addMessage(`Número inválido. Escolha entre 1 e ${chunks.length}.`, "bot");
+      }
+      return;
+    }
+
+    // se não estava o menu mas um POP está selecionado, permitir seleção direta por número
+    if(popSelecionado){
+      const chunks = popSelecionado.chunks || [];
+      if(n >=1 && n <= chunks.length){
+        const pi = pops.indexOf(popSelecionado);
+        displayChunk(pi, n-1);
+        return;
+      }
+    }
+
+    // se número sem POP selecionado -> tentar selecionar POP pelo índice global
+    if(!popSelecionado){
+      if(n >=1 && n <= pops.length){
+        selectPopByIndex(n-1);
+        return;
+      }
+    }
+  }
+
+  // if no pop selected and user entered a number, try to select (handled above) - fallback
   if(!popSelecionado){
     const asNum = parseInt(cmd);
     if(!isNaN(asNum) && asNum >=1 && asNum <= pops.length){
@@ -581,3 +756,5 @@ carregarPOPs();
 </script>
 </body>
 </html>
+
+		
