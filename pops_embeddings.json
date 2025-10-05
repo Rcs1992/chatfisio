@@ -4,47 +4,47 @@
     "chunks": [
       {
         "texto": "INTRODUÇÃO: Nos últimos anos, os avanços tecnológicos e a evolução no cuidado de pacientes graves contribuíram significativamente para a redução da mortalidade e para o aumento da sobrevida dessa população, promovendo crescente interesse pelo conhecimento das morbidades e pelos efeitos adversos causados pelo imobilismo.",
-        "keywords": ["introdução"]
+        "keywords": ["Introdução"]
       },
       {
         "texto": "OBJETIVO: Padronizar os procedimentos entre a equipe de fisioterapia na retirada precoce do leito de paciente internado no bloco crítico e emergência do CER Leblon, prevenindo e ou reduzindo comorbidades associadas ao longo período de restrição ao leito, ou manutenção de decúbito prolongado.",
-        "keywords": ["objetivo"]
+        "keywords": ["Objetivo"]
       },
       {
         "texto": "ABRANGÊNCIA: Bloco crítico (b5-RH CTI Geral, b7-RH unidade neurointensiva, b9-RH unidade cardiointensiva) e emergência do CER Leblon.",
-        "keywords": ["abrangência"]
+        "keywords": ["Abrangência"]
       },
       {
         "texto": "REFERÊNCIAS: Altman DG, Machin D, Bryan TN, Gardner MJ. Statistics for medical Research council. London: Chapman & Hall, 1991; Hodgson CL, Capeel E, Tipping CJ. Early Mobilization of patients in intensive care, 2018; Silva VZM et al. Versão brasileira da escala de estado funcional em UTI, 2017; Shunsuke Taito et al., 2016; Diretrizes Brasileiras de Mobilização Precoce em UTI, 2019.",
-        "keywords": ["referências"]
+        "keywords": ["Referências"]
       },
       {
         "texto": "DEFINIÇÕES: Escala Funcional em UTI (IMS): avaliação funcional do paciente à beira leito. A ICU Mobility Scale (IMS) é uma escala validada que avalia o nível máximo de mobilidade alcançado por pacientes em terapia intensiva, variando de 0 a 10 pontos. Os níveis são: 0 – acamado, não realiza mobilidade passiva/ativa; 1 – realiza exercícios na cama; 2 – senta passivamente no leito ou fora dele; 3 – sentado na beira do leito; 4 – ortostatismo (pode ser auxiliado); 5 – capaz de realizar transferência para poltrona; 6 – realiza marcha estacionária; 7 – deambula com auxílio de duas pessoas; 8 – deambula com auxílio de uma pessoa; 9 – deambula com dispositivo; 10 – deambula de forma independente, sem ajuda. Essa classificação contribui para monitorar a progressão funcional, padronizar a comunicação entre a equipe e orientar a tomada de decisão clínica.; Escore Medical Research Council (MRC): avalia força muscular de 0 a 5 em seis movimentos específicos; Longo decúbito: período prolongado no mesmo decúbito; Posição de Fowler: cabeceira elevada 45º a 60º, joelhos ligeiramente elevados.",
-        "keywords": ["definições", "IMS", "MRC"]
+        "keywords": ["Definições", "IMS", "MRC"]
       },
       {
         "texto": "SIGLAS: CER - Centro Emergência Regional; CTI - Centro de terapia intensiva; FiO2 - Fração inspirada de oxigênio; FR - Frequência respiratória; FC - Frequência cardíaca; MMII - Membros inferiores; MMSS - Membros superiores; IMS - Mobility scale; MRC - Medical Research Council; PaO2 - Pressão arterial parcial de oxigênio; SpO2 - Saturação de oxigênio; EPI - Equipamento de proteção individual.",
-        "keywords": ["siglas"]
+        "keywords": ["Siglas"]
       },
       {
         "texto": "RESPONSABILIDADES: Avaliar sinais vitais e nível de cooperação do paciente; Testar força muscular; Avaliar funcionalidade via IMS; Avaliar critérios de segurança; Avaliar necessidade de analgesia. Responsáveis: fisioterapeuta, enfermagem, medicina.",
-        "keywords": ["responsabilidades"]
+        "keywords": ["Responsabilidades"]
       },
       {
         "texto": "DESCRIÇÃO DA TÉCNICA: Higienizar mãos, usar EPI, discutir contraindicações com médico; avaliar SpO2>92%, PaO2/FiO2>200; observar comandos verbais e nível de cooperação; testar grupos musculares; graduar força; avaliar funcionalidade via IMS; definir nível do protocolo IMS 0-10; explicar procedimentos ao paciente; avaliar analgesia; avaliar critérios de segurança antes e após mobilização; reavaliar diariamente.",
-        "keywords": ["técnica", "como fazer"]
+        "keywords": ["Técnica", "como fazer"]
       },
       {
         "texto": "CRITÉRIOS DE SEGURANÇA: Cardiovascular (FC 40-130 bpm, PA sistólica 90-180 mmHg, PA diastólica 60-110 mmHg); Respiratório (FR 5-40 irpm, SpO2>88%, PEEP<10 cmH2O, FiO2<60% se em VM); Neurológico (paciente cooperativo, entende comandos). Eventos adversos raros e não graves; mortalidade não aumenta.",
-        "keywords": ["segurança", "cardiovascular", "respiratório", "neurológico"]
+        "keywords": ["Critérios de segurança", "segurança", "cardiovascular", "respiratório", "neurológico"]
       },
       {
         "texto": "INTERRUPÇÃO: Os critérios de interrupção da mobilização precoce incluem a presença de sinais clínicos de instabilidade, como queda da pressão arterial sistólica abaixo de 90 mmHg ou aumento acima de 180 mmHg, frequência cardíaca menor que 40 bpm ou maior que 130 bpm, dessaturação de oxigênio com SpO₂ < 88%, aumento da frequência respiratória acima de 35 irpm, aparecimento de arritmias graves, dor intensa ou desconforto limitante, além de alteração aguda do nível de consciência (síncope, confusão súbita). Nessas condições, a mobilização deve ser interrompida imediatamente e o paciente reavaliado pela equipe multiprofissional.",
-        "keywords": ["interromper", "interrupção", "parar", "quando parar"]
+        "keywords": ["Interrupção", "interromper", "parar", "quando parar"]
       },
       {
         "texto": "MODELO DE INTERVENÇÃO: Uso da IMS para definir nível funcional; periodicidade, intensidade e continuidade ajustadas; acompanhamento multiprofissional; metas terapêuticas bem definidas; intervenção segura respeitando contraindicações e limitações.",
-        "keywords": ["intervenção", "limitações"]
+        "keywords": ["Intervenção", "limitações"]
       },
       {
         "texto": "CONTROLE DE REGISTROS: Avaliação periódica de IMS e MRC e registro em prontuário eletrônico.",
@@ -528,6 +528,7 @@
   ]
  }
 ]
+
 
 
 
