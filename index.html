@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8" />
-<title> ChatFisio — Layout Otimizado</title>
+<title> ChatFisio</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <!-- Fuse.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.basic.min.js"></script>
@@ -16,24 +16,17 @@
     --user:#dbeeff;
     --bot:#eef6ff;
     --muted:#47607f;
-    --maxw:1100px;
+    --maxw:920px;
     --gap:12px;
     --radius:12px;
     --shadow: 0 8px 28px rgba(11,61,145,0.08);
-    --sidebar-w:320px;
   }
 
-  /* reset & base */
   html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif; background:var(--bg); color:#07203a; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
   *{box-sizing:border-box}
 
-  /* app agora ocupa toda a viewport e usa grid para layout estilo ChatGPT */
-  .app{height:100vh;display:grid;grid-template-rows:auto 1fr;grid-template-columns:var(--sidebar-w) 1fr;gap:12px;align-items:start;padding:16px}
-
-  /* quando a sidebar estiver fechada, reduzimos a grid para 1 coluna */
-  .app.sidebar-closed{grid-template-columns:0 1fr}
-
-  header{grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;box-shadow:var(--shadow);position:sticky;top:12px;z-index:50}
+  .app{max-width:var(--maxw);margin:16px auto;padding:12px;display:flex;flex-direction:column;gap:var(--gap);min-height:calc(100vh - 32px)}
+  header{display:flex;align-items:center;gap:12px;padding:12px;border-radius:var(--radius);background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;box-shadow:var(--shadow)}
   header h1{margin:0;font-size:16px;line-height:1.1}
   header .top-controls{margin-left:auto;display:flex;gap:8px;align-items:center}
 
@@ -41,80 +34,79 @@
   .btn-primary{background:#fff;color:var(--accent);border:none;padding:8px 12px;border-radius:10px;font-weight:700;cursor:pointer}
   .btn-small{background:rgba(255,255,255,0.12);color:#fff;border:none;padding:6px 8px;border-radius:8px}
 
-  /* left sidebar (desktop) */
-  aside.left{width:var(--sidebar-w);background:var(--card);border-radius:var(--radius);padding:12px;box-shadow:0 6px 18px rgba(10,10,10,0.04);display:flex;flex-direction:column;gap:8px;height:calc(100vh - 96px);overflow:auto;transition:transform .24s ease, opacity .18s ease}
-  /* quando app.sidebar-closed -> esconder sidebar visualmente */
-  .app.sidebar-closed aside.left{transform:translateX(-18px) scale(.99);opacity:0;pointer-events:none}
-
+  .main{display:flex;gap:16px;flex:1;min-height:60vh}
+  aside.left{width:300px;background:var(--card);border-radius:var(--radius);padding:12px;box-shadow:0 6px 18px rgba(10,10,10,0.04);display:flex;flex-direction:column;gap:8px}
   aside.left h3{margin:0 0 8px 0;font-size:14px}
-  .pop-list{display:flex;flex-direction:column;gap:8px;max-height:calc(100% - 140px);overflow:auto;padding-right:6px}
+  .pop-list{display:flex;flex-direction:column;gap:8px;max-height:calc(60vh - 48px);overflow:auto;padding-right:6px}
   .pop-item{padding:12px;border-radius:10px;cursor:pointer;border:1px solid transparent;font-size:15px;line-height:1.2}
   .pop-item:hover{background:#f3f8ff}
   .pop-item.active{background:linear-gradient(90deg,#f0f6ff,#e7f0ff);border-color:#d6e6ff;box-shadow:0 4px 12px rgba(11,61,145,0.04)}
 
-  /* center chat area semelhante ao ChatGPT: painel principal com largura responsiva centrada internamente */
-  main.center{display:flex;flex-direction:column;background:var(--card);border-radius:var(--radius);padding:8px;box-shadow:0 6px 18px rgba(10,10,10,0.04);min-height:calc(100vh - 128px);margin-right:8px}
-
-  /* chat interior: restringe o conteúdo para leitura confortável e centraliza dentro do main */
-  .chat-shell{flex:1;display:flex;justify-content:center;align-items:stretch;padding:12px 8px}
-  .chat-window{width:100%;max-width:var(--maxw);display:flex;flex-direction:column;background:transparent}
-
-  #chat{flex:1;overflow:auto;padding:12px 16px 120px 16px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth;border-radius:8px}
+  main.center{flex:1;display:flex;flex-direction:column;background:var(--card);border-radius:var(--radius);padding:8px;box-shadow:0 6px 18px rgba(10,10,10,0.04);min-height:0}
+  #chat{flex:1;overflow:auto;padding:12px 10px 80px 10px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
   .msg{max-width:78%;padding:12px 14px;border-radius:12px;white-space:pre-wrap;word-break:break-word;box-shadow:0 1px 0 rgba(0,0,0,0.03)}
   .msg.user{align-self:flex-end;background:var(--user);color:var(--accent)}
   .msg.bot{align-self:flex-start;background:var(--bot);color:#052035}
   .meta{font-size:12px;color:var(--muted);margin-top:6px}
-
-  .input-row{display:flex;gap:8px;padding:10px;border-top:1px solid #eef4fb;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.98));align-items:center;position:sticky;bottom:0;margin-top:8px;border-radius:10px}
+  .input-row{display:flex;gap:8px;padding:10px;border-top:1px solid #eef4fb;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.98));align-items:center}
   .input-row input{flex:1;padding:12px;border-radius:12px;border:1px solid #dfeaf8;font-size:16px}
   .input-row button{background:var(--accent);color:#fff;border:none;padding:12px 14px;border-radius:12px;cursor:pointer;font-weight:700;font-size:15px;min-width:72px}
   .hint{font-size:13px;color:var(--muted);margin-top:8px}
   .small-btn{display:inline-block;padding:8px 10px;border-radius:10px;border:1px solid #e6eef0;background:#fff;cursor:pointer;font-size:14px;margin-right:6px}
-  footer{font-size:13px;color:var(--muted);text-align:center;padding:6px;grid-column:1/-1}
+  footer{font-size:13px;color:var(--muted);text-align:center;padding:6px}
 
-  /* mobile off-canvas aside: mantemos comportamento anterior, só tornamos animação mais suave */
-  .mobile-aside{position:fixed;inset:0 auto 0 0;width:320px;max-width:86%;transform:translateX(-110%);transition:transform .24s cubic-bezier(.2,.9,.3,1);z-index:1200;margin-left:8px}
+  .mobile-aside{
+    position:fixed;
+    inset:0 auto 0 0;
+    width:320px;
+    max-width:86%;
+    transform:translateX(-110%);
+    transition:transform .24s cubic-bezier(.2,.9,.3,1);
+    z-index:1200;
+    margin-left:8px;
+  }
   .mobile-aside.open{transform:translateX(0)}
   .aside-backdrop{position:fixed;inset:0;background:rgba(3,12,30,0.36);z-index:1100;opacity:0;pointer-events:none;transition:opacity .18s}
   .aside-backdrop.show{opacity:1;pointer-events:auto}
 
-  /* responsive adjustments */
-  @media (max-width:1000px){
-    :root{--sidebar-w:0}
-    .app{grid-template-columns:0 1fr}
-    .app.sidebar-closed{grid-template-columns:0 1fr}
-    aside.left{position:fixed;left:8px;top:84px;bottom:12px;z-index:40}
-    header{top:8px}
-    main.center{min-height:calc(100vh - 124px);margin-right:0}
+  @media (max-width:900px){
+    .main{gap:10px}
+    aside.left{display:none}
+    .main.mobile .center{flex:1}
+    header h1{font-size:15px}
   }
 
-  @media (max-width:720px){
-    .app{padding:10px}
+  @media (max-width:600px){
+    .app{margin:8px;padding:8px}
     header{padding:10px;border-radius:10px}
-    .chat-shell{padding:6px}
+    header h1{font-size:14px}
+    .btn-primary{padding:8px 10px;font-size:14px}
+    .pop-item{padding:14px;font-size:16px}
     .input-row{position:fixed;left:0;right:0;bottom:0;padding:12px;background:linear-gradient(180deg, #ffffff, #fbfdff);box-shadow:0 -6px 20px rgba(11,61,145,0.06);z-index:1000}
     main.center{padding-bottom:88px}
-    #chat{padding-bottom:140px}
+    #chat{padding-bottom:120px}
     footer{display:none}
+    .input-row{padding-bottom:calc(12px + env(safe-area-inset-bottom));}
   }
 
-  /* improved accessibility focus styles */
-  .pop-item:focus{outline:2px solid rgba(11,61,145,0.18);outline-offset:2px}
-
+  .pop-search{width:100%;padding:8px;border-radius:10px;border:1px solid #e6eef8;margin-bottom:8px;font-size:14px}
+  .pop-search-mobile{width:100%;padding:10px;border-radius:10px;border:1px solid #e6eef8;margin:12px 12px 0 12px;font-size:15px}
+  .pop-count{font-size:13px;color:var(--muted);margin-bottom:8px}
+  .pop-item:focus{outline:2px solid rgba(11,61,145,0.12);outline-offset:2px}
 </style>
 </head>
 <body>
-  <div class="app" role="application" aria-label="Assistente POPs" id="appRoot">
+  <div class="app" role="application" aria-label="Assistente POPs">
     <header>
-      <button class="btn-icon" id="openListBtn" title="Abrir/fechar lista de POPs" aria-label="Abrir/fechar lista de POPs">☰</button>
+      <button class="btn-icon" id="openListBtn" title="Abrir lista de POPs" aria-label="Abrir lista de POPs">☰</button>
       <svg width="36" height="36" viewBox="0 0 24 24" fill="none" style="flex:0 0 36px">
         <rect width="24" height="24" rx="6" fill="#fff" opacity="0.06"/>
         <path d="M7 11c1.5-2 4-3 6-3s4.5 1 6 3" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M7 16c1.5-2 4-3 6-3s4.5 1 6 3" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
       </svg>
-      <div style="flex:1;min-width:0">
-        <h1>Chat Fisio — Desenvolvido por Rodrigo Cavalcante - Fisioterapeuta - CREFITO 2/Nº 242633-F</h1>
-        <div style="font-size:13px;color:rgba(255,255,255,0.9);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Escolha um POP e faça perguntas sobre ele.</div>
+      <div>
+        <h1>Assistente POPs — Consulta restrita aos seus documentos</h1>
+        <div style="font-size:13px;color:rgba(255,255,255,0.9)">Escolha um POP e faça perguntas sobre ele.</div>
       </div>
       <div class="top-controls" aria-hidden="false">
         <button class="btn-small" onclick="showAll()" title="Listar POPs">Listar</button>
@@ -122,34 +114,35 @@
       </div>
     </header>
 
-    <!-- desktop aside (visível em telas maiores) -->
-    <aside class="left" aria-label="Lista de POPs (desktop)" id="desktopAside">
-      <h3>POPs disponíveis</h3>
-      <input id="popSearch" class="pop-search" type="search" placeholder="Buscar POPs..." aria-label="Buscar POPs" />
-      <div id="popCount" class="pop-count"></div>
-      <div id="popList" class="pop-list" tabindex="0"></div>
-      <div style="margin-top:8px">
-        <button class="small-btn" onclick="resetSelection()">Trocar POP</button>
-        <button class="small-btn" onclick="showAll()">Listar</button>
-      </div>
-    </aside>
-
-    <!-- center area -->
-    <main class="center" aria-live="polite">
-      <div class="chat-shell">
-        <div class="chat-window">
-          <div id="chat" role="log" aria-live="polite"></div>
-
-          <div class="input-row" role="region" aria-label="Entrada de usuário">
-            <input id="input" placeholder="Digite sua pergunta (ou 'help' para comandos)..." aria-label="Pergunta do usuário" />
-            <button onclick="onSend()">Enviar</button>
-          </div>
-          <div class="hint" style="padding:8px 6px;">Comandos: <b>trocar</b> (voltar à lista); <b>listar</b> (mostrar POPs); <b>menu</b> (abrir menu numerado do POP selecionado); <b>limpar</b> (limpar chat); <b>limpar tudo</b> (limpar chat + seleção); <b>help</b></div>
+    <div class="main" id="mainArea">
+      <!-- desktop aside -->
+      <aside class="left" aria-label="Lista de POPs (desktop)">
+        <h3>POPs disponíveis</h3>
+        <input id="popSearch" class="pop-search" type="search" placeholder="Buscar POPs..." aria-label="Buscar POPs" />
+        <div id="popCount" class="pop-count"></div>
+        <div id="popList" class="pop-list" tabindex="0"></div>
+        <div style="margin-top:8px">
+          <button class="small-btn" onclick="resetSelection()">Trocar POP</button>
+          <button class="small-btn" onclick="showAll()">Listar novamente</button>
         </div>
-      </div>
-    </main>
+      </aside>
 
-  <!-- mobile off-canvas aside (mantido) -->
+      <!-- center area -->
+      <main class="center" aria-live="polite">
+        <div id="chat" role="log" aria-live="polite"></div>
+
+        <div class="input-row" role="region" aria-label="Entrada de usuário">
+          <input id="input" placeholder="Digite sua pergunta (ou 'help' para comandos)..." aria-label="Pergunta do usuário" />
+          <button onclick="onSend()">Enviar</button>
+        </div>
+                <div class="hint" style="padding:8px 6px;">Comandos: <b>trocar</b> (voltar à lista); <b>listar</b> (mostrar POPs); <b>menu</b> (abrir menu numerado do POP selecionado); <b>limpar</b> (limpar chat); <b>limpar tudo</b> (limpar chat + seleção); <b>help</b></div>
+      </main>
+    </div>
+
+    <footer>Desenvolvido por Rodrigo Cavalcante - Fisioterapeuta - CREFITO 2/Nº 242633-F.</footer>
+  </div>
+
+  <!-- mobile off-canvas aside -->
   <div class="mobile-aside" id="mobileAside" aria-hidden="true">
     <aside class="left" style="height:100vh;padding-top:18px;">
       <div style="display:flex;align-items:center;justify-content:space-between;padding:0 12px;">
@@ -168,16 +161,13 @@
 
 <script>
 /* CONFIG: troque pela URL raw do seu pops_embeddings.json OU deixe 'pops_embeddings.json' local */
-const popFile = "https://raw.githubusercontent.com/Rcs1992/chatfisio/refs/heads/main/pops_embeddings.json"; // NÃO ALTERAR
+const popFile = "https://raw.githubusercontent.com/Rcs1992/chatfisio/refs/heads/main/pops_embeddings.json"; // padrão local. substitua se usar raw URL
 
 let pops = [];              // array de POP objects
 let popSelecionado = null;
 let searchable = [];        // array usado pelo Fuse
 let fuse = null;            // Fuse instance
 let popFilter = "";         // filtro para lista de POPs
-
-const appRoot = document.getElementById('appRoot');
-const desktopAside = document.getElementById('desktopAside');
 
 // ---------- utils ----------
 function normalizeText(s){
@@ -283,12 +273,13 @@ function buildSearchableIndex(){
       { name: 'keywords', weight: 0.1 }
     ],
     includeScore: true,
-    threshold: 0.36,
+    threshold: 0.36,      // ajustar: menor = mais estrito
     ignoreLocation: true,
     minMatchCharLength: 2,
     useExtendedSearch: false
   };
 
+  // criar a instância Fuse (leve)
   try{
     fuse = new Fuse(searchable, fuseOptions);
   }catch(err){
@@ -301,6 +292,7 @@ function buildSearchableIndex(){
 async function carregarPOPs(){
   try{
     addMessage("Carregando POPs...", "bot");
+    // fetch com timeout / abort
     const controller = new AbortController();
     const id = setTimeout(()=> controller.abort(), 10000);
     const r = await fetch(popFile, { signal: controller.signal });
@@ -311,6 +303,7 @@ async function carregarPOPs(){
     if(!Array.isArray(data)) throw new Error("JSON inválido: deve ser um array de POPs");
     pops = data;
 
+    // normalizar e preparar caches
     for(const p of pops){
       p.titulo = p.titulo || p.title || "Sem título";
       p._normTitulo = normalizeText(p.titulo);
@@ -324,6 +317,7 @@ async function carregarPOPs(){
       }
     }
 
+    // construir índice Fuse
     buildSearchableIndex();
 
     renderPopList();
@@ -374,6 +368,8 @@ function selectPopByIndex(i){
   popSelecionado = pops[i];
   renderPopList();
   addMessage(`📄 Você selecionou: ${popSelecionado.titulo}\nAgora pode fazer suas perguntas.`, "bot");
+  // se quiser abrir o menu automaticamente ao selecionar, descomente a linha abaixo
+  // showMenuForSelectedPop(true);
 }
 
 // reset selection
@@ -426,11 +422,12 @@ function searchInSelectedPOP_old(query){
 // fuzzy search via Fuse.js (retorna topK resultados apenas para o popIndex selecionado)
 function searchFuzzy(query, popIndex, topK = 3){
   if(!fuse || !query) return [];
+  // pedir um conjunto maior e filtrar por popIndex
   const candidateLimit = 50;
   try{
     const results = fuse.search(query, { limit: candidateLimit });
     const filtered = results
-      .map(r => ({ item: r.item, score: r.score }))
+      .map(r => ({ item: r.item, score: r.score })) // score: 0 melhor
       .filter(r => r.item.popIndex === popIndex)
       .slice(0, topK)
       .map(r => ({
@@ -438,6 +435,7 @@ function searchFuzzy(query, popIndex, topK = 3){
         chunkIndex: r.item.chunkIndex,
         texto: r.item.texto,
         titulo: r.item.titulo,
+        // converter score (0..1) -> relevância (1..0) para exibição
         relevance: 1 - (r.score || 0)
       }));
     return filtered;
@@ -451,6 +449,7 @@ function searchFuzzy(query, popIndex, topK = 3){
 let menuOpen = false;
 let menuPopIndex = null;
 
+// tenta obter um título legível para um chunk
 function getChunkTitle(chunk, idx){
   if(chunk.heading) return String(chunk.heading);
   if(chunk.title_chunk) return String(chunk.title_chunk);
@@ -466,6 +465,7 @@ function getChunkTitle(chunk, idx){
   return t ? (t + ( (chunk.texto && chunk.texto.length > t.length) ? "…" : "")) : `Parágrafo ${idx+1}`;
 }
 
+// adiciona um elemento DOM (bot) ao chat — preserva segurança pois criamos nós
 function addBotNode(node){
   const chat = document.getElementById('chat');
   const wrapper = document.createElement('div');
@@ -475,6 +475,7 @@ function addBotNode(node){
   chat.scrollTop = chat.scrollHeight;
 }
 
+// mostra menu numerado do POP selecionado
 function showMenuForSelectedPop(optAutoOpen = false){
   if(!popSelecionado) {
     addMessage("❗ Nenhum POP selecionado. Escolha um POP primeiro.", "bot");
@@ -528,6 +529,7 @@ function closeMenu(){
   menuPopIndex = null;
 }
 
+// exibe o chunk (mostra texto e meta)
 function displayChunk(popIndex, chunkIndex){
   const pop = pops[popIndex];
   if(!pop) return;
@@ -557,9 +559,9 @@ async function onSend(){
   input.value = "";
   const cmd = text.toLowerCase().trim();
   if(cmd === 'help'){
-    addMessage("Comandos:\n- Digite o número do POP (ex: 1) ou clique no nome à esquerda para selecionar.\n- 'trocar' ou 'listar' para ver/alterar POP.\n- 'menu' mostra os parágrafos numerados do POP selecionado.\n- 'limpar' (ou 'limpar tudo') para limpar o chat ou resetar seleção.", "bot");
-    return;
-  }
+  addMessage("Comandos:\n- Digite o número do POP (ex: 1) ou clique no nome à esquerda para selecionar.\n- 'trocar' ou 'listar' para ver/alterar POP.\n- 'menu' mostra os parágrafos numerados do POP selecionado.\n- 'limpar' (ou 'limpar tudo') para limpar o chat ou resetar seleção.", "bot");
+  return;
+}
   if(cmd === 'trocar'){
     resetSelection();
     return;
@@ -569,32 +571,38 @@ async function onSend(){
     return;
   }
 
+  // suporte a comando via texto para limpar o chat (e variações)
   if (cmd === 'limpar' || cmd === 'clear' || cmd === 'cls') {
     clearChat();
+    // informa o usuário
     addMessage("✔ Chat limpo.", "bot");
     return;
   }
 
+  // comando para limpar chat e também remover a seleção do POP
   if (cmd === 'limpar tudo' || cmd === 'limpartudo' || cmd === 'clearall') {
     clearChat();
-    resetSelection();
-    closeMenu();
-    closeMobileAside();
+    resetSelection();      // remove seleção do POP
+    closeMenu();           // fecha menu por segurança
+    closeMobileAside();    // fecha a lista mobile caso esteja aberta
     addMessage("✔ Chat e seleção de POP removidos.", "bot");
     return;
   }
 
+  // se o usuário digitou 'menu' -> mostrar menu para o POP selecionado
   if(cmd === 'menu'){
     if(!popSelecionado){
       addMessage("Ainda não há POP selecionado. Selecione um POP (click ou digite o número).", "bot");
       return;
     }
-    showMenuForSelectedPop(true);
+    showMenuForSelectedPop(true); // true = foco no primeiro botão
     return;
   }
 
+  // se o usuário digitou apenas um número e o menu está aberto -> selecionar esse parágrafo
   if(/^\d+$/.test(cmd)){
     const n = parseInt(cmd, 10);
+    // caso o menu esteja aberto para esse POP
     if(menuOpen && menuPopIndex !== null){
       const chunks = pops[menuPopIndex].chunks || [];
       if(n >=1 && n <= chunks.length){
@@ -606,6 +614,7 @@ async function onSend(){
       return;
     }
 
+    // se não estava o menu mas um POP está selecionado, permitir seleção direta por número
     if(popSelecionado){
       const chunks = popSelecionado.chunks || [];
       if(n >=1 && n <= chunks.length){
@@ -615,6 +624,7 @@ async function onSend(){
       }
     }
 
+    // se número sem POP selecionado -> tentar selecionar POP pelo índice global
     if(!popSelecionado){
       if(n >=1 && n <= pops.length){
         selectPopByIndex(n-1);
@@ -623,12 +633,14 @@ async function onSend(){
     }
   }
 
+  // if no pop selected and user entered a number, try to select (handled above) - fallback
   if(!popSelecionado){
     const asNum = parseInt(cmd);
     if(!isNaN(asNum) && asNum >=1 && asNum <= pops.length){
       selectPopByIndex(asNum-1);
       return;
     }
+    // also try to match by title substring
     const findByTitle = pops.find(p => normalizeText(p.titulo).includes(normalizeText(text)));
     if(findByTitle){
       popSelecionado = findByTitle;
@@ -640,8 +652,9 @@ async function onSend(){
     return;
   }
 
+  // if a pop is selected -> fuzzy search inside it
   addMessage("Assistente: ... pesquisando ...", "bot");
-  await new Promise(r => setTimeout(r, 180));
+  await new Promise(r => setTimeout(r, 180)); // pequeno delay UX
 
   const popIndex = pops.indexOf(popSelecionado);
   let fuzzyResults = [];
@@ -652,6 +665,7 @@ async function onSend(){
     fuzzyResults = [];
   }
 
+  // remove the '... pesquisando ...' message
   const chat = document.getElementById('chat');
   for(let i=chat.children.length-1;i>=0;i--){
     const el = chat.children[i];
@@ -665,6 +679,7 @@ async function onSend(){
   }
 
   if(fuzzyResults && fuzzyResults.length > 0){
+    // montar mensagem com top resultados
     let display = `🔎 Resultados fuzzy (${fuzzyResults.length}):\n\n`;
     fuzzyResults.forEach((res, idx) => {
       display += `📌 (${idx+1}) score ${(res.relevance).toFixed(2)}\n${res.texto}\n\n`;
@@ -674,6 +689,7 @@ async function onSend(){
     return;
   }
 
+  // fallback para busca antiga
   const resultOld = searchInSelectedPOP_old(text);
   if(resultOld && resultOld.chunk && resultOld.score > 0){
     const display = `📌 (fallback) Trecho encontrado (score ${resultOld.score.toFixed(2)}):\n\n${resultOld.chunk.texto}\n\nFonte: ${popSelecionado.titulo}`;
@@ -691,7 +707,7 @@ document.getElementById('input').addEventListener('keypress', function(e) {
   }
 });
 
-// mobile aside controls (mantidos)
+// mobile aside controls
 const openListBtn = document.getElementById('openListBtn');
 const closeListBtn = document.getElementById('closeListBtn');
 const mobileAside = document.getElementById('mobileAside');
@@ -714,28 +730,10 @@ function closeMobileAside(){
   asideBackdrop.setAttribute('aria-hidden','true');
   openListBtn.focus();
 }
-
-function toggleDesktopAside(){
-  // alterna classe no root .app para esconder/mostrar a sidebar em desktop
-  const w = window.innerWidth || document.documentElement.clientWidth;
-  if(w <= 1000){
-    // em telas pequenas, abra o painel mobile
-    openMobileAside();
-    return;
-  }
-  const root = document.getElementById('appRoot');
-  root.classList.toggle('sidebar-closed');
-  // se abrirmos a sidebar, focar o campo de busca
-  if(!root.classList.contains('sidebar-closed')){
-    const ds = document.getElementById('popSearch');
-    if(ds) ds.focus();
-  }
-}
-
-if(openListBtn) openListBtn.addEventListener('click', toggleDesktopAside);
+if(openListBtn) openListBtn.addEventListener('click', openMobileAside);
 if(closeListBtn) closeListBtn.addEventListener('click', closeMobileAside);
 if(asideBackdrop) asideBackdrop.addEventListener('click', closeMobileAside);
-document.addEventListener('keydown', (e) => { if(e.key === 'Escape'){ closeMobileAside(); const root = document.getElementById('appRoot'); if(root) root.classList.add('sidebar-closed'); } });
+document.addEventListener('keydown', (e) => { if(e.key === 'Escape'){ closeMobileAside(); } });
 
 // listeners para filtro de POPs (debounced)
 const desktopSearch = document.getElementById('popSearch');
@@ -758,5 +756,3 @@ carregarPOPs();
 </script>
 </body>
 </html>
-
-
