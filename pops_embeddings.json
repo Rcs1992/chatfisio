@@ -89,7 +89,7 @@
       },
       {
         "texto": "DESCRIÇÃO DA TÉCNICA: Usar EPI; verificar circuito do ventilador; testar ventilador; em PCV usar PI para gerar VT 6 ml/kg de peso predito (Homens: 0,91x(altura-152,4)+50; Mulheres: 0,91x(altura-152,4)+45,5); FR 14–20; PEEP 5–8 cmH2O; TI 0,8–1,5s; FiO2 >80%; avaliar mudança para VCV ou PRVC se PI >25 cmH2O. Anotar parâmetros.",
-        "keywords": ["parâmetros"]
+        "keywords": ["parâmetros", "como ventilar", "quais são os parâmetros inciais", "parâmetro inciais", "como iniciar", "como iniciar a ventilação mecânica"]
       },
       {
         "texto": "MATERIAIS NECESSÁRIOS: EPI, fita métrica, estetoscópio, caneta de quadro branco, ventilador mecânico, circuito, sistema fechado de aspiração, filtro bacteriológico.",
@@ -528,6 +528,7 @@
   ]
  }
 ]
+
 
 
 
