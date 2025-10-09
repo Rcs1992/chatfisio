@@ -88,8 +88,16 @@
         "keywords": ["responsabilidades"]
       },
       {
-        "texto": "DESCRIÇÃO DA TÉCNICA: Usar EPI; verificar circuito do ventilador; testar ventilador; em PCV usar PI para gerar VT 6 ml/kg de peso predito (Homens: 0,91x(altura-152,4)+50; Mulheres: 0,91x(altura-152,4)+45,5); FR 14–20; PEEP 5–8 cmH2O; TI 0,8–1,5s; FiO2 >80%; avaliar mudança para VCV ou PRVC se PI >25 cmH2O. Anotar parâmetros.",
+        "texto": "DESCRIÇÃO DA TÉCNICA: Usar EPI; verificar circuito do ventilador; testar ventilador; USAR OS SEGUINTES PARÂMETROS INCIAIS: em PCV usar PInsp para gerar VT 6 ml/kg de peso predito (Homens: 0,91x(altura-152,4)+50; Mulheres: 0,91x(altura-152,4)+45,5); FR 14–20; PEEP 5–8 cmH2O; TI 0,8–1,5s; FiO2 >80%; avaliar mudança para VCV ou PRVC se PI >25 cmH2O. Anotar parâmetros.",
         "keywords": ["parâmetros", "como ventilar", "quais são os parâmetros inciais", "parâmetro inciais", "como iniciar", "como iniciar a ventilação mecânica"]
+      },
+      {
+         "texto": "GASOMETRIA ARTERIAL: A gasometria permite avaliar o equilíbrio ácido-base e a oxigenação do paciente. O primeiro passo é analisar o pH: valores <7,35 indicam acidose e >7,45 indicam alcalose. Em seguida, avaliar o PaCO2 — se estiver elevado, sugere componente respiratório ácido; se estiver reduzido, indica alcalose respiratória. Depois, observar o HCO3–: valores baixos indicam acidose metabólica e altos, alcalose metabólica. O excesso de bases (BE) ajuda a confirmar o distúrbio metabólico. Avaliar também a PaO2 e a saturação de O2 para identificar hipoxemia. Por fim, determinar se há compensação (parcial ou total) e correlacionar com o quadro clínico e parâmetros ventilatórios.",
+         "keywords": ["gasometria", "interpretação da gasometria", "acidose respiratória", "alcalose metabólica", "como interpretar gasometria", "gasometria arterial"]
+      },
+      {
+        "texto": "GASOMETRIA ARTERIAL — GUIA PRÁTICO: 1) Verifique o pH: <7,35 → acidemia; >7,45 → alcalemia. 2) Identifique o componente respiratório (PaCO2) e metabólico (HCO3−) e veja qual deles 'segue' o pH: se pH baixo + PaCO2 alto → distúrbio primariamente respiratório; se pH baixo + HCO3− baixo → distúrbio primariamente metabólico. 3) Valores de referência (adulto, nível do mar): pH 7,35–7,45; PaCO2 35–45 mmHg; HCO3− 22–26 mEq/L; PaO2 ≈ 75–100 mmHg; SaO2 ≈ 95–100%; BE ≈ −2 a +2 mEq/L (variações por altitude/idade). 4) Avalie compensação esperada: para acidose metabólica use a fórmula de Winter (PaCO2 esperada ≈ 1,5 × HCO3− + 8 ± 2) para checar se há componente respiratório adicional; na acidose respiratória a resposta aguda renal aumenta o HCO3− ≈ +1 mEq/L para cada 10 mmHg de elevação da PaCO2 (fase aguda), e em doença respiratória crônica o HCO3− pode aumentar ≈ +3–4 mEq/L por cada 10 mmHg de PaCO2 (fase crônica). Para alcalose respiratória a redução aguda do HCO3− é ≈ −2 mEq/L por cada 10 mmHg de queda da PaCO2; em fase crônica a redução renal é maior (≈ −4–5 mEq/L por cada 10 mmHg). 5) Procure por distúrbios mistos: pH próximo do normal pode esconder duas alterações opostas; comparar valores medidos com compensação esperada (p.ex., usar Winter) ajuda a identificar sobreposição. 7) Correlacione sempre com quadro clínico e parâmetros ventilatórios (respiração espontânea, suporte ventilatório, uso de BIPAP/ventilador, diurese, perdas gastrointestinais, função renal). 7) Exemplo rápido: pH 7,25; PaCO2 60 mmHg; HCO3− 26 mEq/L → pH baixo com PaCO2 elevado indica **acidose respiratória**; HCO3− levemente elevado sugere início de compensação (se crônico, esperar HCO3− bem mais alto). 8) Registrar e comunicar desvios significativos (p.ex. pH <7,25 ou PaO2 <60 mmHg) e integrar com condutas (ajuste ventilatório, investigar causa respiratória/metabólica).",
+        "keywords": ["interpretação gasometria", "valores normais gasometria", "gasometria"]
       },
       {
         "texto": "MATERIAIS NECESSÁRIOS: EPI, fita métrica, estetoscópio, caneta de quadro branco, ventilador mecânico, circuito, sistema fechado de aspiração, filtro bacteriológico.",
@@ -110,7 +118,7 @@
     ]
   },
   {
-    "titulo": "POP_Desmame_VM",
+    "titulo": "POP_Desmame_TQT",
     "chunks": [
       {
         "texto": "INTRODUÇÃO: A Ventilação Mecânica (VM) é necessária em uma grande parcela dos pacientes críticos internados nas Unidades de Terapia Intensiva (UTI). Seu uso prolongado pode gerar VILI, PAV, fraqueza da musculatura respiratória e polineuropatia do paciente crítico, aumentando mortalidade e custos. Nas últimas décadas, houve um esforço científico para reduzir o tempo de exposição à VM, desenvolvendo estratégias de desmame.",
@@ -528,6 +536,7 @@
   ]
  }
 ]
+
 
 
 
